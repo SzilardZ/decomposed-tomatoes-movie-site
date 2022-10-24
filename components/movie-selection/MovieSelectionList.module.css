@@ -1,0 +1,5 @@
+.selected-movie-container {
+  display: flex;
+  gap: 1.6rem;
+  margin-bottom: 8rem;
+}

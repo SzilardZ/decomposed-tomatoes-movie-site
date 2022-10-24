@@ -1,0 +1,4 @@
+.selected-image {
+  max-height: 50rem;
+  cursor: pointer;
+}

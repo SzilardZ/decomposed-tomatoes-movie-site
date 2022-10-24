@@ -1,0 +1,25 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 100%;
+  margin: 8rem;
+}
+
+.movie-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.movie-title {
+  font-size: 4.4rem;
+}
+
+.movie-year {
+  font-size: 2.4rem;
+}
+
+.movie-image {
+  overflow: visible;
+  max-width: 55rem;
+}

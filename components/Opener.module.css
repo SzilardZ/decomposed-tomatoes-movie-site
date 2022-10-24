@@ -1,0 +1,11 @@
+.container {
+  margin: 0 auto;
+  max-width: 65rem;
+  padding: 8rem 0;
+  text-align: center;
+}
+
+.opener-text {
+  font-size: 4.4rem;
+  line-height: 1.5;
+}
