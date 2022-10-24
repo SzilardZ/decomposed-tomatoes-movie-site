@@ -24,6 +24,11 @@
   width: 50%;
 }
 
+.title,
+.site-details {
+  color: #343a40;
+}
+
 .title {
   font-size: 7.4rem;
   margin-bottom: 1.6rem;

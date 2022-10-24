@@ -14,7 +14,9 @@ const MovieList = (props: MovieListProps) => {
     <Fragment>
       <Navbar />
       <div className={styles.container}>
-        <SearchField />
+        <div className={styles['search-field']}>
+          <SearchField />
+        </div>
         <ul className={styles['movie-list']}>
           {props.movies.map(movie => (
             <Movie key={movie.id} id={movie.id} imageUrl={movie.imageUrl} />
