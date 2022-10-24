@@ -1,11 +1,9 @@
 import type { GetStaticProps, NextPage } from 'next';
 import Head from 'next/head';
-import styles from '../styles/Home.module.css';
 
 import Header from '../components/header/Header';
 import Opener from '../components/Opener';
 import MovieSelectionList from '../components/movie-selection/MovieSelectionList';
-// import Slider from '../components/slider/Slider';
 import SelectedMovieModel from '../models/selectedMovie';
 import { Result, ResultElement } from '../types/homePageMoviesTypes';
 
@@ -22,7 +20,6 @@ const Home: NextPage<{ selectedMovies: SelectedMovieModel[] }> = ({
       <Header />
       <Opener />
       <MovieSelectionList selectedMovies={selectedMovies} />
-      {/* <Slider /> */}
     </div>
   );
 };

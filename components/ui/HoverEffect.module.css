@@ -35,6 +35,7 @@
   transform: translate(-50%, -50%);
   transition: stroke-dashoffset 0s 0.2s, opacity 0.2s;
   z-index: -1;
+  enable-background: new 0 0 152.9 43.4;
 }
 
 .menu__link--active svg,

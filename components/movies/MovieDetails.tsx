@@ -16,7 +16,6 @@ const MovieDetails = (props: MovieDetailProps) => {
           <h1 className={styles['movie-title']}>{props.movie.title}</h1>
           <h2 className={styles['movie-year']}>{props.movie.releaseYear}</h2>
           <h2 className={styles['movie-rating']}>
-            {' '}
             IMDB Rating: {props.movie.rating}
           </h2>
           <h2 className={styles['movie-votes']}>
