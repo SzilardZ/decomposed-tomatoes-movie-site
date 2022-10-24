@@ -5,7 +5,11 @@ interface ButtonProps {
 }
 
 const Button = ({ buttonText }: ButtonProps) => {
-  return <button className={styles.fill}>{buttonText}</button>;
+  return (
+    <button className={styles.fill}>
+      <span className={styles['button-text']}>{buttonText}</span>
+    </button>
+  );
 };
 
 export default Button;

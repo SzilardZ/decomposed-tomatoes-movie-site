@@ -1,27 +1,33 @@
 .fill {
-  font-size: 2rem;
-  /* letter-spacing: 1px; */
+  letter-spacing: 1px;
   padding: 13px 30px 13px;
+  font: inherit;
   outline: 0;
-  border: 1px solid #fff;
+  /* border: 1.5px solid #fff; */
+  border: none;
   cursor: pointer;
   position: relative;
   background-color: rgba(0, 0, 0, 0);
 }
 
-/* .fill::after {
+.button-text {
+  font-size: 3rem;
+}
+
+.fill::after {
   content: '';
-  background-color: #ffe54c;
+  /* background-color: #ffe54c; */
+  background-color: #f25056;
   width: 100%;
   z-index: -1;
   position: absolute;
   height: 100%;
-  top: 7px;
-  left: 7px;
+  bottom: 0px;
+  left: 0px;
   transition: 0.2s;
 }
 
 .fill:hover::after {
-  top: 0px;
-  left: 0px;
-} */
+  /* bottom: 7px; */
+  left: 10px;
+}
