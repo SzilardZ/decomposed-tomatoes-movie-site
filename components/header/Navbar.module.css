@@ -8,6 +8,8 @@
 .logo {
   font-size: 4.4rem;
   cursor: pointer;
+  border: solid 2px #fff;
+  padding: 0.2rem 0.8rem;
 }
 
 .main-nav-list {
