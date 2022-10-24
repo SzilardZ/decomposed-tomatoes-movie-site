@@ -17,10 +17,10 @@ const SearchField = () => {
   return (
     <form onSubmit={submitSearchMovieHandler} className={styles['search-bar']}>
       {/* <label htmlFor='search-movie'>Search Movie</label> */}
-      <span className={styles.input}>
+      <div className={styles.input}>
         <input type='text' id='search-movie' ref={inputMovieRef} />
-      </span>
-      <Button buttonText='Search now' />
+        <Button buttonText='Search now' />
+      </div>
     </form>
   );
 };
