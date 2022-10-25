@@ -1,7 +1,7 @@
 import { GetServerSideProps } from 'next';
 import { useEffect, useState } from 'react';
 import MovieList from '../../components/movies/MovieList';
-import { Result } from '../../types/movieByTitleTypes';
+import { ResultElement } from '../../types/movieByTitleTypes';
 import { SimpleMovieModel } from '../../models/movie';
 
 interface SearchedMoviesProps {
@@ -35,10 +35,10 @@ export const getServerSideProps: GetServerSideProps = async context => {
   const { results } = await response.json();
 
   const filteredMovies = results.filter(
-    (movie: Result) => movie.primaryImage !== null
+    (movie: ResultElement) => movie.primaryImage !== null
   );
 
-  const movies = filteredMovies.map((movie: Result) => {
+  const movies = filteredMovies.map((movie: ResultElement) => {
     return {
       id: movie.id,
       imageUrl: movie.primaryImage!.url,
