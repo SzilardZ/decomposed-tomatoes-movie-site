@@ -16,9 +16,9 @@ const favMoviesSlice = createSlice({
     addMovie(state, action: PayloadAction<SimpleMovieModel>) {
       state.favMovies.push(action.payload);
     },
-    removeMovie(state, action: PayloadAction<SimpleMovieModel>) {
-      state.favMovies.filter(
-        (movie: SimpleMovieModel) => movie.id !== action.payload.id
+    removeMovie(state, action: PayloadAction<string>) {
+      state.favMovies = state.favMovies.filter(
+        (movie: SimpleMovieModel) => movie.id !== action.payload
       );
     },
   },

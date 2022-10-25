@@ -13,3 +13,9 @@
 .search-field {
   margin-bottom: 8rem;
 }
+
+.no-movie {
+  display: flex;
+  font-size: 3.6rem;
+  justify-content: center;
+}

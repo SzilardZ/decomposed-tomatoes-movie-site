@@ -1,7 +1,7 @@
 import { Fragment } from 'react';
 import Navbar from '../header/Navbar';
 import styles from './MovieDetails.module.css';
-import { MovieModel } from '../../models/movie';
+import { MovieModel, SimpleMovieModel } from '../../models/movie';
 import { useDispatch, useSelector } from 'react-redux';
 import { addMovie, removeMovie } from '../../store/favMovies/favMoviesSlice';
 
@@ -12,8 +12,24 @@ interface MovieDetailProps {
 const MovieDetails = (props: MovieDetailProps) => {
   const dispatch = useDispatch();
 
-  const addToFavoriteHandler = () => {
-    dispatch(addMovie({ id: props.movie.id, imageUrl: props.movie.imageUrl }));
+  const favMovies = useSelector((state: any) => state.favMovies.favMovies);
+
+  let buttonText;
+
+  const isInFavorite = favMovies.find(
+    (movie: SimpleMovieModel) => movie.id === props.movie.id
+  );
+
+  isInFavorite
+    ? (buttonText = '- Remove from Favorites')
+    : (buttonText = '+ Add to Favorites');
+
+  const favoriteHandler = () => {
+    isInFavorite
+      ? dispatch(removeMovie(props.movie.id))
+      : dispatch(
+          addMovie({ id: props.movie.id, imageUrl: props.movie.imageUrl })
+        );
   };
 
   return (
@@ -32,8 +48,8 @@ const MovieDetails = (props: MovieDetailProps) => {
           <div>
             <button
               className={styles['btn-add-to-fav']}
-              onClick={addToFavoriteHandler}>
-              + Add to Favorites
+              onClick={favoriteHandler}>
+              {buttonText}
             </button>
           </div>
         </div>
