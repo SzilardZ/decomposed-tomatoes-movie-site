@@ -5,7 +5,7 @@ const Navbar = () => {
   return (
     <div className={styles['main-nav']}>
       <Link href='/'>
-        <div className={styles.logo}>MOVIE APP</div>
+        <div className={styles.logo}>THE "THE MOVIE APP"</div>
       </Link>
       <nav className={styles['main-nav']}>
         <ul className={styles['main-nav-list']}>
