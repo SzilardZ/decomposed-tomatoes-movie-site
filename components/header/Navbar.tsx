@@ -40,7 +40,7 @@ const Navbar = () => {
             </svg>
           </li>
           <li className={styles.menu__link}>
-            <Link href='#' className={styles.menu__link}>
+            <Link href='/favorite-movies' className={styles.menu__link}>
               Your Favorites
             </Link>
             <svg

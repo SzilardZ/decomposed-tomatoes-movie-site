@@ -2,12 +2,20 @@ import { Fragment } from 'react';
 import Navbar from '../header/Navbar';
 import styles from './MovieDetails.module.css';
 import { MovieModel } from '../../models/movie';
+import { useDispatch, useSelector } from 'react-redux';
+import { addMovie, removeMovie } from '../../store/favMovies/favMoviesSlice';
 
 interface MovieDetailProps {
   movie: MovieModel;
 }
 
 const MovieDetails = (props: MovieDetailProps) => {
+  const dispatch = useDispatch();
+
+  const addToFavoriteHandler = () => {
+    dispatch(addMovie({ id: props.movie.id, imageUrl: props.movie.imageUrl }));
+  };
+
   return (
     <Fragment>
       <Navbar />
@@ -22,7 +30,9 @@ const MovieDetails = (props: MovieDetailProps) => {
             Number of Votes: {props.movie.numVotes}
           </h2>
           <div>
-            <button className={styles['btn-add-to-fav']}>
+            <button
+              className={styles['btn-add-to-fav']}
+              onClick={addToFavoriteHandler}>
               + Add to Favorites
             </button>
           </div>

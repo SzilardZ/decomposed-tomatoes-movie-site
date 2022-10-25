@@ -1,8 +1,8 @@
-import { createSlice } from '@reduxjs/toolkit';
-import SelectedMovieModel from '../../models/selectedMovie';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { SimpleMovieModel } from '../../models/movie';
 
 interface InitialState {
-  favMovies: SelectedMovieModel[];
+  favMovies: SimpleMovieModel[];
 }
 
 const initialState: InitialState = {
@@ -13,12 +13,12 @@ const favMoviesSlice = createSlice({
   name: 'favMovies',
   initialState: initialState,
   reducers: {
-    addMovie(state, action) {
+    addMovie(state, action: PayloadAction<SimpleMovieModel>) {
       state.favMovies.push(action.payload);
     },
-    removeMovie(state, action) {
+    removeMovie(state, action: PayloadAction<SimpleMovieModel>) {
       state.favMovies.filter(
-        (movie: SelectedMovieModel) => movie.movieId !== action.payload.id
+        (movie: SimpleMovieModel) => movie.id !== action.payload.id
       );
     },
   },
