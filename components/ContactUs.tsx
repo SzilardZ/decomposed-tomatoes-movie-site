@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import styles from './ContactUs.module.css';
 
 const Contact = () => {
@@ -17,6 +18,9 @@ const Contact = () => {
           then, don't contact us. Not on this website. Not for any reason. Do
           you get me, sweetheart?
         </p>
+        <div className={styles['go-back']}>
+          <Link href='/'>Go Back</Link>
+        </div>
       </div>
     </div>
   );

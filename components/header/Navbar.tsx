@@ -1,12 +1,11 @@
 import Link from 'next/link';
+import Logo from '../ui/Logo';
 import styles from './Navbar.module.css';
 
 const Navbar = () => {
   return (
     <div className={styles['main-nav']}>
-      <Link href='/'>
-        <div className={styles.logo}>THE "THE MOVIE APP"</div>
-      </Link>
+      <Logo />
       <nav className={styles['main-nav']}>
         <ul className={styles['main-nav-list']}>
           <li className={styles.menu__link}>
