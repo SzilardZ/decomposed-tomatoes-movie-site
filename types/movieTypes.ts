@@ -11,3 +11,15 @@ export interface SimpleMovieModel {
   id: string;
   imageUrl: string;
 }
+
+export interface SelectedMovieModel {
+  movieId: string;
+  movieImage: string;
+}
+
+export interface UpcomingMovieModel {
+  id: string;
+  title: string;
+  imageUrl: string;
+  releaseYear: string;
+}

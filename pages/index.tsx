@@ -4,7 +4,7 @@ import Head from 'next/head';
 import Header from '../components/header/Header';
 import Opener from '../components/Opener';
 import MovieSelectionList from '../components/movie-selection/MovieSelectionList';
-import SelectedMovieModel from '../models/selectedMovie';
+import { SelectedMovieModel } from '../types/movieTypes';
 import { Result, ResultElement } from '../types/homePageMoviesTypes';
 
 const Home: NextPage<{ selectedMovies: SelectedMovieModel[] }> = ({

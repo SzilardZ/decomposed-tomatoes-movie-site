@@ -2,7 +2,7 @@ import { GetStaticProps } from 'next';
 import { Fragment } from 'react';
 import MovieList from '../../components/movies/MovieList';
 import { Result, ResultElement } from '../../types/upcomingMovieTypes';
-import { UpcomingMovieModel } from '../../models/upcomingMovieModel';
+import { UpcomingMovieModel } from '../../types/movieTypes';
 
 interface UpcomingMoviesProps {
   upcomingMovies: UpcomingMovieModel[];

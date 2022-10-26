@@ -2,7 +2,7 @@ import { GetServerSideProps } from 'next';
 import { useEffect, useState } from 'react';
 import MovieList from '../../components/movies/MovieList';
 import { ResultElement } from '../../types/movieByTitleTypes';
-import { SimpleMovieModel } from '../../models/movie';
+import { SimpleMovieModel } from '../../types/movieTypes';
 
 interface SearchedMoviesProps {
   movies: SimpleMovieModel[];

@@ -3,7 +3,7 @@ import Navbar from '../header/Navbar';
 import SearchField from '../header/SearchField';
 import Movie from './Movie';
 import styles from './MovieList.module.css';
-import { SimpleMovieModel } from '../../models/movie';
+import { SimpleMovieModel } from '../../types/movieTypes';
 
 interface MovieListProps {
   movies: SimpleMovieModel[];

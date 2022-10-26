@@ -1,7 +1,7 @@
 import MovieItem from './MovieItem';
 import styles from './MovieSelectionList.module.css';
 
-import SelectedMovieModel from '../../models/selectedMovie';
+import { SelectedMovieModel } from '../../types/movieTypes';
 
 interface MovieSelectionListProps {
   selectedMovies: SelectedMovieModel[];

@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { SimpleMovieModel } from '../../models/movie';
+import { SimpleMovieModel } from '../../types/movieTypes';
 
 interface InitialState {
   favMovies: SimpleMovieModel[];

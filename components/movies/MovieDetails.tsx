@@ -1,7 +1,7 @@
 import { Fragment } from 'react';
 import Navbar from '../header/Navbar';
 import styles from './MovieDetails.module.css';
-import { MovieModel, SimpleMovieModel } from '../../models/movie';
+import { MovieModel, SimpleMovieModel } from '../../types/movieTypes';
 import { useDispatch, useSelector } from 'react-redux';
 import { addMovie, removeMovie } from '../../store/favMovies/favMoviesSlice';
 
@@ -21,7 +21,7 @@ const MovieDetails = (props: MovieDetailProps) => {
   );
 
   isInFavorite
-    ? (buttonText = '- Remove from Favorites')
+    ? (buttonText = 'Remove from Favorites')
     : (buttonText = '+ Add to Favorites');
 
   const favoriteHandler = () => {

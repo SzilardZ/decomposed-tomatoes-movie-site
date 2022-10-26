@@ -1,6 +1,6 @@
 import { GetServerSideProps } from 'next';
 import MovieDetails from '../../components/movies/MovieDetails';
-import { MovieModel } from '../../models/movie';
+import { MovieModel } from '../../types/movieTypes';
 import { Result } from '../../types/movieByIdTypes';
 import { RatingResult } from '../../types/movieRatingByIdTypes';
 
