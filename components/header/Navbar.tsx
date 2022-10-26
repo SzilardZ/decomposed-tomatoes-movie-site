@@ -25,7 +25,7 @@ const Navbar = () => {
             </svg>
           </li>
           <li className={styles.menu__link}>
-            <Link href='#' className={styles.menu__link}>
+            <Link href='/our-favorites' className={styles.menu__link}>
               Our Favorites
             </Link>
             <svg
