@@ -1,7 +1,11 @@
-import SearchField from '.././hero/SearchField';
+import SearchField from '../search-field/SearchFieldActor';
 import styles from './SearchActor.module.css';
 
 const SearchActor = () => {
+  const searchActorHandler = (actor: string) => {
+    console.log(actor);
+  };
+
   return (
     <div className={styles['search-actor']}>
       <div className={styles['search-actor-container']}>
@@ -13,7 +17,7 @@ const SearchActor = () => {
             soluta necessitatibus ab saepe?
           </p>
           <div className={styles['search-field']}>
-            <SearchField text='type actor' />
+            <SearchField onSearchActor={searchActorHandler} />
           </div>
         </div>
       </div>

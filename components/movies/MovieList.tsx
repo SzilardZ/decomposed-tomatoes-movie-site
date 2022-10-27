@@ -1,6 +1,6 @@
 import { Fragment } from 'react';
 import Navbar from '../hero/Navbar';
-import SearchField from '../hero/SearchField';
+import SearchField from '../search-field/SearchFieldMovie';
 import Movie from './Movie';
 import styles from './MovieList.module.css';
 import { SimpleMovieModel } from '../../types/movieTypes';
