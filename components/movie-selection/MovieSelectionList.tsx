@@ -2,6 +2,7 @@ import MovieItem from './MovieItem';
 import styles from './MovieSelectionList.module.css';
 
 import { SelectedMovieModel } from '../../types/movieTypes';
+import { Fragment } from 'react';
 
 interface MovieSelectionListProps {
   selectedMovies: SelectedMovieModel[];
@@ -9,17 +10,17 @@ interface MovieSelectionListProps {
 
 const MovieSelectionList = ({ selectedMovies }: MovieSelectionListProps) => {
   return (
-    <ul className={styles['selected-movie-container']}>
-      {selectedMovies.map(movie => {
-        return (
+    <Fragment>
+      <ul className={styles['selected-movie-container']}>
+        {selectedMovies.map(movie => (
           <MovieItem
             key={movie.movieId}
             id={movie.movieId}
             image={movie.movieImage}
           />
-        );
-      })}
-    </ul>
+        ))}
+      </ul>
+    </Fragment>
   );
 };
 

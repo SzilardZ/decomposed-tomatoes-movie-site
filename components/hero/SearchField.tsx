@@ -1,11 +1,13 @@
 import { useRouter } from 'next/router';
 import React, { useRef } from 'react';
-
 import styles from './SearchField.module.css';
-
 import Button from '../ui/Button';
 
-const SearchField = () => {
+interface SearchFieldProps {
+  text: string;
+}
+
+const SearchField = ({ text }: SearchFieldProps) => {
   const inputMovieRef = useRef<HTMLInputElement>(null);
   const router = useRouter();
 
@@ -26,7 +28,7 @@ const SearchField = () => {
           type='text'
           id='search-movie'
           ref={inputMovieRef}
-          placeholder='movie title'
+          placeholder={text}
         />
         <Button buttonText='Search now' />
       </div>

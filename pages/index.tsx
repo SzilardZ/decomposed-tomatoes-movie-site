@@ -1,11 +1,12 @@
 import type { GetStaticProps, NextPage } from 'next';
 import Head from 'next/head';
 
-import Header from '../components/header/Header';
-import Opener from '../components/Opener';
+import Header from '../components/hero/Header';
+import Opener from '../components/opener/Opener';
 import MovieSelectionList from '../components/movie-selection/MovieSelectionList';
 import { SelectedMovieModel } from '../types/movieTypes';
 import { Result, ResultElement } from '../types/homePageMoviesTypes';
+import SearchActor from '../components/search-actor/SearchActor';
 
 const Home: NextPage<{ selectedMovies: SelectedMovieModel[] }> = ({
   selectedMovies,
@@ -20,6 +21,7 @@ const Home: NextPage<{ selectedMovies: SelectedMovieModel[] }> = ({
       <Header />
       <Opener />
       <MovieSelectionList selectedMovies={selectedMovies} />
+      <SearchActor />
     </div>
   );
 };

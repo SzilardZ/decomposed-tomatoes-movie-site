@@ -1,5 +1,16 @@
 .selected-movie-container {
   display: flex;
-  gap: 1.6rem;
+  gap: 2.4rem;
   margin-bottom: 8rem;
+  overflow: hidden;
+  animation: slide 40s linear infinite;
+}
+
+@keyframes slide {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-1500px, 0, 0); /* The image width */
+  }
 }

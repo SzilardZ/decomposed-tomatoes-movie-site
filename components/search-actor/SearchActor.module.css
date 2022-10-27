@@ -1,5 +1,5 @@
-.header {
-  background-image: url(../../src/images/header-background-2.jpg);
+.search-actor {
+  background-image: url(../../src/images/search-actor-background.jpg);
   overflow: hidden;
   background-repeat: no-repeat;
   background-position: 50%;
@@ -8,25 +8,28 @@
   background-size: cover;
 }
 
-.header-container {
+.search-actor-container {
   width: 120rem;
-  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   /* In relation to PARENT size */
-  left: 50%;
-  top: 50%;
+  /* left: 50%;
+  top: 50%; */
 
   /* In relation to ELEMENT size */
-  transform: translate(-50%, -50%);
+  transform: translate(-15%, 70%);
 }
 
-.header-container-inner {
+.search-actor-container-inner {
   width: 50%;
+  /* margin: 0 10rem; */
 }
 
 .title,
 .site-details {
-  color: #212529;
+  color: #f1f3f5;
 }
 
 .title {

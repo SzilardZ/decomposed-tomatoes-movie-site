@@ -1,4 +1,4 @@
-import OurFavs from '../../components/OurFavs';
+import OurFavs from '../../components/our-favs/OurFavs';
 
 const OurFavsPage = () => {
   return <OurFavs />;

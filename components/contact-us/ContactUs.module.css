@@ -1,6 +1,6 @@
 .container {
   background-image: linear-gradient(rgb(34, 34, 34, 0.3), rgb(34, 34, 34, 0.3)),
-    url(../src/images/contact-image.jpeg);
+    url(../../src/images/contact-image.jpeg);
   overflow: hidden;
   background-repeat: no-repeat;
   background-position: 50%;
