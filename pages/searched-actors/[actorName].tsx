@@ -25,7 +25,14 @@ export const getServerSideProps: GetServerSideProps = async context => {
   );
   const { results } = await response.json();
 
-  const actors = results.map((actor: ActorElement) => ({
+  // For some reason, the API sends back not just actors, but some kind of TV shows,
+  // so we filter the results for only actors by checking the id, because TV shows have
+  // different IDs.
+  const filteredActors = results.filter(
+    (actor: ActorElement) => actor.imdb_id.slice(0, 2) === 'nm'
+  );
+
+  const actors = filteredActors.map((actor: ActorElement) => ({
     id: actor.imdb_id,
     name: actor.name,
   }));

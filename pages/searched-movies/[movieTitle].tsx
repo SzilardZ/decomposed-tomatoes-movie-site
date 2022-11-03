@@ -4,6 +4,24 @@ import MovieList from '../../components/movies/MovieList';
 import { ResultElement } from '../../types/movieByTitleTypes';
 import { SimpleMovieModel } from '../../types/movieTypes';
 
+interface SearchedMovieProps {
+  movies: SimpleMovieModel[];
+}
+
+const SearchedMovie = (props: SearchedMovieProps) => {
+  const [movies, setMovies] = useState<SimpleMovieModel[]>([]);
+
+  useEffect(() => {
+    setMovies(props.movies);
+  }, [props.movies]);
+
+  return (
+    <Fragment>
+      <MovieList movies={movies} />
+    </Fragment>
+  );
+};
+
 const getMovieHttpRequest = async (URL: string) => {
   const response = await fetch(URL, {
     method: 'GET',
@@ -26,24 +44,6 @@ const getMovieHttpRequest = async (URL: string) => {
     };
   });
   return movies;
-};
-
-interface SearchedMovieProps {
-  movies: SimpleMovieModel[];
-}
-
-const SearchedMovie = (props: SearchedMovieProps) => {
-  const [movies, setMovies] = useState<SimpleMovieModel[]>([]);
-
-  useEffect(() => {
-    setMovies(props.movies);
-  }, [props.movies]);
-
-  return (
-    <Fragment>
-      <MovieList movies={movies} />
-    </Fragment>
-  );
 };
 
 export const getServerSideProps: GetServerSideProps = async context => {

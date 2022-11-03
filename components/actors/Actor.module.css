@@ -2,4 +2,9 @@
   font-size: 3.6rem;
   cursor: pointer;
   width: auto;
+  transition: all 0.4s;
+}
+
+.actor-name:hover {
+  transform: scale(1.2);
 }

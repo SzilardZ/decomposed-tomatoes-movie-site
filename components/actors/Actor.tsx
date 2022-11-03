@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router';
 import styles from './Actor.module.css';
 
 interface ActorProps {
@@ -5,10 +6,18 @@ interface ActorProps {
   name: string;
 }
 
-const Actor = ({ name }: ActorProps) => {
+const Actor = ({ id, name }: ActorProps) => {
+  const router = useRouter();
+
+  const clickHandler = () => {
+    router.push(`/actor/${id}`);
+  };
+
   return (
     <li>
-      <h2 className={styles['actor-name']}>{name}</h2>
+      <h2 className={styles['actor-name']} onClick={clickHandler}>
+        {name}
+      </h2>
     </li>
   );
 };
