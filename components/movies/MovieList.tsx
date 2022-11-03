@@ -1,6 +1,6 @@
 import { Fragment } from 'react';
 import Navbar from '../hero/Navbar';
-import SearchField from '../search-field/SearchFieldMovie';
+import SearchField from '../search-field/SearchField';
 import Movie from './Movie';
 import styles from './MovieList.module.css';
 import { SimpleMovieModel } from '../../types/movieTypes';
@@ -35,7 +35,7 @@ const MovieList = (props: MovieListProps) => {
       <Navbar />
       <div className={styles.container}>
         <div className={styles['search-field']}>
-          <SearchField />
+          <SearchField type='movie' />
         </div>
         {content}
       </div>

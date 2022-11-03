@@ -7,6 +7,7 @@ import MovieSelectionList from '../components/movie-selection/MovieSelectionList
 import { SelectedMovieModel } from '../types/movieTypes';
 import { Result, ResultElement } from '../types/homePageMoviesTypes';
 import SearchActor from '../components/actor/SearchActor';
+import Footer from '../components/footer/Footer';
 
 const Home: NextPage<{ selectedMovies: SelectedMovieModel[] }> = ({
   selectedMovies,
@@ -22,6 +23,7 @@ const Home: NextPage<{ selectedMovies: SelectedMovieModel[] }> = ({
       <Opener />
       <MovieSelectionList selectedMovies={selectedMovies} />
       <SearchActor />
+      <Footer />
     </div>
   );
 };

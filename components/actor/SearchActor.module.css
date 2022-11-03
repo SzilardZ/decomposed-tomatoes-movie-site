@@ -3,7 +3,7 @@
   overflow: hidden;
   background-repeat: no-repeat;
   background-position: 50%;
-  margin: auto;
+  margin: auto 0;
   height: 900px;
   background-size: cover;
 }

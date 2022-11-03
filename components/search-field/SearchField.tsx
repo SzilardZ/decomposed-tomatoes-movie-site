@@ -3,7 +3,11 @@ import React, { useRef } from 'react';
 import styles from './SearchField.module.css';
 import Button from '../ui/Button';
 
-const SearchFieldMovie = () => {
+interface SearchFieldProps {
+  type: string;
+}
+
+const SearchField = ({ type }: SearchFieldProps) => {
   const inputRef = useRef<HTMLInputElement>(null);
   const router = useRouter();
 
@@ -11,7 +15,9 @@ const SearchFieldMovie = () => {
     e.preventDefault();
     const userInput = inputRef.current!.value;
     if (userInput.length > 1) {
-      router.push(`/searched-movie/${userInput}`);
+      type === 'movie'
+        ? router.push(`/searched-movies/${userInput}`)
+        : router.push(`/searched-actors/${userInput}`);
     } else {
       alert('Please type at least 2 characters!');
     }
@@ -25,7 +31,7 @@ const SearchFieldMovie = () => {
           type='text'
           id='search-movie'
           ref={inputRef}
-          placeholder='movie title'
+          placeholder='type here'
         />
         <Button buttonText='Search now' />
       </div>
@@ -33,4 +39,4 @@ const SearchFieldMovie = () => {
   );
 };
 
-export default SearchFieldMovie;
+export default SearchField;

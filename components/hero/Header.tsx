@@ -1,6 +1,6 @@
 import styles from './Header.module.css';
 import Navbar from './Navbar';
-import SearchField from '../search-field/SearchFieldMovie';
+import SearchField from '../search-field/SearchField';
 
 const Header = () => {
   return (
@@ -16,7 +16,7 @@ const Header = () => {
               facere soluta necessitatibus ab saepe?
             </p>
             <div className={styles['search-field']}>
-              <SearchField />
+              <SearchField type='movie' />
             </div>
           </div>
         </div>

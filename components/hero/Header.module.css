@@ -10,14 +10,16 @@
 
 .header-container {
   width: 120rem;
-  position: absolute;
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
   /* In relation to PARENT size */
-  left: 50%;
-  top: 50%;
+  /* left: 50%;
+  top: 50%; */
 
   /* In relation to ELEMENT size */
-  transform: translate(-50%, -40%);
+  /* transform: translate(-50%, -40%); */
+  transform: translate(-15%, 30%);
 }
 
 .header-container-inner {
