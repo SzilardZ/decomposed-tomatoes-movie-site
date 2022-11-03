@@ -6,7 +6,7 @@ import Opener from '../components/opener/Opener';
 import MovieSelectionList from '../components/movie-selection/MovieSelectionList';
 import { SelectedMovieModel } from '../types/movieTypes';
 import { Result, ResultElement } from '../types/homePageMoviesTypes';
-import SearchActor from '../components/actor/SearchActor';
+import SearchActor from '../components/actors/SearchActor';
 import Footer from '../components/footer/Footer';
 
 const Home: NextPage<{ selectedMovies: SelectedMovieModel[] }> = ({

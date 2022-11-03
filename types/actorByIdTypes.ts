@@ -1,8 +1,8 @@
 export interface Result {
-  results: ResultElement[];
+  results: ActorElement[];
 }
 
-export interface ResultElement {
+export interface ActorElement {
   imdb_id: string;
   name: string;
 }
