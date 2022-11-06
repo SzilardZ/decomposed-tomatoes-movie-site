@@ -7,14 +7,28 @@ import MovieList from './MovieList';
 
 const FavoriteMovies = () => {
   const favMovies = useSelector((state: any) => state.favMovies.favMovies);
+
+  let content;
+
+  if (favMovies.length === 0) {
+    content = (
+      <p className={styles['no-movie']}>
+        Search for a movie and add it to your favorite!
+      </p>
+    );
+  } else if (favMovies.length > 0) {
+    content = <MovieList movies={favMovies} />;
+  }
+
   return (
     <Fragment>
       <Navbar />
       <div className={styles.container}>
-        <div className={styles['search-field']}>
+        <div className={styles['title-search-container']}>
+          <h3 className={styles['sub-title']}>Your favorite movies</h3>
           <SearchField type='movie' />
         </div>
-        <MovieList movies={favMovies} />
+        {content}
       </div>
     </Fragment>
   );

@@ -3,6 +3,21 @@
   margin: 2rem auto;
 }
 
-.search-field {
+.sub-title {
+  font-size: 5.2rem;
+}
+
+.title-search-container {
+  max-width: 130rem;
+  display: flex;
+  align-items: center;
   margin-bottom: 8rem;
+  justify-content: space-between;
+}
+
+.no-movie {
+  display: flex;
+  font-size: 3.6rem;
+  justify-content: center;
+  margin-top: 12.8rem;
 }

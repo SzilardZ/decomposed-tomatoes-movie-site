@@ -7,17 +7,22 @@ import { Fragment } from 'react';
 
 interface MoviesListSectionProps {
   movies: SimpleMovieModel[];
+  searchedMovie: string;
 }
 
-const MoviesListSection = (props: MoviesListSectionProps) => {
+const MoviesListSection = ({
+  movies,
+  searchedMovie,
+}: MoviesListSectionProps) => {
   return (
     <Fragment>
       <Navbar />
       <div className={styles.container}>
-        <div className={styles['search-field']}>
+        <div className={styles['title-search-container']}>
+          <h3 className={styles['sub-title']}>Results for "{searchedMovie}"</h3>
           <SearchField type='movie' />
         </div>
-        <MovieList movies={props.movies} />
+        <MovieList movies={movies} />
       </div>
     </Fragment>
   );

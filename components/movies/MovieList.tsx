@@ -7,27 +7,15 @@ interface MovieListProps {
 }
 
 const MovieList = (props: MovieListProps) => {
-  let content;
-
-  if (props.movies.length === 0) {
-    content = (
-      <p className={styles['no-movie']}>
-        Search for a movie and add it to your favorite!
-      </p>
-    );
-  }
-
-  if (props.movies.length > 0) {
-    content = (
+  return (
+    <div>
       <ul className={styles['movie-list']}>
         {props.movies.map(movie => (
           <Movie key={movie.id} id={movie.id} imageUrl={movie.imageUrl} />
         ))}
       </ul>
-    );
-  }
-
-  return <div>{content}</div>;
+    </div>
+  );
 };
 
 export default MovieList;

@@ -4,9 +4,3 @@
   column-gap: 2.4rem;
   row-gap: 4.8rem;
 }
-
-.no-movie {
-  display: flex;
-  font-size: 3.6rem;
-  justify-content: center;
-}

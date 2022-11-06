@@ -5,19 +5,20 @@ import { ResultElement } from '../../types/movieByTitleTypes';
 import { SimpleMovieModel } from '../../types/movieTypes';
 
 interface SearchedMovieProps {
-  movies: SimpleMovieModel[];
+  moviesData: SimpleMovieModel[];
+  searchedMovie: string;
 }
 
-const SearchedMovie = (props: SearchedMovieProps) => {
+const SearchedMovie = ({ moviesData, searchedMovie }: SearchedMovieProps) => {
   const [movies, setMovies] = useState<SimpleMovieModel[]>([]);
 
   useEffect(() => {
-    setMovies(props.movies);
-  }, [props.movies]);
+    setMovies(moviesData);
+  }, [moviesData]);
 
   return (
     <Fragment>
-      <MoviesListSection movies={movies} />
+      <MoviesListSection movies={movies} searchedMovie={searchedMovie} />
     </Fragment>
   );
 };
@@ -61,7 +62,8 @@ export const getServerSideProps: GetServerSideProps = async context => {
 
   return {
     props: {
-      movies: movies,
+      moviesData: movies,
+      searchedMovie: movieTitle,
     },
   };
 };
