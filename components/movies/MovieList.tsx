@@ -1,6 +1,3 @@
-import { Fragment } from 'react';
-import Navbar from '../hero/Navbar';
-import SearchField from '../search-field/SearchField';
 import Movie from './Movie';
 import styles from './MovieList.module.css';
 import { SimpleMovieModel } from '../../types/movieTypes';
@@ -30,11 +27,7 @@ const MovieList = (props: MovieListProps) => {
     );
   }
 
-  return (
-    <Fragment>
-      <div className={styles.container}>{content}</div>
-    </Fragment>
-  );
+  return <div>{content}</div>;
 };
 
 export default MovieList;

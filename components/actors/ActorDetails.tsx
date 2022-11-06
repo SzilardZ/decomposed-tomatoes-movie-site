@@ -1,51 +1,13 @@
 import styles from './ActorDetails.module.css';
 import { ActorDetailedType } from '../../types/actorTypes';
-import { Fragment, useEffect, useState } from 'react';
+import { Fragment } from 'react';
 import Navbar from '../hero/Navbar';
-import { Results } from '../../types/movieByIdTypes';
 import MovieList from '../movies/MovieList';
-import { SimpleMovieModel } from '../../types/movieTypes';
 
 interface ActorDetailsProps {
   actor: ActorDetailedType;
 }
-
-const API_KEY: string | undefined = process.env.REACT_APP_MOVIE_API_KEY;
-
 const ActorDetails = ({ actor }: ActorDetailsProps) => {
-  const [movies, setMovies] = useState<SimpleMovieModel[]>([]);
-
-  let url = `https://moviesdatabase.p.rapidapi.com/titles/x/titles-by-ids?`;
-
-  for (const [i, id] of Object.entries(actor.movieIds)) {
-    url = url.concat(`idsList%5B${i}%5D=${id}&`);
-  }
-
-  const urlFormatted = url.slice(0, -1);
-
-  const fetchMoviesByActor = async (URL: string) => {
-    const response = await fetch(URL, {
-      method: 'GET',
-      headers: {
-        'X-RapidAPI-Key': API_KEY!,
-        'X-RapidAPI-Host': 'moviesdatabase.p.rapidapi.com',
-      },
-    });
-    const data = await response.json();
-
-    const movies = data.results.map((movie: Results) => {
-      return {
-        id: movie.id,
-        imageUrl: movie.primaryImage.url,
-      };
-    });
-    setMovies(movies);
-  };
-
-  useEffect(() => {
-    fetchMoviesByActor(urlFormatted);
-  }, []);
-
   return (
     <Fragment>
       <Navbar />
@@ -64,7 +26,7 @@ const ActorDetails = ({ actor }: ActorDetailsProps) => {
       <div>
         <div className={styles['section-container']}>
           <h3 className={styles['secondary-title']}>Movies Known For</h3>
-          <MovieList movies={movies} />
+          <MovieList movies={actor.movies} />
         </div>
 
         <div className={styles['section-container']}>

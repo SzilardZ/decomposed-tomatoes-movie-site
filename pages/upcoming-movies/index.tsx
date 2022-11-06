@@ -4,6 +4,7 @@ import MovieList from '../../components/movies/MovieList';
 import { Result, ResultElement } from '../../types/upcomingMovieTypes';
 import { UpcomingMovieModel } from '../../types/movieTypes';
 import Navbar from '../../components/hero/Navbar';
+import styles from '../../styles/Home.module.css';
 
 interface UpcomingMoviesProps {
   upcomingMovies: UpcomingMovieModel[];
@@ -13,7 +14,9 @@ const UpcomingMovies = (props: UpcomingMoviesProps) => {
   return (
     <Fragment>
       <Navbar />
-      <MovieList movies={props.upcomingMovies} />
+      <div className={styles.container}>
+        <MovieList movies={props.upcomingMovies} />
+      </div>
     </Fragment>
   );
 };

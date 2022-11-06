@@ -9,6 +9,11 @@ export interface ActorDetailedType {
   birthDate: string;
   bio: string;
   imgUrl: string;
-  movieIds: string[];
+  movies: SimpleMovieModel[];
   bioFull: string;
+}
+
+export interface SimpleMovieModel {
+  id: string;
+  imageUrl: string;
 }
