@@ -30,7 +30,12 @@ export const getServerSideProps: GetServerSideProps = async context => {
   );
 
   const actorRolesData = await sendHttpRequest(
-    `https://moviesminidatabase.p.rapidapi.com/actor/id/${actorId}/all_roles/?page_size=50`
+    `https://moviesminidatabase.p.rapidapi.com/actor/id/${actorId}/all_roles/?page_size=20&page=1`
+    // `https://moviesminidatabase.p.rapidapi.com/actor/id/${actorId}/movies_knownFor/?page_size=50&page=1`
+  );
+
+  const actorBio = await sendHttpRequest(
+    `https://moviesminidatabase.p.rapidapi.com/actor/id/${actorId}/bio/`
   );
 
   const actorMovieIdArr = actorRolesData.flatMap(
@@ -44,6 +49,7 @@ export const getServerSideProps: GetServerSideProps = async context => {
     bio: actorData.partial_bio,
     imgUrl: actorData.image_url,
     movieIds: actorMovieIdArr,
+    bioFull: actorBio.biography?.bio,
   };
 
   return {

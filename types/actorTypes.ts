@@ -10,4 +10,5 @@ export interface ActorDetailedType {
   bio: string;
   imgUrl: string;
   movieIds: string[];
+  bioFull: string;
 }

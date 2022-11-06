@@ -4,6 +4,7 @@ import styles from './MovieDetails.module.css';
 import { MovieModel, SimpleMovieModel } from '../../types/movieTypes';
 import { useDispatch, useSelector } from 'react-redux';
 import { addMovie, removeMovie } from '../../store/favMovies/favMoviesSlice';
+import RoleActor from './RoleActor';
 
 interface MovieDetailProps {
   movie: MovieModel;
@@ -32,11 +33,34 @@ const MovieDetails = (props: MovieDetailProps) => {
         );
   };
 
+  // handle the case if the movie does not have available cast
+  let castContent;
+  if (props.movie.cast.length === 0) {
+    castContent = <p className={styles['no-cast']}>No available cast</p>;
+  } else if (props.movie.cast.length > 0) {
+    castContent = (
+      <div>
+        {props.movie.cast.map(item => (
+          <div>
+            <ul className={styles['role-actor-list']}>
+              <RoleActor
+                key={item.actor.imdb_id}
+                id={item.actor.imdb_id}
+                role={item.role}
+                name={item.actor.name}
+              />
+            </ul>
+          </div>
+        ))}
+      </div>
+    );
+  }
+
   return (
     <Fragment>
       <Navbar />
-      <div className={styles.container}>
-        <div className={styles['movie-details']}>
+      <main className={styles.container}>
+        <section className={styles['movie-details']}>
           <h1 className={styles['movie-title']}>{props.movie.title}</h1>
           <h3 className={styles['movie-year']}>{props.movie.releaseYear}</h3>
           <h3 className={styles['movie-rating']}>
@@ -52,15 +76,19 @@ const MovieDetails = (props: MovieDetailProps) => {
               {buttonText}
             </button>
           </div>
-        </div>
-        <div>
+          <div>
+            <h3 className={styles['cast-title']}>Cast</h3>
+            {castContent}
+          </div>
+        </section>
+        <section>
           <img
-            className={styles['movie-image']}
+            className={styles['movie-img']}
             src={props.movie.imageUrl}
             alt=''
           />
-        </div>
-      </div>
+        </section>
+      </main>
     </Fragment>
   );
 };

@@ -3,6 +3,7 @@ import { Fragment } from 'react';
 import MovieList from '../../components/movies/MovieList';
 import { Result, ResultElement } from '../../types/upcomingMovieTypes';
 import { UpcomingMovieModel } from '../../types/movieTypes';
+import Navbar from '../../components/hero/Navbar';
 
 interface UpcomingMoviesProps {
   upcomingMovies: UpcomingMovieModel[];
@@ -11,6 +12,7 @@ interface UpcomingMoviesProps {
 const UpcomingMovies = (props: UpcomingMoviesProps) => {
   return (
     <Fragment>
+      <Navbar />
       <MovieList movies={props.upcomingMovies} />
     </Fragment>
   );

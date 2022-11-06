@@ -19,7 +19,7 @@ const Contact = () => {
           you get me, sweetheart?
         </p>
         <div className={styles['go-back']}>
-          <Link href='/'>Go Back</Link>
+          <Link href='/'>Go to Homepage</Link>
         </div>
       </div>
     </div>

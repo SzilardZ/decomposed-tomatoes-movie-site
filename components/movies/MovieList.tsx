@@ -32,13 +32,7 @@ const MovieList = (props: MovieListProps) => {
 
   return (
     <Fragment>
-      <Navbar />
-      <div className={styles.container}>
-        <div className={styles['search-field']}>
-          <SearchField type='movie' />
-        </div>
-        {content}
-      </div>
+      <div className={styles.container}>{content}</div>
     </Fragment>
   );
 };

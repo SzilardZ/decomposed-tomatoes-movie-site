@@ -12,43 +12,45 @@ const MovieDetailPage = (props: MovieDetailPageProps) => {
   return <MovieDetails movie={props.movie} />;
 };
 
+const sendHttpRequest = async (URL: string, API_HOST: string) => {
+  const response: Response = await fetch(URL, {
+    method: 'GET',
+    headers: {
+      'X-RapidAPI-Key': process.env.REACT_APP_MOVIE_API_KEY!,
+      'X-RapidAPI-Host': API_HOST,
+    },
+  });
+  const data = await response.json();
+  return data;
+};
+
 export const getServerSideProps: GetServerSideProps = async context => {
   const movieId = context.params!.movieId;
 
-  const response: Response = await fetch(
+  const movieData = await sendHttpRequest(
     `https://moviesdatabase.p.rapidapi.com/titles/${movieId}?info=mini_info`,
-    {
-      method: 'GET',
-      headers: {
-        'X-RapidAPI-Key': process.env.REACT_APP_MOVIE_API_KEY!,
-        'X-RapidAPI-Host': 'moviesdatabase.p.rapidapi.com',
-      },
-    }
+    'moviesdatabase.p.rapidapi.com'
   );
-  const { results }: Result = await response.json();
-
-  const responseRating: Response = await fetch(
+  const ratingData: RatingResult = await sendHttpRequest(
     `https://moviesdatabase.p.rapidapi.com/titles/${movieId}/ratings`,
-    {
-      method: 'GET',
-      headers: {
-        'X-RapidAPI-Key': process.env.REACT_APP_MOVIE_API_KEY!,
-        'X-RapidAPI-Host': 'moviesdatabase.p.rapidapi.com',
-      },
-    }
+    'moviesdatabase.p.rapidapi.com'
   );
 
-  const dataRating: RatingResult = await responseRating.json();
+  const castData = await sendHttpRequest(
+    `https://moviesminidatabase.p.rapidapi.com/movie/id/${movieId}/cast/`,
+    'moviesminidatabase.p.rapidapi.com'
+  );
 
   return {
     props: {
       movie: {
-        id: results.id,
-        title: results.titleText.text,
-        releaseYear: results.releaseYear?.year || 'NA',
-        imageUrl: results.primaryImage.url,
-        rating: dataRating.results?.averageRating || 'NA',
-        numVotes: dataRating.results?.numVotes || 'NA',
+        id: movieData.results.id,
+        title: movieData.results.titleText.text,
+        releaseYear: movieData.results.releaseYear?.year || 'NA',
+        imageUrl: movieData.results.primaryImage.url,
+        rating: ratingData.results?.averageRating || 'NA',
+        numVotes: ratingData.results?.numVotes || 'NA',
+        cast: castData.results?.roles || [],
       },
     },
   };

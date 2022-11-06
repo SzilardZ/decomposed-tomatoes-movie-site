@@ -5,6 +5,7 @@ export interface MovieModel {
   imageUrl: string;
   rating: string;
   numVotes: string;
+  cast: Role[];
 }
 
 export interface SimpleMovieModel {
@@ -22,4 +23,19 @@ export interface UpcomingMovieModel {
   title: string;
   imageUrl: string;
   releaseYear: string;
+}
+
+// Cast by Movie Id Type
+export interface CastResults {
+  roles: Role[];
+}
+
+export interface Role {
+  role: string;
+  actor: Actor;
+}
+
+export interface Actor {
+  imdb_id: string;
+  name: string;
 }
