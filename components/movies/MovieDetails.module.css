@@ -6,6 +6,13 @@
   /* margin: 2.4rem 12rem 8rem 8rem; */
 }
 
+.inner-container {
+  max-width: 50rem;
+  display: flex;
+  /* align-items: center; */
+  justify-content: space-between;
+}
+
 .movie-details {
   display: flex;
   flex-direction: column;
@@ -13,7 +20,7 @@
 }
 
 .movie-title {
-  font-size: 8.6rem;
+  font-size: 7.4rem;
   margin-top: 4.8rem;
 }
 
@@ -31,12 +38,16 @@
 .btn-add-to-fav {
   font: inherit;
   font-size: 3rem;
-  margin-top: 8rem;
   padding: 1rem 2rem;
   outline: 0;
   border: 1.5px solid #fff;
   background-color: rgba(0, 0, 0, 0);
   cursor: pointer;
+}
+
+.btn-add-to-fav:hover {
+  color: #000;
+  background-color: #fff;
 }
 
 .cast-title {

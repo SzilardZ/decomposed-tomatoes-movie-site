@@ -41,16 +41,14 @@ const MovieDetails = (props: MovieDetailProps) => {
     castContent = (
       <div>
         {props.movie.cast.map(item => (
-          <div>
-            <ul className={styles['role-actor-list']}>
-              <RoleActor
-                key={item.actor.imdb_id}
-                id={item.actor.imdb_id}
-                role={item.role}
-                name={item.actor.name}
-              />
-            </ul>
-          </div>
+          <ul className={styles['role-actor-list']}>
+            <RoleActor
+              key={item.actor.imdb_id}
+              id={item.actor.imdb_id}
+              role={item.role}
+              name={item.actor.name}
+            />
+          </ul>
         ))}
       </div>
     );
@@ -62,19 +60,21 @@ const MovieDetails = (props: MovieDetailProps) => {
       <main className={styles.container}>
         <section className={styles['movie-details']}>
           <h1 className={styles['movie-title']}>{props.movie.title}</h1>
-          <h3 className={styles['movie-year']}>{props.movie.releaseYear}</h3>
-          <h3 className={styles['movie-rating']}>
-            IMDB Rating: {props.movie.rating}
-          </h3>
-          <h2 className={styles['movie-votes']}>
-            Number of Votes: {props.movie.numVotes}
-          </h2>
-          <div>
+          <div className={styles['inner-container']}>
+            <h3 className={styles['movie-year']}>{props.movie.releaseYear}</h3>
             <button
               className={styles['btn-add-to-fav']}
               onClick={favoriteHandler}>
               {buttonText}
             </button>
+          </div>
+          <div className={styles['inner-container']}>
+            <h3 className={styles['movie-rating']}>
+              IMDB Rating: {props.movie.rating}
+            </h3>
+            <h3 className={styles['movie-votes']}>
+              Number of Votes: {props.movie.numVotes}
+            </h3>
           </div>
           <div>
             <h3 className={styles['cast-title']}>Cast</h3>

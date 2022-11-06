@@ -1,16 +1,18 @@
 .roles-actors {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1.2rem;
+  max-width: 60rem;
+  justify-content: space-between;
   font-size: 2.4rem;
   padding-right: 1.2rem;
 }
 
 .actor-name {
   cursor: pointer;
-  transition: all 0.3s;
+  /* transition: all 0.3s; */
 }
 
 .actor-name:hover {
-  transform: scale(1.05);
+  /* transform: scale(1.05); */
+  color: #495057;
 }
