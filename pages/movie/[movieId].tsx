@@ -4,13 +4,20 @@ import { MovieModel } from '../../types/movieTypes';
 import { Results } from '../../types/movieByIdTypes';
 import { RatingResult } from '../../types/movieRatingByIdTypes';
 import { sendHttpGetRequest } from '../../util/http';
+import { Fragment } from 'react';
+import Footer from '../../components/footer/Footer';
 
 interface MovieDetailPageProps {
   movie: MovieModel;
 }
 
 const MovieDetailPage = (props: MovieDetailPageProps) => {
-  return <MovieDetails movie={props.movie} />;
+  return (
+    <Fragment>
+      <MovieDetails movie={props.movie} />
+      <Footer />
+    </Fragment>
+  );
 };
 
 export const getServerSideProps: GetServerSideProps = async context => {

@@ -1,5 +1,7 @@
 import { GetServerSideProps } from 'next';
+import { Fragment } from 'react';
 import ActorDetails from '../../components/actors/ActorDetails';
+import Footer from '../../components/footer/Footer';
 import { ResultElement } from '../../types/actorByIdTypes';
 import { ActorDetailedType } from '../../types/actorTypes';
 import { Results } from '../../types/movieByIdTypes';
@@ -11,7 +13,12 @@ interface ActorPageProps {
 }
 
 const ActorPage = (props: ActorPageProps) => {
-  return <ActorDetails actor={props.actor} />;
+  return (
+    <Fragment>
+      <ActorDetails actor={props.actor} />
+      <Footer />
+    </Fragment>
+  );
 };
 
 export const getServerSideProps: GetServerSideProps = async context => {
