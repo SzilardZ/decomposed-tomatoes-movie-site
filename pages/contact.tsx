@@ -1,4 +1,4 @@
-import ContactUs from '../components/ContactUs';
+import ContactUs from '../components/contact-us/ContactUs';
 
 const ContactPage = () => {
   return <ContactUs />;

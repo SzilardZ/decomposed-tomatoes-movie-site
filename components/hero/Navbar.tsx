@@ -1,12 +1,11 @@
 import Link from 'next/link';
+import Logo from '../ui/Logo';
 import styles from './Navbar.module.css';
 
 const Navbar = () => {
   return (
     <div className={styles['main-nav']}>
-      <Link href='/'>
-        <div className={styles.logo}>MOVIE APP</div>
-      </Link>
+      <Logo />
       <nav className={styles['main-nav']}>
         <ul className={styles['main-nav-list']}>
           <li className={styles.menu__link}>
@@ -25,7 +24,7 @@ const Navbar = () => {
             </svg>
           </li>
           <li className={styles.menu__link}>
-            <Link href='#' className={styles.menu__link}>
+            <Link href='/our-favorites' className={styles.menu__link}>
               Our Favorites
             </Link>
             <svg
@@ -40,7 +39,7 @@ const Navbar = () => {
             </svg>
           </li>
           <li className={styles.menu__link}>
-            <Link href='#' className={styles.menu__link}>
+            <Link href='/favorite-movies' className={styles.menu__link}>
               Your Favorites
             </Link>
             <svg

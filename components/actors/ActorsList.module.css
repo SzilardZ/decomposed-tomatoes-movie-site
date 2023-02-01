@@ -1,0 +1,12 @@
+.actors-container {
+  max-width: 130rem;
+  margin: 4.8rem auto;
+}
+
+.actors {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8rem;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,8 +1,9 @@
 import { GetServerSideProps } from 'next';
 import MovieDetails from '../../components/movies/MovieDetails';
-import { MovieModel } from '../../models/movie';
-import { Result } from '../../types/movieByIdTypes';
+import { MovieModel } from '../../types/movieTypes';
+import { Results } from '../../types/movieByIdTypes';
 import { RatingResult } from '../../types/movieRatingByIdTypes';
+import { sendHttpGetRequest } from '../../util/http';
 
 interface MovieDetailPageProps {
   movie: MovieModel;
@@ -15,40 +16,38 @@ const MovieDetailPage = (props: MovieDetailPageProps) => {
 export const getServerSideProps: GetServerSideProps = async context => {
   const movieId = context.params!.movieId;
 
-  const response: Response = await fetch(
+  const API_KEY = process.env.REACT_APP_MOVIE_API_KEY!;
+  const API_HOST_MOVIES_DB = 'moviesdatabase.p.rapidapi.com';
+  const API_HOST_MOVIES_MINI_DB = 'moviesminidatabase.p.rapidapi.com';
+
+  const movieData: Results = await sendHttpGetRequest(
     `https://moviesdatabase.p.rapidapi.com/titles/${movieId}?info=mini_info`,
-    {
-      method: 'GET',
-      headers: {
-        'X-RapidAPI-Key': process.env.REACT_APP_MOVIE_API_KEY!,
-        'X-RapidAPI-Host': 'moviesdatabase.p.rapidapi.com',
-      },
-    }
+    API_KEY,
+    API_HOST_MOVIES_DB
   );
-  const { results }: Result = await response.json();
 
-  const responseRating: Response = await fetch(
+  const ratingData: RatingResult = await sendHttpGetRequest(
     `https://moviesdatabase.p.rapidapi.com/titles/${movieId}/ratings`,
-    {
-      method: 'GET',
-      headers: {
-        'X-RapidAPI-Key': process.env.REACT_APP_MOVIE_API_KEY!,
-        'X-RapidAPI-Host': 'moviesdatabase.p.rapidapi.com',
-      },
-    }
+    API_KEY,
+    API_HOST_MOVIES_DB
   );
 
-  const dataRating: RatingResult = await responseRating.json();
+  const castData = await sendHttpGetRequest(
+    `https://moviesminidatabase.p.rapidapi.com/movie/id/${movieId}/cast/`,
+    API_KEY,
+    API_HOST_MOVIES_MINI_DB
+  );
 
   return {
     props: {
       movie: {
-        id: results.id,
-        title: results.titleText.text,
-        releaseYear: results.releaseYear?.year || 'NA',
-        imageUrl: results.primaryImage.url,
-        rating: dataRating.results?.averageRating || 'NA',
-        numVotes: dataRating.results?.numVotes || 'NA',
+        id: movieData.id,
+        title: movieData.titleText.text,
+        releaseYear: movieData.releaseYear?.year || 'NA',
+        imageUrl: movieData.primaryImage.url,
+        rating: ratingData?.averageRating || 'NA',
+        numVotes: ratingData?.numVotes || 'NA',
+        cast: castData?.roles || [],
       },
     },
   };

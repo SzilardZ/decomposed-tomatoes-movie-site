@@ -2,7 +2,8 @@ import { GetStaticProps } from 'next';
 import { Fragment } from 'react';
 import MovieList from '../../components/movies/MovieList';
 import { Result, ResultElement } from '../../types/upcomingMovieTypes';
-import { UpcomingMovieModel } from '../../models/upcomingMovieModel';
+import { UpcomingMovieModel } from '../../types/movieTypes';
+import Navbar from '../../components/hero/Navbar';
 
 interface UpcomingMoviesProps {
   upcomingMovies: UpcomingMovieModel[];
@@ -11,6 +12,8 @@ interface UpcomingMoviesProps {
 const UpcomingMovies = (props: UpcomingMoviesProps) => {
   return (
     <Fragment>
+      <Navbar />
+
       <MovieList movies={props.upcomingMovies} />
     </Fragment>
   );
@@ -18,7 +21,7 @@ const UpcomingMovies = (props: UpcomingMoviesProps) => {
 
 export const getStaticProps: GetStaticProps = async () => {
   const response: Response = await fetch(
-    `https://moviesdatabase.p.rapidapi.com/titles/x/upcoming?info=mini_info&limit=50&page=1&titleType=movie`,
+    'https://moviesdatabase.p.rapidapi.com/titles/x/upcoming',
     {
       method: 'GET',
       headers: {

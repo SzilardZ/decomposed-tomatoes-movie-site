@@ -17,12 +17,13 @@ FONT SIZE SYSTEM (px)
 html,
 body {
   /* font-family: 'Inter', sans-serif; */
-  font-family: 'Bebas Neue', cursive;
+  font-family: 'Bebas Neue', sans-serif;
 }
 
 html {
   font-size: 62.5%;
-  color: #f1f3f5;
+  /* color: #f1f3f5; */
+  color: #e6e8e6;
 }
 
 a {
@@ -44,6 +45,8 @@ ul {
   }
   body {
     /* background: #212529; */
-    background: #000;
+    /* background: #000; */
+    /* background: #1a1a19; */
+    background: #080708;
   }
 }

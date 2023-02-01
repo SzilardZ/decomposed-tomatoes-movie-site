@@ -1,0 +1,50 @@
+.actor-detail-container {
+  max-width: 130rem;
+  margin: 5rem auto;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  gap: 8rem;
+}
+
+.actor-name {
+  font-size: 7.4rem;
+  margin-top: 4.8rem;
+}
+
+.actor-birth-date {
+  font-size: 3rem;
+}
+
+.actor-bio {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 2.4rem;
+  margin-top: 3.2rem;
+}
+
+.actor-img {
+  width: 32rem;
+}
+
+.secondary-title {
+  font-size: 3rem;
+  margin-bottom: 3rem;
+}
+
+.section-container {
+  max-width: 130rem;
+  margin: 9.6rem auto;
+}
+
+.bio-container {
+  background-color: #fff;
+  color: #212529;
+  padding: 1.6rem 0;
+}
+
+.bio-full {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 2rem;
+  line-height: 1.3;
+}

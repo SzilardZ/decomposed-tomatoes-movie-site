@@ -16,8 +16,8 @@
 
 .fill::after {
   content: '';
-  /* background-color: #ffe54c; */
-  background-color: #f25056;
+  /* background-color: #f25056; */
+  background-color: #df2935;
   width: 100%;
   z-index: -1;
   position: absolute;

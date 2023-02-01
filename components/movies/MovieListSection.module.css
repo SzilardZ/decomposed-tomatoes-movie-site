@@ -1,0 +1,16 @@
+.container {
+  max-width: 130rem;
+  margin: 2rem auto;
+}
+
+.sub-title {
+  font-size: 5.2rem;
+}
+
+.title-search-container {
+  max-width: 130rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8rem;
+}
