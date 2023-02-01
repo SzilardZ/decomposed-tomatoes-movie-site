@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   column-gap: 2rem;
-  max-width: 60rem;
+  max-width: 70rem;
   justify-content: space-between;
   font-size: 3rem;
   padding-right: 1.2rem;
@@ -10,10 +10,9 @@
 
 .actor-name {
   cursor: pointer;
-  /* transition: all 0.3s; */
 }
 
 .actor-name:hover {
-  /* transform: scale(1.05); */
-  color: #495057;
+  /* color: #495057; */
+  color: #63e6bfd5;
 }

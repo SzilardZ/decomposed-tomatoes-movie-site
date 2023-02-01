@@ -61,13 +61,13 @@ const MovieDetails = (props: MovieDetailProps) => {
           <h1 className={styles['movie-title']}>{props.movie.title}</h1>
           <div className={styles['inner-container']}>
             <h3 className={styles['movie-year']}>{props.movie.releaseYear}</h3>
-            <button
-              className={styles['btn-add-to-fav']}
-              onClick={favoriteHandler}>
-              {buttonText}
-            </button>
-          </div>
-          <div className={styles['inner-container']}>
+            <span>
+              <button
+                className={styles['btn-add-to-fav']}
+                onClick={favoriteHandler}>
+                {buttonText}
+              </button>
+            </span>
             <h3 className={styles['movie-rating']}>
               IMDB Rating: {props.movie.rating}
             </h3>
