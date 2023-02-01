@@ -41,9 +41,8 @@ const MovieDetails = (props: MovieDetailProps) => {
     castContent = (
       <div>
         {props.movie.cast.map(item => (
-          <ul className={styles['role-actor-list']}>
+          <ul className={styles['role-actor-list']} key={item.actor.imdb_id}>
             <RoleActor
-              key={item.actor.imdb_id}
               id={item.actor.imdb_id}
               role={item.role}
               name={item.actor.name}

@@ -3,6 +3,8 @@ import ActorDetails from '../../components/actors/ActorDetails';
 import { ResultElement } from '../../types/actorByIdTypes';
 import { ActorDetailedType } from '../../types/actorTypes';
 import { Results } from '../../types/movieByIdTypes';
+import { sendHttpGetRequest } from '../../util/http';
+import { urlBuilderForMultipleMovies } from '../../util/urlBuilder';
 
 interface ActorPageProps {
   actor: ActorDetailedType;
@@ -12,52 +14,40 @@ const ActorPage = (props: ActorPageProps) => {
   return <ActorDetails actor={props.actor} />;
 };
 
-const sendHttpRequest = async (URL: string, apiHost: string) => {
-  const response = await fetch(URL, {
-    method: 'GET',
-    headers: {
-      'X-RapidAPI-Key': process.env.REACT_APP_MOVIE_API_KEY!,
-      'X-RapidAPI-Host': apiHost,
-    },
-  });
-  const { results } = await response.json();
-  return results;
-};
-
 export const getServerSideProps: GetServerSideProps = async context => {
   const actorId = context.params!.actorId;
 
-  const actorData = await sendHttpRequest(
-    `https://moviesminidatabase.p.rapidapi.com/actor/id/${actorId}/`,
-    'moviesminidatabase.p.rapidapi.com'
+  const API_KEY = process.env.REACT_APP_MOVIE_API_KEY!;
+
+  const API_HOST_MOVIES_MINI_DB = 'moviesminidatabase.p.rapidapi.com';
+  const API_HOST_MOVIES_DB = 'moviesdatabase.p.rapidapi.com';
+
+  const { imdb_id, name, birth_date, partial_bio, image_url } =
+    await sendHttpGetRequest(
+      `https://moviesminidatabase.p.rapidapi.com/actor/id/${actorId}/`,
+      API_KEY,
+      API_HOST_MOVIES_MINI_DB
+    );
+
+  const moviesKnownFor = await sendHttpGetRequest(
+    `https://moviesminidatabase.p.rapidapi.com/actor/id/${actorId}/movies_knownFor/`,
+    API_KEY,
+    API_HOST_MOVIES_MINI_DB
   );
 
-  const actorRolesData = await sendHttpRequest(
-    `https://moviesminidatabase.p.rapidapi.com/actor/id/${actorId}/all_roles/?page_size=20&page=1`,
-    'moviesminidatabase.p.rapidapi.com'
-  );
-
-  const actorBio = await sendHttpRequest(
+  const actorBio = await sendHttpGetRequest(
     `https://moviesminidatabase.p.rapidapi.com/actor/id/${actorId}/bio/`,
-    'moviesminidatabase.p.rapidapi.com'
+    API_KEY,
+    API_HOST_MOVIES_MINI_DB
   );
 
-  const actorMovieIdArr = actorRolesData.flatMap(
+  const actorMovieIdArr = moviesKnownFor.flatMap(
     (movie: ResultElement[]) => movie[0].imdb_id
   );
 
-  let url = `https://moviesdatabase.p.rapidapi.com/titles/x/titles-by-ids?`;
+  const url = urlBuilderForMultipleMovies(actorMovieIdArr);
 
-  for (const [i, id] of Object.entries(actorMovieIdArr)) {
-    url = url.concat(`idsList%5B${i}%5D=${id}&`);
-  }
-
-  const urlFormatted = url.slice(0, -1);
-
-  const moviesData = await sendHttpRequest(
-    urlFormatted,
-    'moviesdatabase.p.rapidapi.com'
-  );
+  const moviesData = await sendHttpGetRequest(url, API_KEY, API_HOST_MOVIES_DB);
 
   const movies = await moviesData.map((movie: Results) => {
     return {
@@ -67,11 +57,11 @@ export const getServerSideProps: GetServerSideProps = async context => {
   });
 
   const actor = {
-    id: actorData.imdb_id,
-    name: actorData.name,
-    birthDate: actorData.birth_date,
-    bio: actorData.partial_bio,
-    imgUrl: actorData.image_url,
+    id: imdb_id,
+    name: name,
+    birthDate: birth_date,
+    bio: partial_bio,
+    imgUrl: image_url,
     movies: movies,
     bioFull: actorBio.biography?.bio,
   };

@@ -4,7 +4,6 @@ import MovieList from '../../components/movies/MovieList';
 import { Result, ResultElement } from '../../types/upcomingMovieTypes';
 import { UpcomingMovieModel } from '../../types/movieTypes';
 import Navbar from '../../components/hero/Navbar';
-import styles from '../../styles/Home.module.css';
 
 interface UpcomingMoviesProps {
   upcomingMovies: UpcomingMovieModel[];
@@ -14,16 +13,15 @@ const UpcomingMovies = (props: UpcomingMoviesProps) => {
   return (
     <Fragment>
       <Navbar />
-      <div className={styles.container}>
-        <MovieList movies={props.upcomingMovies} />
-      </div>
+
+      <MovieList movies={props.upcomingMovies} />
     </Fragment>
   );
 };
 
 export const getStaticProps: GetStaticProps = async () => {
   const response: Response = await fetch(
-    `https://moviesdatabase.p.rapidapi.com/titles/x/upcoming?info=mini_info&limit=50&page=1&titleType=movie`,
+    'https://moviesdatabase.p.rapidapi.com/titles/x/upcoming',
     {
       method: 'GET',
       headers: {

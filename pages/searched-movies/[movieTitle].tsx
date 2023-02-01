@@ -1,6 +1,6 @@
 import { GetServerSideProps } from 'next';
 import { Fragment, useEffect, useState } from 'react';
-import MoviesListSection from '../../components/movies/MoviesListSection';
+import MovieListSection from '../../components/movies/MovieListSection';
 import { ResultElement } from '../../types/movieByTitleTypes';
 import { SimpleMovieModel } from '../../types/movieTypes';
 
@@ -18,7 +18,7 @@ const SearchedMovie = ({ moviesData, searchedMovie }: SearchedMovieProps) => {
 
   return (
     <Fragment>
-      <MoviesListSection movies={movies} searchedMovie={searchedMovie} />
+      <MovieListSection movies={movies} searchedMovie={searchedMovie} />
     </Fragment>
   );
 };

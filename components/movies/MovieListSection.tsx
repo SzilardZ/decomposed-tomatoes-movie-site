@@ -1,19 +1,16 @@
 import Navbar from '../hero/Navbar';
 import SearchField from '../search-field/SearchField';
-import styles from './MoviesListSection.module.css';
+import styles from './MovieListSection.module.css';
 import MovieList from './MovieList';
 import { SimpleMovieModel } from '../../types/movieTypes';
 import { Fragment } from 'react';
 
-interface MoviesListSectionProps {
+interface MovieListSectionProps {
   movies: SimpleMovieModel[];
   searchedMovie: string;
 }
 
-const MoviesListSection = ({
-  movies,
-  searchedMovie,
-}: MoviesListSectionProps) => {
+const MovieListSection = ({ movies, searchedMovie }: MovieListSectionProps) => {
   return (
     <Fragment>
       <Navbar />
@@ -28,4 +25,4 @@ const MoviesListSection = ({
   );
 };
 
-export default MoviesListSection;
+export default MovieListSection;

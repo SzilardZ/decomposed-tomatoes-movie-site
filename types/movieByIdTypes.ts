@@ -1,7 +1,3 @@
-export interface Result {
-  results: Results;
-}
-
 export interface Results {
   id: string;
   primaryImage: PrimaryImage;

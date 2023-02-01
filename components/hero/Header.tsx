@@ -1,6 +1,7 @@
 import styles from './Header.module.css';
 import Navbar from './Navbar';
 import SearchField from '../search-field/SearchField';
+import { useEffect, useState } from 'react';
 
 const Header = () => {
   return (

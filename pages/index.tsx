@@ -8,6 +8,7 @@ import { SelectedMovieModel } from '../types/movieTypes';
 import { Result, ResultElement } from '../types/homePageMoviesTypes';
 import SearchActor from '../components/actors/SearchActor';
 import Footer from '../components/footer/Footer';
+import { urlBuilderForMultipleMovies } from '../util/urlBuilder';
 
 const Home: NextPage<{ selectedMovies: SelectedMovieModel[] }> = ({
   selectedMovies,
@@ -41,16 +42,16 @@ export const getStaticProps: GetStaticProps = async () => {
     'tt12631758',
     'tt2582802',
   ];
-  const response: Response = await fetch(
-    `https://moviesdatabase.p.rapidapi.com/titles/x/titles-by-ids?idsList%5B0%5D=${movieIds[0]}&idsList%5B1%5D=${movieIds[1]}&idsList%5B2%5D=${movieIds[2]}&idsList%5B3%5D=${movieIds[3]}&idsList%5B4%5D=${movieIds[4]}&idsList%5B5%5D=${movieIds[5]}&idsList%5B6%5D=${movieIds[6]}&idsList%5B7%5D=${movieIds[7]}&idsList%5B8%5D=${movieIds[8]}&idsList%5B9%5D=${movieIds[9]}`,
-    {
-      method: 'GET',
-      headers: {
-        'X-RapidAPI-Key': process.env.REACT_APP_MOVIE_API_KEY!,
-        'X-RapidAPI-Host': 'moviesdatabase.p.rapidapi.com',
-      },
-    }
-  );
+
+  const url = urlBuilderForMultipleMovies(movieIds);
+
+  const response: Response = await fetch(url, {
+    method: 'GET',
+    headers: {
+      'X-RapidAPI-Key': process.env.REACT_APP_MOVIE_API_KEY!,
+      'X-RapidAPI-Host': 'moviesdatabase.p.rapidapi.com',
+    },
+  });
 
   const responseData: Result = await response.json();
 

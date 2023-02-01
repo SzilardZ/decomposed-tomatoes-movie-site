@@ -29,9 +29,11 @@ const ActorDetails = ({ actor }: ActorDetailsProps) => {
           <MovieList movies={actor.movies} />
         </div>
 
-        <div className={styles['section-container']}>
-          <h3 className={styles['secondary-title']}>Biography</h3>
-          <p className={styles['bio-full']}>{actor.bioFull}</p>
+        <div className={styles['bio-container']}>
+          <div className={styles['section-container']}>
+            <h3 className={styles['secondary-title']}>Biography</h3>
+            <p className={styles['bio-full']}>{actor.bioFull}</p>
+          </div>
         </div>
       </div>
     </Fragment>

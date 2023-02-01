@@ -23,7 +23,7 @@
 }
 
 .actor-img {
-  width: 22rem;
+  width: 32rem;
 }
 
 .secondary-title {
@@ -34,6 +34,12 @@
 .section-container {
   max-width: 130rem;
   margin: 9.6rem auto;
+}
+
+.bio-container {
+  background-color: #fff;
+  color: #212529;
+  padding: 1.6rem 0;
 }
 
 .bio-full {
