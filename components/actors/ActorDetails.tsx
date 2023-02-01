@@ -16,7 +16,7 @@ const ActorDetails = ({ actor }: ActorDetailsProps) => {
           <h1 className={styles['actor-name']}>{actor.name}</h1>
           <h3 className={styles['actor-birth-date']}>{actor.birthDate}</h3>
           <p className={styles['actor-bio']}>
-            {actor.bio} {actor.bio !== null ? 'Full bio down' : ''}
+            {actor.bio} {actor.bio !== null ? 'full bio down ⬇' : ''}
           </p>
         </div>
         <div>

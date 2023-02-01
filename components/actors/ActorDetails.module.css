@@ -7,8 +7,8 @@
 }
 
 .actor-name {
-  font-size: 7.4rem;
-  margin-top: 4.8rem;
+  font-size: 8.6rem;
+  margin: 4.8rem 0 2.4rem 0;
 }
 
 .actor-birth-date {
@@ -27,8 +27,9 @@
 }
 
 .secondary-title {
-  font-size: 3rem;
-  margin-bottom: 3rem;
+  font-size: 3.6rem;
+  margin-bottom: 4.8rem;
+  color: #63e6be;
 }
 
 .section-container {
@@ -37,7 +38,7 @@
 }
 
 .bio-container {
-  background-color: #fff;
+  background-color: #f8f9fa;
   color: #212529;
   padding: 1.6rem 0;
 }

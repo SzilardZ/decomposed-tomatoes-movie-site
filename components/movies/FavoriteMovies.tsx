@@ -13,7 +13,7 @@ const FavoriteMovies = () => {
   if (favMovies.length === 0) {
     content = (
       <p className={styles['no-movie']}>
-        Search for a movie and add it to your favorite!
+        Search for movies and add them to your favorites!
       </p>
     );
   } else if (favMovies.length > 0) {

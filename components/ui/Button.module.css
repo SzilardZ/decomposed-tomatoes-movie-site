@@ -1,10 +1,12 @@
-.fill {
+.button {
   letter-spacing: 1px;
   padding: 13px 30px 13px;
   font: inherit;
+  border-radius: 8px;
   outline: 0;
-  /* border: 1.5px solid #fff; */
-  border: none;
+  /* border: 2px solid #df2935; */
+  border: 2px solid #63e6be;
+  /* border: none; */
   cursor: pointer;
   position: relative;
   background-color: rgba(0, 0, 0, 0);
@@ -12,22 +14,10 @@
 
 .button-text {
   font-size: 3rem;
+  color: #63e6be;
+  transition: color 0.4s;
 }
 
-.fill::after {
-  content: '';
-  /* background-color: #f25056; */
-  background-color: #df2935;
-  width: 100%;
-  z-index: -1;
-  position: absolute;
-  height: 100%;
-  bottom: 0px;
-  left: 0px;
-  transition: 0.2s;
-}
-
-.fill:hover::after {
-  /* bottom: 7px; */
-  left: 10px;
+.button-text:hover {
+  color: #fff;
 }
