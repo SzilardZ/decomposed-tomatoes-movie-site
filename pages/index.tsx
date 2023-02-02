@@ -9,6 +9,8 @@ import { Result, ResultElement } from '../types/homePageMoviesTypes';
 import SearchActor from '../components/actors/SearchActor';
 import Footer from '../components/footer/Footer';
 import { urlBuilderForMultipleMovies } from '../util/urlBuilder';
+import { API_HOST_MOVIE_DB, API_KEY } from '../constants/contants';
+import { sendHttpGetRequest } from '../util/http';
 
 const Home: NextPage<{ selectedMovies: SelectedMovieModel[] }> = ({
   selectedMovies,
@@ -45,17 +47,9 @@ export const getStaticProps: GetStaticProps = async () => {
 
   const url = urlBuilderForMultipleMovies(movieIds);
 
-  const response: Response = await fetch(url, {
-    method: 'GET',
-    headers: {
-      'X-RapidAPI-Key': process.env.REACT_APP_MOVIE_API_KEY!,
-      'X-RapidAPI-Host': 'moviesdatabase.p.rapidapi.com',
-    },
-  });
+  const data = await sendHttpGetRequest(url, API_KEY, API_HOST_MOVIE_DB);
 
-  const responseData: Result = await response.json();
-
-  const seletedMovies = responseData.results.map((movie: ResultElement) => {
+  const seletedMovies = data.map((movie: ResultElement) => {
     return {
       movieId: movie.id,
       movieImage: movie.primaryImage.url,

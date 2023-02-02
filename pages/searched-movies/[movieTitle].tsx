@@ -2,8 +2,10 @@ import { GetServerSideProps } from 'next';
 import { Fragment, useEffect, useState } from 'react';
 import Footer from '../../components/footer/Footer';
 import MovieListSection from '../../components/movies/MovieListSection';
+import { API_HOST_MOVIE_DB, API_KEY } from '../../constants/contants';
 import { ResultElement } from '../../types/movieByTitleTypes';
 import { SimpleMovieModel } from '../../types/movieTypes';
+import { sendHttpGetRequest } from '../../util/http';
 
 interface SearchedMovieProps {
   moviesData: SimpleMovieModel[];
@@ -26,17 +28,9 @@ const SearchedMovie = ({ moviesData, searchedMovie }: SearchedMovieProps) => {
 };
 
 const getMovieHttpRequest = async (URL: string) => {
-  const response = await fetch(URL, {
-    method: 'GET',
-    headers: {
-      'X-RapidAPI-Key': process.env.REACT_APP_MOVIE_API_KEY!,
-      'X-RapidAPI-Host': 'moviesdatabase.p.rapidapi.com',
-    },
-  });
+  const data = await sendHttpGetRequest(URL, API_KEY, API_HOST_MOVIE_DB);
 
-  const data = await response.json();
-
-  const filteredMovies = data.results.filter(
+  const filteredMovies = data.filter(
     (movie: ResultElement) => movie.primaryImage !== null
   );
 

@@ -1,7 +1,6 @@
 import styles from './Header.module.css';
 import Navbar from './Navbar';
 import SearchField from '../search-field/SearchField';
-import { useEffect, useState } from 'react';
 
 const Header = () => {
   return (
@@ -12,7 +11,7 @@ const Header = () => {
           <div className={styles['header-container-inner']}>
             <h1 className={styles['title']}>Search for a movie</h1>
             <p className={styles['site-details']}>
-              the movie site works with a large database and provides complete
+              The movie site works with a large database and provides complete
               and updated data for over 9 million titles and 11 million actors /
               crew and cast members.
             </p>

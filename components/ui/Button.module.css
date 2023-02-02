@@ -4,12 +4,11 @@
   font: inherit;
   border-radius: 8px;
   outline: 0;
-  /* border: 2px solid #df2935; */
   border: 2px solid #63e6be;
-  /* border: none; */
   cursor: pointer;
   position: relative;
   background-color: rgba(0, 0, 0, 0);
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .button-text {

@@ -1,7 +1,9 @@
 import { GetServerSideProps } from 'next';
 import ActorsList from '../../components/actors/ActorsList';
+import { API_HOST_MOVIE_MINI_DB, API_KEY } from '../../constants/contants';
 import { ActorElement } from '../../types/actorByIdTypes';
 import { ActorType } from '../../types/actorTypes';
+import { sendHttpGetRequest } from '../../util/http';
 
 interface SearchedActorProps {
   actors: ActorType[];
@@ -13,22 +15,17 @@ const SearchedActor = (props: SearchedActorProps) => {
 
 export const getServerSideProps: GetServerSideProps = async context => {
   const actorName = context.params!.actorName;
-  const response = await fetch(
+
+  const data = await sendHttpGetRequest(
     `https://moviesminidatabase.p.rapidapi.com/actor/imdb_id_byName/${actorName}/`,
-    {
-      method: 'GET',
-      headers: {
-        'X-RapidAPI-Key': process.env.REACT_APP_MOVIE_API_KEY!,
-        'X-RapidAPI-Host': 'moviesminidatabase.p.rapidapi.com',
-      },
-    }
+    API_KEY,
+    API_HOST_MOVIE_MINI_DB
   );
-  const { results } = await response.json();
 
   // For some reason, the API sends back not just actors, but some kind of TV shows,
-  // so we filter the results for only actors by checking the id, because TV shows have
-  // different IDs.
-  const filteredActors = results.filter(
+  // so we filter the results for only actors by checking the format of the id, because
+  // TV shows have different kind of IDs.
+  const filteredActors = data.filter(
     (actor: ActorElement) => actor.imdb_id.slice(0, 2) === 'nm'
   );
 

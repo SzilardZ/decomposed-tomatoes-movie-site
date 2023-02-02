@@ -4,6 +4,8 @@ import MovieList from '../../components/movies/MovieList';
 import { Result, ResultElement } from '../../types/upcomingMovieTypes';
 import { UpcomingMovieModel } from '../../types/movieTypes';
 import Navbar from '../../components/hero/Navbar';
+import { sendHttpGetRequest } from '../../util/http';
+import { API_HOST_MOVIE_DB, API_KEY } from '../../constants/contants';
 
 interface UpcomingMoviesProps {
   upcomingMovies: UpcomingMovieModel[];
@@ -20,21 +22,14 @@ const UpcomingMovies = (props: UpcomingMoviesProps) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const response: Response = await fetch(
+  const data = await sendHttpGetRequest(
     'https://moviesdatabase.p.rapidapi.com/titles/x/upcoming',
-    {
-      method: 'GET',
-      headers: {
-        'X-RapidAPI-Key': process.env.REACT_APP_MOVIE_API_KEY!,
-        'X-RapidAPI-Host': 'moviesdatabase.p.rapidapi.com',
-      },
-    }
+    API_KEY,
+    API_HOST_MOVIE_DB
   );
 
-  const data: Result = await response.json();
-
   // filter out the movies which don't have image
-  const filteredMovies = data.results.filter(
+  const filteredMovies = data.filter(
     (movie: ResultElement) => movie.primaryImage !== null
   );
 
