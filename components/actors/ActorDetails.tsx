@@ -1,7 +1,7 @@
 import styles from './ActorDetails.module.css';
 import { ActorDetailedType } from '../../types/actorTypes';
 import { Fragment } from 'react';
-import Navbar from '../hero/Navbar';
+import Navbar from '../navbar/Navbar';
 import MovieList from '../movies/MovieList';
 
 interface ActorDetailsProps {

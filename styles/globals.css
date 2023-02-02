@@ -44,6 +44,7 @@ ul {
     color-scheme: dark;
   }
   body {
-    background: #080708;
+    /* background: #080708; */
+    background: #000;
   }
 }

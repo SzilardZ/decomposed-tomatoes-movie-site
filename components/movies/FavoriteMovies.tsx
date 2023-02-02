@@ -1,7 +1,7 @@
 import styles from './FavoriteMovies.module.css';
 import { Fragment } from 'react';
 import { useSelector } from 'react-redux';
-import Navbar from '../hero/Navbar';
+import Navbar from '../navbar/Navbar';
 import SearchField from '../search-field/SearchField';
 import MovieList from './MovieList';
 

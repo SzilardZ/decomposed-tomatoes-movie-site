@@ -1,5 +1,5 @@
 import { Fragment } from 'react';
-import Navbar from '../hero/Navbar';
+import Navbar from '../navbar/Navbar';
 import styles from './MovieDetails.module.css';
 import { MovieModel, SimpleMovieModel } from '../../types/movieTypes';
 import { useDispatch, useSelector } from 'react-redux';

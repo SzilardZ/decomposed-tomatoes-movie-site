@@ -1,5 +1,5 @@
 import styles from './Header.module.css';
-import Navbar from './Navbar';
+import Navbar from '../navbar/Navbar';
 import SearchField from '../search-field/SearchField';
 
 const Header = () => {

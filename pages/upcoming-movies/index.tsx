@@ -3,7 +3,7 @@ import { Fragment } from 'react';
 import MovieList from '../../components/movies/MovieList';
 import { Result, ResultElement } from '../../types/upcomingMovieTypes';
 import { UpcomingMovieModel } from '../../types/movieTypes';
-import Navbar from '../../components/hero/Navbar';
+import Navbar from '../../components/navbar/Navbar';
 import { sendHttpGetRequest } from '../../util/http';
 import { API_HOST_MOVIE_DB, API_KEY } from '../../constants/contants';
 

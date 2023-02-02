@@ -1,5 +1,5 @@
 import { Fragment } from 'react';
-import Navbar from '.././hero/Navbar';
+import Navbar from '.././navbar/Navbar';
 
 import styles from './OurFavs.module.css';
 

@@ -1,6 +1,6 @@
 import { Fragment } from 'react';
 import { ActorType } from '../../types/actorTypes';
-import Navbar from '../hero/Navbar';
+import Navbar from '../navbar/Navbar';
 import Actor from './Actor';
 
 import styles from './ActorsList.module.css';
