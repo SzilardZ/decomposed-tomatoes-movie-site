@@ -1,11 +1,11 @@
 import { GetStaticProps } from 'next';
 import { Fragment } from 'react';
-import MovieList from '../../components/movies/MovieList';
-import { Result, ResultElement } from '../../types/upcomingMovieTypes';
+import { ResultElement } from '../../types/upcomingMovieTypes';
 import { UpcomingMovieModel } from '../../types/movieTypes';
-import Navbar from '../../components/navbar/Navbar';
 import { sendHttpGetRequest } from '../../util/http';
 import { API_HOST_MOVIE_DB, API_KEY } from '../../constants/contants';
+import MovieListSection from '../../components/movies/MovieListSection';
+import Footer from '../../components/footer/Footer';
 
 interface UpcomingMoviesProps {
   upcomingMovies: UpcomingMovieModel[];
@@ -14,8 +14,11 @@ interface UpcomingMoviesProps {
 const UpcomingMovies = (props: UpcomingMoviesProps) => {
   return (
     <Fragment>
-      <Navbar />
-      <MovieList movies={props.upcomingMovies} />
+      <MovieListSection
+        movies={props.upcomingMovies}
+        searchedMovie='Upcoming Movies'
+      />
+      <Footer />
     </Fragment>
   );
 };
