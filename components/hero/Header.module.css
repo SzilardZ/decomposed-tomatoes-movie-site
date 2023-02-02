@@ -13,6 +13,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 4.8rem;
   /* In relation to PARENT size */
   /* left: 50%;
   top: 50%; */
@@ -35,6 +36,10 @@
 .title {
   font-size: 7.4rem;
   margin-bottom: 1.6rem;
+}
+
+.title span {
+  color: #63e6be;
 }
 
 .site-details {

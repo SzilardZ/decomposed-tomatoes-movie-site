@@ -6,7 +6,7 @@ import styles from './OurFavs.module.css';
 const OurFavs = () => {
   return (
     <Fragment>
-      <Navbar />
+      <Navbar isTransparent={false} />
       <h2 className={styles.text}>Sorry. We don't like movies.</h2>
     </Fragment>
   );

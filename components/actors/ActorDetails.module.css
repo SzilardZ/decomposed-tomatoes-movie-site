@@ -1,6 +1,6 @@
 .actor-detail-container {
   max-width: 130rem;
-  margin: 5rem auto;
+  margin: 6.4rem auto;
   display: grid;
   grid-template-columns: 3fr 1fr;
   gap: 8rem;

@@ -7,14 +7,14 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <div className={styles['dark-overlay']}>
-        <Navbar />
+        <Navbar isTransparent={true} />
         <div className={styles['header-container']}>
           <div className={styles['header-container-inner']}>
-            <h1 className={styles['title']}>A Super Cool Movie Website</h1>
+            <h1 className={styles['title']}>Search for a movie</h1>
             <p className={styles['site-details']}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque
-              quod, maiores impedit optio itaque, odit tempore consequuntur
-              facere soluta necessitatibus ab saepe?
+              the movie site works with a large database and provides complete
+              and updated data for over 9 million titles and 11 million actors /
+              crew and cast members.
             </p>
             <div className={styles['search-field']}>
               <SearchField type='movie' />

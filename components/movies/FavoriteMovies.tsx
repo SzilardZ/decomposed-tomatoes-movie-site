@@ -22,7 +22,7 @@ const FavoriteMovies = () => {
 
   return (
     <Fragment>
-      <Navbar />
+      <Navbar isTransparent={false} />
       <div className={styles.container}>
         <div className={styles['title-search-container']}>
           <h3 className={styles['sub-title']}>Your favorite movies</h3>

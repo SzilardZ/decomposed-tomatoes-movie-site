@@ -12,7 +12,7 @@ interface ActorsListProps {
 const ActorsList = (props: ActorsListProps) => {
   return (
     <Fragment>
-      <Navbar />
+      <Navbar isTransparent={false} />
       <div className={styles['actors-container']}>
         <ul className={styles.actors}>
           {props.actors.map(actor => (

@@ -12,7 +12,7 @@ interface UpcomingMoviesProps {
 const UpcomingMovies = (props: UpcomingMoviesProps) => {
   return (
     <Fragment>
-      <Navbar />
+      <Navbar isTransparent={false} />
 
       <MovieList movies={props.upcomingMovies} />
     </Fragment>

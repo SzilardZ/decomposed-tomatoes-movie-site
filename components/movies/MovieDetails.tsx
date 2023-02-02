@@ -55,7 +55,7 @@ const MovieDetails = (props: MovieDetailProps) => {
 
   return (
     <Fragment>
-      <Navbar />
+      <Navbar isTransparent={false} />
       <main className={styles.container}>
         <section className={styles['movie-details']}>
           <h1 className={styles['movie-title']}>{props.movie.title}</h1>

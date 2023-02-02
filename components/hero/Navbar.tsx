@@ -2,9 +2,18 @@ import Link from 'next/link';
 import Logo from '../ui/Logo';
 import styles from './Navbar.module.css';
 
-const Navbar = () => {
+interface NavbarProps {
+  isTransparent: boolean;
+}
+
+const Navbar = ({ isTransparent }: NavbarProps) => {
   return (
-    <div className={styles['main-nav']}>
+    <div
+      className={
+        isTransparent
+          ? styles['main-nav-transparent']
+          : styles['main-nav-black']
+      }>
       <Logo />
       <nav className={styles['main-nav']}>
         <ul className={styles['main-nav-list']}>

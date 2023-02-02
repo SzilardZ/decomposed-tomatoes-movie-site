@@ -1,10 +1,14 @@
 .container {
   max-width: 130rem;
-  margin: 2rem auto;
+  margin: 6.4rem auto;
 }
 
 .sub-title {
   font-size: 3rem;
+}
+
+.sub-title span {
+  color: #63e6be;
 }
 
 .title-search-container {
