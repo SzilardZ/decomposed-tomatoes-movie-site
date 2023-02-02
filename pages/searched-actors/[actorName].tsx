@@ -1,5 +1,5 @@
 import { GetServerSideProps } from 'next';
-import ActorsList from '../../components/actors/ActorsList';
+import ActorList from '../../components/actors/ActorList';
 import { API_HOST_MOVIE_MINI_DB, API_KEY } from '../../constants/contants';
 import { ActorElement } from '../../types/actorByIdTypes';
 import { ActorType } from '../../types/actorTypes';
@@ -10,7 +10,7 @@ interface SearchedActorProps {
 }
 
 const SearchedActor = (props: SearchedActorProps) => {
-  return <ActorsList actors={props.actors} />;
+  return <ActorList actors={props.actors} />;
 };
 
 export const getServerSideProps: GetServerSideProps = async context => {

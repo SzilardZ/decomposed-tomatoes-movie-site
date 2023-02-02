@@ -2,8 +2,7 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  height: 20rem;
-  background-color: #000;
+  height: 16rem;
 }
 
 .paragraph {

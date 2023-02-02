@@ -1,12 +1,12 @@
 import { useRouter } from 'next/router';
-import styles from './Actor.module.css';
+import styles from './ActorItem.module.css';
 
-interface ActorProps {
+interface ActorItemProps {
   id: string;
   name: string;
 }
 
-const Actor = ({ id, name }: ActorProps) => {
+const ActorItem = ({ id, name }: ActorItemProps) => {
   const router = useRouter();
 
   const clickHandler = () => {
@@ -22,4 +22,4 @@ const Actor = ({ id, name }: ActorProps) => {
   );
 };
 
-export default Actor;
+export default ActorItem;

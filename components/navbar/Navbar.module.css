@@ -1,16 +1,8 @@
-.main-nav-transparent {
+.main-nav {
   display: flex;
-  padding: 2.4rem 4.8rem;
+  padding: 1.6rem 4.8rem;
   justify-content: space-between;
   align-items: center;
-}
-
-.main-nav-black {
-  display: flex;
-  padding: 2.4rem 4.8rem;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #000;
 }
 
 .main-nav-list {

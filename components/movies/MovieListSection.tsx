@@ -13,7 +13,7 @@ interface MovieListSectionProps {
 const MovieListSection = ({ movies, searchedMovie }: MovieListSectionProps) => {
   return (
     <Fragment>
-      <Navbar isTransparent={false} />
+      <Navbar />
       <div className={styles['outer-container']}>
         <div className={styles['inner-container']}>
           <div className={styles['title-search-container']}>

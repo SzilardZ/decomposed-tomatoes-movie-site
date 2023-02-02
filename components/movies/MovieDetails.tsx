@@ -55,38 +55,42 @@ const MovieDetails = (props: MovieDetailProps) => {
 
   return (
     <Fragment>
-      <Navbar isTransparent={false} />
-      <main className={styles.container}>
-        <section className={styles['movie-details']}>
-          <h1 className={styles['movie-title']}>{props.movie.title}</h1>
-          <div className={styles['inner-container']}>
-            <h3 className={styles['movie-year']}>{props.movie.releaseYear}</h3>
-            <span>
-              <button
-                className={styles['btn-add-to-fav']}
-                onClick={favoriteHandler}>
-                {buttonText}
-              </button>
-            </span>
-            <h3 className={styles['movie-rating']}>
-              IMDB Rating: {props.movie.rating}
-            </h3>
-            <h3 className={styles['movie-votes']}>
-              Number of Votes: {props.movie.numVotes}
-            </h3>
-          </div>
-          <div>
-            <h3 className={styles['cast-title']}>Cast</h3>
-            {castContent}
-          </div>
-        </section>
-        <section>
-          <img
-            className={styles['movie-img']}
-            src={props.movie.imageUrl}
-            alt=''
-          />
-        </section>
+      <Navbar />
+      <main className={styles['outer-container']}>
+        <div className={styles['inner-container']}>
+          <section className={styles['movie-details']}>
+            <h1 className={styles['movie-title']}>{props.movie.title}</h1>
+            <div className={styles['data-container']}>
+              <h3 className={styles['movie-year']}>
+                {props.movie.releaseYear}
+              </h3>
+              <span>
+                <button
+                  className={styles['btn-add-to-fav']}
+                  onClick={favoriteHandler}>
+                  {buttonText}
+                </button>
+              </span>
+              <h3 className={styles['movie-rating']}>
+                IMDB Rating: {props.movie.rating}
+              </h3>
+              <h3 className={styles['movie-votes']}>
+                Number of Votes: {props.movie.numVotes}
+              </h3>
+            </div>
+            <div>
+              <h3 className={styles['cast-title']}>Cast</h3>
+              {castContent}
+            </div>
+          </section>
+          <section>
+            <img
+              className={styles['movie-img']}
+              src={props.movie.imageUrl}
+              alt=''
+            />
+          </section>
+        </div>
       </main>
     </Fragment>
   );

@@ -1,12 +1,18 @@
-.container {
-  display: flex;
-  justify-content: space-between;
-  max-width: 130rem;
-  margin: 6.4rem auto;
-  gap: 2.4rem;
+.outer-container {
+  max-width: 100%;
+  background-color: #080708;
+  padding: 8rem 0;
 }
 
 .inner-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 130rem;
+  margin: 0 auto;
+  gap: 2.4rem;
+}
+
+.data-container {
   max-width: 70rem;
   display: grid;
   grid-template-columns: 1fr 1fr;

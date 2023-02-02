@@ -1,6 +1,11 @@
-.actor-detail-container {
+.actor-details-outer-container {
+  background-color: #080708;
+  padding: 6.4rem 0 9.6rem 0;
+}
+
+.actor-details-inner-container {
   max-width: 130rem;
-  margin: 6.4rem auto;
+  margin: 0 auto 8rem auto;
   display: grid;
   grid-template-columns: 3fr 1fr;
   gap: 8rem;
@@ -16,7 +21,6 @@
 }
 
 .actor-bio {
-  /* font-family: 'Oswald', sans-serif; */
   font-weight: 500;
   font-size: 3rem;
   margin-top: 3.2rem;
@@ -34,13 +38,13 @@
 
 .section-container {
   max-width: 130rem;
-  margin: 9.6rem auto;
+  margin: 0 auto;
 }
 
 .bio-container {
   background-color: #f8f9fa;
   color: #212529;
-  padding: 0.2rem 0 0.2rem 0;
+  padding: 6.4rem 0;
 }
 
 .bio-full {
