@@ -5,6 +5,7 @@ import { MovieModel, SimpleMovieModel } from '../../types/movieTypes';
 import { useDispatch, useSelector } from 'react-redux';
 import { addMovie, removeMovie } from '../../store/favMovies/favMoviesSlice';
 import RoleActor from './RoleActor';
+import TheEnd from '../footer/TheEnd';
 
 interface MovieDetailProps {
   movie: MovieModel;
@@ -92,6 +93,7 @@ const MovieDetails = (props: MovieDetailProps) => {
           </section>
         </div>
       </main>
+      <TheEnd />
     </Fragment>
   );
 };
