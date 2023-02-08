@@ -1,7 +1,8 @@
 import { GetServerSideProps } from 'next';
 import { Fragment, useEffect, useState } from 'react';
-import Footer from '../../components/footer/Footer';
+
 import MovieListSection from '../../components/movies/MovieListSection';
+import Footer from '../../components/footer/Footer';
 import { API_HOST_MOVIE_DB, API_KEY } from '../../constants/contants';
 import { ResultElement } from '../../types/movieByTitleTypes';
 import { SimpleMovieModel } from '../../types/movieTypes';
@@ -56,9 +57,21 @@ export const getServerSideProps: GetServerSideProps = async context => {
 
   const movies = [...movies1, ...movies2];
 
+  // eliminate duplications
+  const uniqueMovies: { id: string; imageUrl: string }[] = [];
+  const unique = movies.filter(element => {
+    const isDuplicate = uniqueMovies.includes(element.id);
+
+    if (!isDuplicate) {
+      uniqueMovies.push(element.id);
+      return true;
+    }
+    return false;
+  });
+
   return {
     props: {
-      moviesData: movies,
+      moviesData: unique,
       searchedMovie: movieTitle,
     },
   };

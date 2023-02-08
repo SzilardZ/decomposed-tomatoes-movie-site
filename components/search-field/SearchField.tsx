@@ -1,18 +1,21 @@
 import { useRouter } from 'next/router';
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import styles from './SearchField.module.css';
 import Button from '../ui/Button';
+import LoadingSpinner from '../ui/LoadingSpinner';
 
 interface SearchFieldProps {
   type: string;
 }
 
 const SearchField = ({ type }: SearchFieldProps) => {
+  const [showLoadingSpinner, setShowLoadingSpinner] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
   const router = useRouter();
 
   const submitSearchHandler = (e: React.FormEvent) => {
     e.preventDefault();
+    setShowLoadingSpinner(true);
     const userInput = inputRef.current!.value;
     if (userInput.length > 1) {
       type === 'movie'
@@ -21,21 +24,25 @@ const SearchField = ({ type }: SearchFieldProps) => {
     } else {
       alert('Please type at least 2 characters!');
     }
+    // setShowLoadingSpinner(false);
   };
 
   return (
-    <form onSubmit={submitSearchHandler} className={styles['search-bar']}>
-      {/* <label htmlFor='search-movie'>Search Movie</label> */}
-      <div className={styles.input}>
-        <input
-          type='text'
-          id='search-movie'
-          ref={inputRef}
-          placeholder='type here'
-        />
-        <Button buttonText='Search now' />
-      </div>
-    </form>
+    <div>
+      {showLoadingSpinner && <LoadingSpinner />}
+      <form onSubmit={submitSearchHandler} className={styles['search-bar']}>
+        {/* <label htmlFor='search-movie'>Search Movie</label> */}
+        <div className={styles.input}>
+          <input
+            type='text'
+            id='search-movie'
+            ref={inputRef}
+            placeholder='type here'
+          />
+          <Button buttonText='Search now' />
+        </div>
+      </form>
+    </div>
   );
 };
 

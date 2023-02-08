@@ -5,7 +5,7 @@ import Header from '../components/hero/Header';
 import Opener from '../components/opener/Opener';
 import MovieSelectionList from '../components/movie-selection/MovieSelectionList';
 import { SelectedMovieModel } from '../types/movieTypes';
-import { Result, ResultElement } from '../types/homePageMoviesTypes';
+import { ResultElement } from '../types/homePageMoviesTypes';
 import SearchActor from '../components/actors/SearchActor';
 import Footer from '../components/footer/Footer';
 import { urlBuilderForMultipleMovies } from '../util/urlBuilder';

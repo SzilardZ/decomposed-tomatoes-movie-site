@@ -16,7 +16,7 @@ const SearchedActor = (props: SearchedActorProps) => {
 export const getServerSideProps: GetServerSideProps = async context => {
   const actorName = context.params!.actorName;
 
-  const data = await sendHttpGetRequest(
+  const actorData = await sendHttpGetRequest(
     `https://moviesminidatabase.p.rapidapi.com/actor/imdb_id_byName/${actorName}/`,
     API_KEY,
     API_HOST_MOVIE_MINI_DB
@@ -25,7 +25,7 @@ export const getServerSideProps: GetServerSideProps = async context => {
   // For some reason, the API sends back not just actors, but some kind of TV shows,
   // so we filter the results for only actors by checking the format of the id, because
   // TV shows have different kind of IDs.
-  const filteredActors = data.filter(
+  const filteredActors = actorData.filter(
     (actor: ActorElement) => actor.imdb_id.slice(0, 2) === 'nm'
   );
 
