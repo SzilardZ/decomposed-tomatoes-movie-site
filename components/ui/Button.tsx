@@ -6,9 +6,11 @@ interface ButtonProps {
 
 const Button = ({ buttonText }: ButtonProps) => {
   return (
-    <button className={styles.button}>
-      <span className={styles['button-text']}>{buttonText}</span>
-    </button>
+    <div>
+      <button className={styles.button}>
+        <span className={styles['button-text']}>{buttonText}</span>
+      </button>
+    </div>
   );
 };
 

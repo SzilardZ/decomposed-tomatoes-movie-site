@@ -3,5 +3,33 @@
   grid-template-columns: repeat(5, 1fr);
   column-gap: 2.4rem;
   row-gap: 4.8rem;
-  padding-bottom: 9.6rem;
+  padding: 0 6.4rem 9.6rem 6.4rem;
+}
+
+/****************************/
+/* BELOW 1100px */
+/****************************/
+@media (max-width: 68.75em) {
+  .movie-list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/****************************/
+/* BELOW 944px (Tablets) */
+/****************************/
+@media (max-width: 59em) {
+  .movie-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/****************************/
+/* BELOW 544px (Mobile phones) */
+/****************************/
+@media (max-width: 34em) {
+  .movie-list {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 3.2rem 9.6rem 3.2rem;
+  }
 }

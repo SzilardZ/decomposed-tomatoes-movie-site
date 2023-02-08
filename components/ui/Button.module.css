@@ -4,17 +4,22 @@
   font: inherit;
   border-radius: 8px;
   outline: 0;
-  border: 2px solid #63e6be;
+  border: none;
   cursor: pointer;
   position: relative;
   background-color: rgba(0, 0, 0, 0);
-  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+  transition: box-shadow 0.1s;
 }
 
 .button-text {
   font-size: 3rem;
   color: #63e6be;
-  transition: color 0.4s;
+  transition: color 0.1s;
+  /* transition: border 0.3s; */
+}
+.button:hover {
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .button-text:hover {
@@ -22,5 +27,5 @@
 }
 
 .button-text:active {
-  color: #379d7e;
+  color: #40ae8d;
 }

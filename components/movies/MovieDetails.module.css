@@ -1,11 +1,12 @@
 .outer-container {
   max-width: 100%;
   background-color: #080708;
-  padding: 8rem 0;
+  padding: 8rem 6.4rem;
 }
 
 .inner-container {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   justify-content: space-between;
   max-width: 130rem;
   margin: 0 auto;
@@ -76,4 +77,54 @@
 
 .no-cast {
   font-size: 3rem;
+}
+
+/****************************/
+/* BELOW 1020px */
+/****************************/
+@media (max-width: 63.75em) {
+  .movie-img {
+    overflow: visible;
+    max-width: 42rem;
+  }
+  .movie-title {
+    font-size: 8rem;
+    margin-bottom: 3rem;
+  }
+}
+
+/****************************/
+/* BELOW 800px */
+/****************************/
+@media (max-width: 50em) {
+  .data-container {
+    grid-template-columns: 1fr;
+    row-gap: 3.2rem;
+    margin-bottom: 1.2rem;
+  }
+  .movie-title {
+    font-size: 6.4rem;
+    margin-bottom: 3rem;
+  }
+}
+
+/****************************/
+/* BELOW 660px */
+/****************************/
+@media (max-width: 41.25em) {
+  .outer-container {
+    max-width: 100%;
+    padding: 8rem 3.2rem;
+    margin: 0 auto;
+  }
+
+  .inner-container {
+    grid-template-columns: 1fr;
+    margin: 0 auto;
+  }
+
+  .movie-img-container {
+    max-width: 100%;
+    justify-self: center;
+  }
 }

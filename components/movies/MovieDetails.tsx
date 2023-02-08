@@ -56,7 +56,7 @@ const MovieDetails = (props: MovieDetailProps) => {
 
   return (
     <Fragment>
-      <Navbar />
+      {/* <Navbar /> */}
       <main className={styles['outer-container']}>
         <div className={styles['inner-container']}>
           <section className={styles['movie-details']}>
@@ -79,17 +79,21 @@ const MovieDetails = (props: MovieDetailProps) => {
                 Number of Votes: {props.movie.numVotes}
               </h3>
             </div>
-            <div>
-              <h3 className={styles['cast-title']}>Cast</h3>
-              {castContent}
-            </div>
           </section>
-          <section>
+
+          <section className={styles['movie-img-container']}>
             <img
               className={styles['movie-img']}
               src={props.movie.imageUrl}
               alt=''
             />
+          </section>
+
+          <section>
+            <div>
+              <h3 className={styles['cast-title']}>Cast</h3>
+              {castContent}
+            </div>
           </section>
         </div>
       </main>

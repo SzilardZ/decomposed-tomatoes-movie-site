@@ -11,6 +11,7 @@ import Footer from '../components/footer/Footer';
 import { urlBuilderForMultipleMovies } from '../util/urlBuilder';
 import { API_HOST_MOVIE_DB, API_KEY } from '../constants/contants';
 import { sendHttpGetRequest } from '../util/http';
+import Navbar from '../components/navbar/Navbar';
 
 const Home: NextPage<{ selectedMovies: SelectedMovieModel[] }> = ({
   selectedMovies,
