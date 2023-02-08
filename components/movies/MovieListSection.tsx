@@ -4,6 +4,7 @@ import styles from './MovieListSection.module.css';
 import MovieList from './MovieList';
 import { SimpleMovieModel } from '../../types/movieTypes';
 import { Fragment } from 'react';
+import NoResults from '../no-results/NoResults';
 
 interface MovieListSectionProps {
   movies: SimpleMovieModel[];
@@ -11,6 +12,15 @@ interface MovieListSectionProps {
 }
 
 const MovieListSection = ({ movies, searchedMovie }: MovieListSectionProps) => {
+  let content;
+
+  if (movies.length === 0) {
+    content = <NoResults type='movie' />;
+  }
+  if (movies.length > 0) {
+    content = <MovieList movies={movies} />;
+  }
+
   return (
     <Fragment>
       <Navbar />
@@ -22,7 +32,7 @@ const MovieListSection = ({ movies, searchedMovie }: MovieListSectionProps) => {
             </h3>
             <SearchField type='movie' />
           </div>
-          <MovieList movies={movies} />
+          {content}
         </div>
       </div>
     </Fragment>
