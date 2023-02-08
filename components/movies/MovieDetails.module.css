@@ -64,7 +64,7 @@
 }
 
 .cast-title {
-  display: inline-block;
+  /* display: inline-block; */
   font-size: 3.6rem;
   margin: 4.8rem 0 2.4rem 0;
   color: #63e6be;
@@ -84,7 +84,6 @@
 /****************************/
 @media (max-width: 63.75em) {
   .movie-img {
-    overflow: visible;
     max-width: 42rem;
   }
   .movie-title {
@@ -100,7 +99,7 @@
   .data-container {
     grid-template-columns: 1fr;
     row-gap: 3.2rem;
-    margin-bottom: 1.2rem;
+    margin-bottom: 3.2rem;
   }
   .movie-title {
     font-size: 6.4rem;
@@ -126,5 +125,9 @@
   .movie-img-container {
     max-width: 100%;
     justify-self: center;
+  }
+
+  .cast-title {
+    text-align: center;
   }
 }

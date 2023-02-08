@@ -10,7 +10,7 @@ interface ActorDetailsProps {
 const ActorDetails = ({ actor }: ActorDetailsProps) => {
   return (
     <Fragment>
-      <Navbar />
+      {/* <Navbar /> */}
       <div className={styles['actor-details-outer-container']}>
         <div className={styles['actor-details-inner-container']}>
           <div>
@@ -24,7 +24,6 @@ const ActorDetails = ({ actor }: ActorDetailsProps) => {
             <img src={actor.imgUrl} alt='' className={styles['actor-img']} />
           </div>
         </div>
-
         <div className={styles['section-container']}>
           <h3 className={styles['secondary-title']}>Movies Known For</h3>
           <MovieList movies={actor.movies} />
