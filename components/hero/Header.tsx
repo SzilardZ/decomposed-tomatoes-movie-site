@@ -6,7 +6,7 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <div className={styles['dark-overlay']}>
-        {/* <Navbar /> */}
+        <Navbar />
         <div className={styles['header-container']}>
           <div className={styles['header-container-inner']}>
             <h1 className={styles['title']}>Search for a movie</h1>

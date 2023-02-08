@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import Navbar from '../navbar/Navbar';
 import SearchField from '../search-field/SearchField';
 import MovieList from './MovieList';
+import Footer from '../footer/Footer';
 
 const FavoriteMovies = () => {
   const favMovies = useSelector((state: any) => state.favMovies.favMovies);
@@ -22,14 +23,17 @@ const FavoriteMovies = () => {
 
   return (
     <Fragment>
-      <Navbar />
-      <div className={styles.container}>
-        <div className={styles['title-search-container']}>
-          <h3 className={styles['sub-title']}>Your favorite movies</h3>
-          <SearchField type='movie' />
+      {/* <Navbar /> */}
+      <div className={styles['outer-container']}>
+        <div className={styles['inner-container']}>
+          <div className={styles['title-search-container']}>
+            <h3 className={styles['sub-title']}>Your favorite movies</h3>
+            <SearchField type='movie' />
+          </div>
         </div>
         {content}
       </div>
+      <Footer />
     </Fragment>
   );
 };

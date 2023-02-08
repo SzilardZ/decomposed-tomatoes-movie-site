@@ -27,7 +27,7 @@ const ActorList = ({ actors }: ActorListProps) => {
 
   return (
     <Fragment>
-      {/* <Navbar /> */}
+      <Navbar />
       <div className={styles['outer-container']}>
         <div className={styles['inner-container']}>{content}</div>
       </div>

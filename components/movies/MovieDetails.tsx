@@ -56,7 +56,7 @@ const MovieDetails = (props: MovieDetailProps) => {
 
   return (
     <Fragment>
-      {/* <Navbar /> */}
+      <Navbar />
       <main className={styles['outer-container']}>
         <div className={styles['inner-container']}>
           <section className={styles['movie-details']}>

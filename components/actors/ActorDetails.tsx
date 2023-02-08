@@ -10,7 +10,7 @@ interface ActorDetailsProps {
 const ActorDetails = ({ actor }: ActorDetailsProps) => {
   return (
     <Fragment>
-      {/* <Navbar /> */}
+      <Navbar />
       <div className={styles['actor-details-outer-container']}>
         <div className={styles['actor-details-inner-container']}>
           <div>
