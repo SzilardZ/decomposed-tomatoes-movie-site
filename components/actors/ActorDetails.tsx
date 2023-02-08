@@ -1,6 +1,7 @@
+import { Fragment } from 'react';
+
 import styles from './ActorDetails.module.css';
 import { ActorDetailedType } from '../../types/actorTypes';
-import { Fragment } from 'react';
 import Navbar from '../navbar/Navbar';
 import MovieList from '../movies/MovieList';
 

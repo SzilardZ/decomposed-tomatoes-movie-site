@@ -1,10 +1,10 @@
 import { Fragment } from 'react';
 import { ActorType } from '../../types/actorTypes';
+
+import styles from './ActorList.module.css';
 import Navbar from '../navbar/Navbar';
 import NoResults from '../no-results/NoResults';
 import ActorItem from './ActorItem';
-
-import styles from './ActorList.module.css';
 
 interface ActorListProps {
   actors: ActorType[];

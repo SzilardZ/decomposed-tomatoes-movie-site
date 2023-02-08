@@ -1,9 +1,10 @@
 import { GetServerSideProps } from 'next';
-import ActorList from '../../components/actors/ActorList';
+
 import { API_HOST_MOVIE_MINI_DB, API_KEY } from '../../constants/contants';
+import { sendHttpGetRequest } from '../../util/http';
 import { ActorElement } from '../../types/actorByIdTypes';
 import { ActorType } from '../../types/actorTypes';
-import { sendHttpGetRequest } from '../../util/http';
+import ActorList from '../../components/actors/ActorList';
 
 interface SearchedActorProps {
   actors: ActorType[];

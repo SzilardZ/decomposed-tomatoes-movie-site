@@ -1,9 +1,10 @@
 import { GetStaticProps } from 'next';
 import { Fragment } from 'react';
+
+import { API_HOST_MOVIE_DB, API_KEY } from '../../constants/contants';
+import { sendHttpGetRequest } from '../../util/http';
 import { ResultElement } from '../../types/upcomingMovieTypes';
 import { UpcomingMovieModel } from '../../types/movieTypes';
-import { sendHttpGetRequest } from '../../util/http';
-import { API_HOST_MOVIE_DB, API_KEY } from '../../constants/contants';
 import MovieListSection from '../../components/movies/MovieListSection';
 import Footer from '../../components/footer/Footer';
 

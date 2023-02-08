@@ -1,9 +1,10 @@
 import { Fragment } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+
+import { addMovie, removeMovie } from '../../store/favMovies/favMoviesSlice';
+import { MovieModel, SimpleMovieModel } from '../../types/movieTypes';
 import Navbar from '../navbar/Navbar';
 import styles from './MovieDetails.module.css';
-import { MovieModel, SimpleMovieModel } from '../../types/movieTypes';
-import { useDispatch, useSelector } from 'react-redux';
-import { addMovie, removeMovie } from '../../store/favMovies/favMoviesSlice';
 import RoleActor from './RoleActor';
 import TheEnd from '../footer/TheEnd';
 

@@ -1,6 +1,7 @@
-import styles from './FavoriteMovies.module.css';
 import { Fragment } from 'react';
 import { useSelector } from 'react-redux';
+
+import styles from './FavoriteMovies.module.css';
 import Navbar from '../navbar/Navbar';
 import SearchField from '../search-field/SearchField';
 import MovieList from './MovieList';
@@ -23,7 +24,7 @@ const FavoriteMovies = () => {
 
   return (
     <Fragment>
-      {/* <Navbar /> */}
+      <Navbar />
       <div className={styles['outer-container']}>
         <div className={styles['inner-container']}>
           <div className={styles['title-search-container']}>

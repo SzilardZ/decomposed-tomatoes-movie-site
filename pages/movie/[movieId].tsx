@@ -1,16 +1,17 @@
 import { GetServerSideProps } from 'next';
-import MovieDetails from '../../components/movies/MovieDetails';
-import { MovieModel } from '../../types/movieTypes';
-import { Results } from '../../types/movieByIdTypes';
-import { RatingResult } from '../../types/movieRatingByIdTypes';
-import { sendHttpGetRequest } from '../../util/http';
 import { Fragment } from 'react';
-import Footer from '../../components/footer/Footer';
+
 import {
   API_HOST_MOVIE_DB,
   API_HOST_MOVIE_MINI_DB,
   API_KEY,
 } from '../../constants/contants';
+import { sendHttpGetRequest } from '../../util/http';
+import { MovieModel } from '../../types/movieTypes';
+import { Results } from '../../types/movieByIdTypes';
+import { RatingResult } from '../../types/movieRatingByIdTypes';
+import MovieDetails from '../../components/movies/MovieDetails';
+import Footer from '../../components/footer/Footer';
 
 interface MovieDetailPageProps {
   movie: MovieModel;

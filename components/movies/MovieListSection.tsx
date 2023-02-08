@@ -1,9 +1,10 @@
+import { Fragment } from 'react';
+
+import styles from './MovieListSection.module.css';
+import { SimpleMovieModel } from '../../types/movieTypes';
 import Navbar from '../navbar/Navbar';
 import SearchField from '../search-field/SearchField';
-import styles from './MovieListSection.module.css';
 import MovieList from './MovieList';
-import { SimpleMovieModel } from '../../types/movieTypes';
-import { Fragment } from 'react';
 import NoResults from '../no-results/NoResults';
 
 interface MovieListSectionProps {

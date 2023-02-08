@@ -1,5 +1,6 @@
+import React, { useRef } from 'react';
 import { useRouter } from 'next/router';
-import React, { useRef, useState } from 'react';
+
 import styles from './SearchField.module.css';
 import Button from '../ui/Button';
 
