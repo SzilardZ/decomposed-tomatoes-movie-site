@@ -1,9 +1,11 @@
 import Link from 'next/link';
+import Navbar from '../navbar/Navbar';
 import styles from './ContactUs.module.css';
 
 const Contact = () => {
   return (
     <div className={styles.container}>
+      <Navbar />
       <div className={styles['text-container']}>
         <p className={styles.text}>
           Never, never, contact us, okay? Not if there's a fire, not even if you

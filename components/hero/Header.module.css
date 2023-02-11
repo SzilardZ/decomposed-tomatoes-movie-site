@@ -13,7 +13,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 4.8rem;
+  margin: 4.8rem;
   /* In relation to PARENT size */
   /* left: 50%;
   top: 50%; */
@@ -75,4 +75,24 @@
   );
   position: absolute;
   top: 0;
+}
+
+/****************************/
+/* BELOW 820px */
+/****************************/
+@media (max-width: 51.25em) {
+  .header-container {
+    width: 65rem;
+    margin: 0rem;
+  }
+}
+
+/****************************/
+/* BELOW 450px */
+/****************************/
+@media (max-width: 28.125em) {
+  .header-container {
+    width: 55rem;
+    margin: 0rem;
+  }
 }
