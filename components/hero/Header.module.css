@@ -83,7 +83,7 @@
 @media (max-width: 51.25em) {
   .header-container {
     width: 65rem;
-    margin: 0rem;
+    transform: translate(-25%, 30%);
   }
 }
 
@@ -93,6 +93,5 @@
 @media (max-width: 28.125em) {
   .header-container {
     width: 55rem;
-    margin: 0rem;
   }
 }

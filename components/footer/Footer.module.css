@@ -9,3 +9,14 @@
   font-family: 'Inter', sans-serif;
   font-size: 1.2rem;
 }
+
+/****************************/
+/* BELOW 450px */
+/****************************/
+@media (max-width: 28.125em) {
+  .footer {
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.8rem;
+  }
+}

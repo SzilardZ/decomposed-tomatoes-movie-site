@@ -45,3 +45,24 @@
 .search-field {
   margin-top: 6.4rem;
 }
+
+/****************************/
+/* BELOW 820px */
+/****************************/
+@media (max-width: 51.25em) {
+  .search-actor-container {
+    width: 90rem;
+    transform: translate(-15%, 60%);
+  }
+}
+
+/****************************/
+/* BELOW 450px */
+/****************************/
+@media (max-width: 28.125em) {
+  .search-actor-container {
+    width: 55rem;
+    margin-bottom: 30rem;
+    transform: translate(-15%, 50%);
+  }
+}
