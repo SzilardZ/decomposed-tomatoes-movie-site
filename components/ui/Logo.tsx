@@ -1,10 +1,13 @@
 import Link from 'next/link';
+
 import styles from './Logo.module.css';
 
 const Logo = () => {
   return (
     <Link href='/'>
-      <div className={styles.logo}>THE "THE MOVIE APP"</div>
+      <div className={styles.logo}>
+        the movi<span>e</span> site.
+      </div>
     </Link>
   );
 };

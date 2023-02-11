@@ -1,9 +1,11 @@
-import Navbar from '../hero/Navbar';
-import SearchField from '../search-field/SearchField';
-import styles from './MovieListSection.module.css';
-import MovieList from './MovieList';
-import { SimpleMovieModel } from '../../types/movieTypes';
 import { Fragment } from 'react';
+
+import styles from './MovieListSection.module.css';
+import { SimpleMovieModel } from '../../types/movieTypes';
+import Navbar from '../navbar/Navbar';
+import SearchField from '../search-field/SearchField';
+import MovieList from './MovieList';
+import NoResults from '../no-results/NoResults';
 
 interface MovieListSectionProps {
   movies: SimpleMovieModel[];
@@ -11,15 +13,28 @@ interface MovieListSectionProps {
 }
 
 const MovieListSection = ({ movies, searchedMovie }: MovieListSectionProps) => {
+  let content;
+
+  if (movies.length === 0) {
+    content = <NoResults type='movie' />;
+  }
+  if (movies.length > 0) {
+    content = <MovieList movies={movies} />;
+  }
+
   return (
     <Fragment>
       <Navbar />
-      <div className={styles.container}>
-        <div className={styles['title-search-container']}>
-          <h3 className={styles['sub-title']}>Results for "{searchedMovie}"</h3>
-          <SearchField type='movie' />
+      <div className={styles['outer-container']}>
+        <div className={styles['inner-container']}>
+          <div className={styles['title-search-container']}>
+            <h3 className={styles['sub-title']}>
+              Results for: <span>{searchedMovie}</span>
+            </h3>
+            <SearchField type='movie' />
+          </div>
+          {content}
         </div>
-        <MovieList movies={movies} />
       </div>
     </Fragment>
   );

@@ -13,6 +13,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 4.8rem;
   /* In relation to PARENT size */
   /* left: 50%;
   top: 50%; */
@@ -30,11 +31,16 @@
 .site-details {
   /* color: #212529; */
   color: #f1f3f5;
+  text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .title {
   font-size: 7.4rem;
   margin-bottom: 1.6rem;
+}
+
+.title span {
+  color: #63e6be;
 }
 
 .site-details {
@@ -69,4 +75,23 @@
   );
   position: absolute;
   top: 0;
+}
+
+/****************************/
+/* BELOW 820px */
+/****************************/
+@media (max-width: 51.25em) {
+  .header-container {
+    width: 65rem;
+    transform: translate(-25%, 30%);
+  }
+}
+
+/****************************/
+/* BELOW 450px */
+/****************************/
+@media (max-width: 28.125em) {
+  .header-container {
+    width: 55rem;
+  }
 }

@@ -1,4 +1,5 @@
 import { useRouter } from 'next/router';
+
 import styles from './Movie.module.css';
 
 interface MovieProps {

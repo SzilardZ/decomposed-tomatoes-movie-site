@@ -1,4 +1,11 @@
 .logo {
+  font-family: 'Inter', sans-serif;
+  color: #fff;
+  font-weight: 900;
   font-size: 4.4rem;
   cursor: pointer;
+}
+
+.logo span {
+  color: #63e6be;
 }

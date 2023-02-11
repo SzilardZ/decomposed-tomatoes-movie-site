@@ -1,10 +1,12 @@
 import { Fragment } from 'react';
-import Navbar from '../hero/Navbar';
-import styles from './MovieDetails.module.css';
-import { MovieModel, SimpleMovieModel } from '../../types/movieTypes';
 import { useDispatch, useSelector } from 'react-redux';
+
 import { addMovie, removeMovie } from '../../store/favMovies/favMoviesSlice';
+import { MovieModel, SimpleMovieModel } from '../../types/movieTypes';
+import Navbar from '../navbar/Navbar';
+import styles from './MovieDetails.module.css';
 import RoleActor from './RoleActor';
+import TheEnd from '../footer/TheEnd';
 
 interface MovieDetailProps {
   movie: MovieModel;
@@ -56,38 +58,47 @@ const MovieDetails = (props: MovieDetailProps) => {
   return (
     <Fragment>
       <Navbar />
-      <main className={styles.container}>
-        <section className={styles['movie-details']}>
-          <h1 className={styles['movie-title']}>{props.movie.title}</h1>
-          <div className={styles['inner-container']}>
-            <h3 className={styles['movie-year']}>{props.movie.releaseYear}</h3>
-            <button
-              className={styles['btn-add-to-fav']}
-              onClick={favoriteHandler}>
-              {buttonText}
-            </button>
-          </div>
-          <div className={styles['inner-container']}>
-            <h3 className={styles['movie-rating']}>
-              IMDB Rating: {props.movie.rating}
-            </h3>
-            <h3 className={styles['movie-votes']}>
-              Number of Votes: {props.movie.numVotes}
-            </h3>
-          </div>
-          <div>
-            <h3 className={styles['cast-title']}>Cast</h3>
-            {castContent}
-          </div>
-        </section>
-        <section>
-          <img
-            className={styles['movie-img']}
-            src={props.movie.imageUrl}
-            alt=''
-          />
-        </section>
+      <main className={styles['outer-container']}>
+        <div className={styles['inner-container']}>
+          <section className={styles['movie-details']}>
+            <h1 className={styles['movie-title']}>{props.movie.title}</h1>
+            <div className={styles['data-container']}>
+              <h3 className={styles['movie-year']}>
+                {props.movie.releaseYear}
+              </h3>
+              <span>
+                <button
+                  className={styles['btn-add-to-fav']}
+                  onClick={favoriteHandler}>
+                  {buttonText}
+                </button>
+              </span>
+              <h3 className={styles['movie-rating']}>
+                IMDB Rating: {props.movie.rating}
+              </h3>
+              <h3 className={styles['movie-votes']}>
+                Number of Votes: {props.movie.numVotes}
+              </h3>
+            </div>
+          </section>
+
+          <section className={styles['movie-img-container']}>
+            <img
+              className={styles['movie-img']}
+              src={props.movie.imageUrl}
+              alt=''
+            />
+          </section>
+
+          <section>
+            <div>
+              <h3 className={styles['cast-title']}>Cast</h3>
+              {castContent}
+            </div>
+          </section>
+        </div>
       </main>
+      <TheEnd />
     </Fragment>
   );
 };

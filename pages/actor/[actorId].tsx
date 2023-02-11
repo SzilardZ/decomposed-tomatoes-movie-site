@@ -1,9 +1,17 @@
+import { Fragment } from 'react';
 import { GetServerSideProps } from 'next';
+
+import {
+  API_HOST_MOVIE_DB,
+  API_HOST_MOVIE_MINI_DB,
+  API_KEY,
+} from '../../constants/contants';
 import ActorDetails from '../../components/actors/ActorDetails';
+import Footer from '../../components/footer/Footer';
+import { sendHttpGetRequest } from '../../util/http';
 import { ResultElement } from '../../types/actorByIdTypes';
 import { ActorDetailedType } from '../../types/actorTypes';
 import { Results } from '../../types/movieByIdTypes';
-import { sendHttpGetRequest } from '../../util/http';
 import { urlBuilderForMultipleMovies } from '../../util/urlBuilder';
 
 interface ActorPageProps {
@@ -11,34 +19,34 @@ interface ActorPageProps {
 }
 
 const ActorPage = (props: ActorPageProps) => {
-  return <ActorDetails actor={props.actor} />;
+  return (
+    <Fragment>
+      <ActorDetails actor={props.actor} />
+      <Footer />
+    </Fragment>
+  );
 };
 
 export const getServerSideProps: GetServerSideProps = async context => {
   const actorId = context.params!.actorId;
 
-  const API_KEY = process.env.REACT_APP_MOVIE_API_KEY!;
-
-  const API_HOST_MOVIES_MINI_DB = 'moviesminidatabase.p.rapidapi.com';
-  const API_HOST_MOVIES_DB = 'moviesdatabase.p.rapidapi.com';
-
   const { imdb_id, name, birth_date, partial_bio, image_url } =
     await sendHttpGetRequest(
       `https://moviesminidatabase.p.rapidapi.com/actor/id/${actorId}/`,
       API_KEY,
-      API_HOST_MOVIES_MINI_DB
+      API_HOST_MOVIE_MINI_DB
     );
 
   const moviesKnownFor = await sendHttpGetRequest(
     `https://moviesminidatabase.p.rapidapi.com/actor/id/${actorId}/movies_knownFor/`,
     API_KEY,
-    API_HOST_MOVIES_MINI_DB
+    API_HOST_MOVIE_MINI_DB
   );
 
   const actorBio = await sendHttpGetRequest(
     `https://moviesminidatabase.p.rapidapi.com/actor/id/${actorId}/bio/`,
     API_KEY,
-    API_HOST_MOVIES_MINI_DB
+    API_HOST_MOVIE_MINI_DB
   );
 
   const actorMovieIdArr = moviesKnownFor.flatMap(
@@ -47,7 +55,7 @@ export const getServerSideProps: GetServerSideProps = async context => {
 
   const url = urlBuilderForMultipleMovies(actorMovieIdArr);
 
-  const moviesData = await sendHttpGetRequest(url, API_KEY, API_HOST_MOVIES_DB);
+  const moviesData = await sendHttpGetRequest(url, API_KEY, API_HOST_MOVIE_DB);
 
   const movies = await moviesData.map((movie: Results) => {
     return {

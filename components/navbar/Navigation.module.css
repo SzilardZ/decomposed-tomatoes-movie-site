@@ -1,18 +1,18 @@
-.main-nav {
+.navigation {
   display: flex;
-  padding: 2.4rem 4.8rem;
+  padding: 1.6rem 4.8rem;
   justify-content: space-between;
   align-items: center;
 }
 
-.main-nav-list {
-  display: flex;
-  align-items: center;
-  gap: 2.4rem;
+.navbar-links {
   font-size: 3rem;
+  color: #fff;
 
   /* hover effect on nav items */
   transform: translate(0%, 0%);
+  display: flex;
+  gap: 2.4rem;
 }
 
 /* hover effect on nav items */
@@ -25,7 +25,8 @@
 
 .menu__link svg {
   fill: none;
-  stroke: #f1f3f5;
+  /* stroke: #f1f3f5; */
+  stroke: #63e6be;
   stroke-width: 4;
   stroke-miterlimit: 10;
   stroke-dasharray: 338;
@@ -48,4 +49,40 @@
   opacity: 1;
   transition: opacity 0s,
     stroke-dashoffset 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+/****************************/
+/* BELOW 1050px */
+/****************************/
+@media (max-width: 66.625em) {
+  .navbar-links {
+    gap: 1.2rem;
+  }
+}
+
+/****************************/
+/* BELOW 1050px */
+/****************************/
+@media (max-width: 66.625em) {
+  .navigation {
+    padding: 1.2rem 2.4rem;
+  }
+}
+
+/****************************/
+/* BELOW 840px */
+/****************************/
+@media (max-width: 52.5em) {
+  .navigation {
+    display: none;
+  }
+  .navbar-links {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 8rem;
+    right: 0;
+    width: 100%;
+    background: #181818;
+  }
 }

@@ -1,0 +1,36 @@
+.mobile-navigation {
+  display: none;
+  padding: 1.6rem 4.8rem;
+}
+
+/****************************/
+/* BELOW 840px */
+/****************************/
+@media (max-width: 52.5em) {
+  .mobile-navigation {
+    display: flex;
+    align-items: center;
+  }
+
+  .hamburger {
+    position: absolute;
+    right: 5%;
+    cursor: pointer;
+  }
+  .navbar-links {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 8rem;
+    right: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    align-items: center;
+    font-size: 3rem;
+    z-index: 999;
+    padding: 5rem 0 4rem 0;
+  }
+  .navbar-links li:hover {
+    color: #63e6bfd5;
+  }
+}

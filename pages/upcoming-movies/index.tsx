@@ -1,9 +1,12 @@
 import { GetStaticProps } from 'next';
 import { Fragment } from 'react';
-import MovieList from '../../components/movies/MovieList';
-import { Result, ResultElement } from '../../types/upcomingMovieTypes';
+
+import { API_HOST_MOVIE_DB, API_KEY } from '../../constants/contants';
+import { sendHttpGetRequest } from '../../util/http';
+import { ResultElement } from '../../types/upcomingMovieTypes';
 import { UpcomingMovieModel } from '../../types/movieTypes';
-import Navbar from '../../components/hero/Navbar';
+import MovieListSection from '../../components/movies/MovieListSection';
+import Footer from '../../components/footer/Footer';
 
 interface UpcomingMoviesProps {
   upcomingMovies: UpcomingMovieModel[];
@@ -12,29 +15,24 @@ interface UpcomingMoviesProps {
 const UpcomingMovies = (props: UpcomingMoviesProps) => {
   return (
     <Fragment>
-      <Navbar />
-
-      <MovieList movies={props.upcomingMovies} />
+      <MovieListSection
+        movies={props.upcomingMovies}
+        searchedMovie='Upcoming Movies'
+      />
+      <Footer />
     </Fragment>
   );
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const response: Response = await fetch(
+  const data = await sendHttpGetRequest(
     'https://moviesdatabase.p.rapidapi.com/titles/x/upcoming',
-    {
-      method: 'GET',
-      headers: {
-        'X-RapidAPI-Key': process.env.REACT_APP_MOVIE_API_KEY!,
-        'X-RapidAPI-Host': 'moviesdatabase.p.rapidapi.com',
-      },
-    }
+    API_KEY,
+    API_HOST_MOVIE_DB
   );
 
-  const data: Result = await response.json();
-
   // filter out the movies which don't have image
-  const filteredMovies = data.results.filter(
+  const filteredMovies = data.filter(
     (movie: ResultElement) => movie.primaryImage !== null
   );
 

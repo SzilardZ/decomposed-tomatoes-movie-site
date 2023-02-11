@@ -1,41 +1,50 @@
 import { GetServerSideProps } from 'next';
-import MovieDetails from '../../components/movies/MovieDetails';
+import { Fragment } from 'react';
+
+import {
+  API_HOST_MOVIE_DB,
+  API_HOST_MOVIE_MINI_DB,
+  API_KEY,
+} from '../../constants/contants';
+import { sendHttpGetRequest } from '../../util/http';
 import { MovieModel } from '../../types/movieTypes';
 import { Results } from '../../types/movieByIdTypes';
 import { RatingResult } from '../../types/movieRatingByIdTypes';
-import { sendHttpGetRequest } from '../../util/http';
+import MovieDetails from '../../components/movies/MovieDetails';
+import Footer from '../../components/footer/Footer';
 
 interface MovieDetailPageProps {
   movie: MovieModel;
 }
 
 const MovieDetailPage = (props: MovieDetailPageProps) => {
-  return <MovieDetails movie={props.movie} />;
+  return (
+    <Fragment>
+      <MovieDetails movie={props.movie} />
+      <Footer />
+    </Fragment>
+  );
 };
 
 export const getServerSideProps: GetServerSideProps = async context => {
   const movieId = context.params!.movieId;
 
-  const API_KEY = process.env.REACT_APP_MOVIE_API_KEY!;
-  const API_HOST_MOVIES_DB = 'moviesdatabase.p.rapidapi.com';
-  const API_HOST_MOVIES_MINI_DB = 'moviesminidatabase.p.rapidapi.com';
-
   const movieData: Results = await sendHttpGetRequest(
     `https://moviesdatabase.p.rapidapi.com/titles/${movieId}?info=mini_info`,
     API_KEY,
-    API_HOST_MOVIES_DB
+    API_HOST_MOVIE_DB
   );
 
   const ratingData: RatingResult = await sendHttpGetRequest(
     `https://moviesdatabase.p.rapidapi.com/titles/${movieId}/ratings`,
     API_KEY,
-    API_HOST_MOVIES_DB
+    API_HOST_MOVIE_DB
   );
 
   const castData = await sendHttpGetRequest(
     `https://moviesminidatabase.p.rapidapi.com/movie/id/${movieId}/cast/`,
     API_KEY,
-    API_HOST_MOVIES_MINI_DB
+    API_HOST_MOVIE_MINI_DB
   );
 
   return {

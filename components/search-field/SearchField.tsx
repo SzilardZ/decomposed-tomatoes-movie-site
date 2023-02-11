@@ -1,5 +1,6 @@
-import { useRouter } from 'next/router';
 import React, { useRef } from 'react';
+import { useRouter } from 'next/router';
+
 import styles from './SearchField.module.css';
 import Button from '../ui/Button';
 
@@ -24,18 +25,20 @@ const SearchField = ({ type }: SearchFieldProps) => {
   };
 
   return (
-    <form onSubmit={submitSearchHandler} className={styles['search-bar']}>
-      {/* <label htmlFor='search-movie'>Search Movie</label> */}
-      <div className={styles.input}>
-        <input
-          type='text'
-          id='search-movie'
-          ref={inputRef}
-          placeholder='type here'
-        />
-        <Button buttonText='Search now' />
-      </div>
-    </form>
+    <div>
+      <form onSubmit={submitSearchHandler} className={styles['search-bar']}>
+        {/* <label htmlFor='search-movie'>Search Movie</label> */}
+        <div className={styles.input}>
+          <input
+            type='text'
+            id='search-movie'
+            ref={inputRef}
+            placeholder='type here'
+          />
+          <Button buttonText='Search now' />
+        </div>
+      </form>
+    </div>
   );
 };
 

@@ -1,4 +1,22 @@
 .footer {
-  height: 20rem;
-  background-color: #000;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 16rem;
+}
+
+.paragraph {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.2rem;
+}
+
+/****************************/
+/* BELOW 450px */
+/****************************/
+@media (max-width: 28.125em) {
+  .footer {
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.8rem;
+  }
 }
