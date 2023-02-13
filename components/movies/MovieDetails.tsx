@@ -59,9 +59,9 @@ const MovieDetails = (props: MovieDetailProps) => {
     <Fragment>
       <Navbar />
       <main className={styles['outer-container']}>
+        <h1 className={styles['movie-title']}>{props.movie.title}</h1>
         <div className={styles['inner-container']}>
           <section className={styles['movie-details']}>
-            <h1 className={styles['movie-title']}>{props.movie.title}</h1>
             <div className={styles['data-container']}>
               <h3 className={styles['movie-year']}>
                 {props.movie.releaseYear}
@@ -73,30 +73,33 @@ const MovieDetails = (props: MovieDetailProps) => {
                   {buttonText}
                 </button>
               </span>
-              <h3 className={styles['movie-rating']}>
-                IMDB Rating: {props.movie.rating}
-              </h3>
-              <h3 className={styles['movie-votes']}>
-                Number of Votes: {props.movie.numVotes}
-              </h3>
+
+              <p>IMDB Rating: {props.movie.rating}</p>
+              <p>Number of Votes: {props.movie.numVotes}</p>
+              <p>Genres: {props.movie.genres}</p>
+              <p>Runtime: {props.movie.runtime} minutes</p>
+            </div>
+            <div className={styles.plot}>
+              <p className={styles['plot-title']}>Plot</p>
+              <p>{props.movie.plot}</p>
             </div>
           </section>
 
-          <section className={styles['movie-img-container']}>
+          <div className={styles['movie-img-container']}>
             <img
               className={styles['movie-img']}
               src={props.movie.imageUrl}
               alt=''
             />
-          </section>
-
-          <section>
-            <div>
-              <h3 className={styles['cast-title']}>Cast</h3>
-              {castContent}
-            </div>
-          </section>
+          </div>
         </div>
+        <section className={styles['cast-container']}>
+          <h3 className={styles['cast-title']}>Cast</h3>
+          <p className={styles['cast-sub-title']}>
+            (in not alphabetical order)
+          </p>
+          <div>{castContent}</div>
+        </section>
       </main>
       <TheEnd />
     </Fragment>

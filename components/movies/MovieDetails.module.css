@@ -1,16 +1,15 @@
 .outer-container {
   max-width: 100%;
   background-color: #080708;
-  padding: 8rem 6.4rem;
+  padding: 8rem 12.8rem;
 }
 
 .inner-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
   justify-content: space-between;
   max-width: 130rem;
   margin: 0 auto;
-  gap: 2.4rem;
+  gap: 4.8rem;
 }
 
 .data-container {
@@ -18,8 +17,11 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
+  justify-content: center;
   row-gap: 3.2rem;
-  margin-bottom: 1.2rem;
+  column-gap: 2.4rem;
+  margin: 6.4rem 0 6.4rem 0;
+  font-size: 3rem;
 }
 
 .movie-details {
@@ -29,19 +31,25 @@
 }
 
 .movie-title {
+  max-width: 130rem;
+  margin: 0 auto 6.4rem auto;
   font-size: 9.8rem;
-  margin-bottom: 3rem;
 }
 
 .movie-year {
   font-size: 3.6rem;
 }
 
-.movie-rating,
-.movie-votes {
-  font-size: 3rem;
+.plot-title {
+  font-size: 3.6rem;
+  color: #63e6be;
+  margin-bottom: 4.8rem;
 }
 
+.plot {
+  font-size: 3rem;
+  margin-top: 4.8rem;
+}
 .movie-img {
   overflow: visible;
   max-width: 55rem;
@@ -63,12 +71,24 @@
   background-color: #63e6be;
 }
 
+.cast-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 15rem;
+}
+
 .cast-title {
-  /* display: inline-block; */
   font-size: 3.6rem;
-  margin: 4.8rem 0 2.4rem 0;
   color: #63e6be;
-  padding: 2.4rem 0 1.2rem 0;
+  margin-bottom: 1.2rem;
+}
+
+.cast-sub-title {
+  font-size: 1.8rem;
+  margin-bottom: 6.4rem;
 }
 
 .role-actor-list {
@@ -96,21 +116,6 @@
 /* BELOW 800px */
 /****************************/
 @media (max-width: 50em) {
-  .data-container {
-    grid-template-columns: 1fr;
-    row-gap: 3.2rem;
-    margin-bottom: 3.2rem;
-  }
-  .movie-title {
-    font-size: 6.4rem;
-    margin-bottom: 3rem;
-  }
-}
-
-/****************************/
-/* BELOW 660px */
-/****************************/
-@media (max-width: 41.25em) {
   .outer-container {
     max-width: 100%;
     padding: 8rem 3.2rem;
@@ -118,16 +123,39 @@
   }
 
   .inner-container {
-    grid-template-columns: 1fr;
     margin: 0 auto;
+    flex-direction: column-reverse;
+  }
+
+  .data-container {
+    grid-template-columns: 1fr;
+    row-gap: 3.2rem;
+    margin-bottom: 3.2rem;
   }
 
   .movie-img-container {
     max-width: 100%;
     justify-self: center;
+    display: flex;
+    justify-content: center;
+    grid-row: 1 / 2;
+    margin: 2.4rem 0 2.4rem 0;
+  }
+
+  .plot-title {
+    margin-bottom: 3.2rem;
+  }
+
+  .cast-container {
+    margin-top: 9.6rem;
   }
 
   .cast-title {
     text-align: center;
+  }
+
+  .movie-title {
+    font-size: 6.4rem;
+    margin-bottom: 3rem;
   }
 }

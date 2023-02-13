@@ -8,8 +8,6 @@ import {
 } from '../../constants/contants';
 import { sendHttpGetRequest } from '../../util/http';
 import { MovieModel } from '../../types/movieTypes';
-import { Results } from '../../types/movieByIdTypes';
-import { RatingResult } from '../../types/movieRatingByIdTypes';
 import MovieDetails from '../../components/movies/MovieDetails';
 import Footer from '../../components/footer/Footer';
 
@@ -29,17 +27,21 @@ const MovieDetailPage = (props: MovieDetailPageProps) => {
 export const getServerSideProps: GetServerSideProps = async context => {
   const movieId = context.params!.movieId;
 
-  const movieData: Results = await sendHttpGetRequest(
-    `https://moviesdatabase.p.rapidapi.com/titles/${movieId}?info=mini_info`,
+  const movieData = await sendHttpGetRequest(
+    `https://moviesdatabase.p.rapidapi.com/titles/${movieId}?info=base_info`,
     API_KEY,
     API_HOST_MOVIE_DB
   );
 
-  const ratingData: RatingResult = await sendHttpGetRequest(
-    `https://moviesdatabase.p.rapidapi.com/titles/${movieId}/ratings`,
-    API_KEY,
-    API_HOST_MOVIE_DB
+  const genres = movieData.genres.genres.map(
+    (item: { text: string; id: string; __typename: string }) => item.text
   );
+
+  const genreString = genres.join(', ');
+
+  const durationInMinutes = movieData.runtime?.seconds
+    ? +movieData.runtime.seconds / 60
+    : 'NA';
 
   const castData = await sendHttpGetRequest(
     `https://moviesminidatabase.p.rapidapi.com/movie/id/${movieId}/cast/`,
@@ -54,8 +56,11 @@ export const getServerSideProps: GetServerSideProps = async context => {
         title: movieData.titleText.text,
         releaseYear: movieData.releaseYear?.year || 'NA',
         imageUrl: movieData.primaryImage.url,
-        rating: ratingData?.averageRating || 'NA',
-        numVotes: ratingData?.numVotes || 'NA',
+        rating: movieData.ratingsSummary?.aggregateRating || 'NA',
+        numVotes: movieData.ratingsSummary?.voteCount || 'NA',
+        genres: genreString || 'NA',
+        runtime: durationInMinutes,
+        plot: movieData.plot.plotText.plainText || 'NA',
         cast: castData?.roles || [],
       },
     },
