@@ -8,8 +8,6 @@ import {
 } from '../../constants/contants';
 import { sendHttpGetRequest } from '../../util/http';
 import { MovieModel } from '../../types/movieTypes';
-import { Results } from '../../types/movieByIdTypes';
-import { RatingResult } from '../../types/movieRatingByIdTypes';
 import MovieDetails from '../../components/movies/MovieDetails';
 import Footer from '../../components/footer/Footer';
 
@@ -41,7 +39,7 @@ export const getServerSideProps: GetServerSideProps = async context => {
 
   const genreString = genres.join(', ');
 
-  const durationInMinutes = movieData.runtime.seconds
+  const durationInMinutes = movieData.runtime?.seconds
     ? +movieData.runtime.seconds / 60
     : 'NA';
 

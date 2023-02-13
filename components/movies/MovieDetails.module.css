@@ -1,12 +1,11 @@
 .outer-container {
   max-width: 100%;
   background-color: #080708;
-  padding: 8rem 6.4rem;
+  padding: 8rem 12.8rem;
 }
 
 .inner-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
   justify-content: space-between;
   max-width: 130rem;
   margin: 0 auto;
@@ -32,8 +31,9 @@
 }
 
 .movie-title {
+  max-width: 130rem;
+  margin: 0 auto 6.4rem auto;
   font-size: 9.8rem;
-  margin-bottom: 6.4rem;
 }
 
 .movie-year {
@@ -116,21 +116,6 @@
 /* BELOW 800px */
 /****************************/
 @media (max-width: 50em) {
-  .data-container {
-    grid-template-columns: 1fr;
-    row-gap: 3.2rem;
-    margin-bottom: 3.2rem;
-  }
-  .movie-title {
-    font-size: 6.4rem;
-    margin-bottom: 3rem;
-  }
-}
-
-/****************************/
-/* BELOW 660px */
-/****************************/
-@media (max-width: 41.25em) {
   .outer-container {
     max-width: 100%;
     padding: 8rem 3.2rem;
@@ -138,8 +123,14 @@
   }
 
   .inner-container {
-    grid-template-columns: 1fr;
     margin: 0 auto;
+    flex-direction: column-reverse;
+  }
+
+  .data-container {
+    grid-template-columns: 1fr;
+    row-gap: 3.2rem;
+    margin-bottom: 3.2rem;
   }
 
   .movie-img-container {
@@ -149,10 +140,6 @@
     justify-content: center;
     grid-row: 1 / 2;
     margin: 2.4rem 0 2.4rem 0;
-  }
-
-  .data-container {
-    margin: 0;
   }
 
   .plot-title {
@@ -165,5 +152,10 @@
 
   .cast-title {
     text-align: center;
+  }
+
+  .movie-title {
+    font-size: 6.4rem;
+    margin-bottom: 3rem;
   }
 }
