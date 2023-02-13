@@ -5,7 +5,9 @@ export interface MovieModel {
   imageUrl: string;
   rating: string;
   numVotes: string;
-  descripiton: string;
+  genres: string;
+  runtime: string;
+  plot: string;
   cast: Role[];
 }
 
