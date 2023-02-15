@@ -8,9 +8,8 @@ const SearchActor = () => {
         <div className={styles['search-actor-container-inner']}>
           <h1 className={styles['title']}>Search for an Actor</h1>
           <p className={styles['site-details']}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque quod,
-            maiores impedit optio itaque, odit tempore consequuntur facere
-            soluta necessitatibus ab saepe?
+            Search for your favorite actors or film makers, our movie site has a
+            database of 11 million actors / crew and cast members.
           </p>
           <div className={styles['search-field']}>
             <SearchField type='actor' />

@@ -39,9 +39,9 @@ export const getStaticProps: GetStaticProps = async () => {
     'tt11214590',
     'tt1160419',
     'tt4975722',
-    'tt8721424',
-    'tt10366460',
     'tt12631758',
+    'tt10366460',
+    'tt8721424',
     'tt2582802',
   ];
 
