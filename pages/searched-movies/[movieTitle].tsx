@@ -14,15 +14,9 @@ interface SearchedMovieProps {
 }
 
 const SearchedMovie = ({ moviesData, searchedMovie }: SearchedMovieProps) => {
-  const [movies, setMovies] = useState<SimpleMovieModel[]>([]);
-
-  useEffect(() => {
-    setMovies(moviesData);
-  }, [moviesData]);
-
   return (
     <Fragment>
-      <MovieListSection movies={movies} searchedMovie={searchedMovie} />
+      <MovieListSection movies={moviesData} searchedMovie={searchedMovie} />
       <Footer />
     </Fragment>
   );
