@@ -1,3 +1,11 @@
 .swiper-container {
   margin-bottom: 8rem;
 }
+
+/* max-width: 576px */
+@media screen and (max-width: 36em) {
+  .swiper-container {
+    width: 40rem;
+    margin: 0 auto 8rem auto;
+  }
+}

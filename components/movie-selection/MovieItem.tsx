@@ -1,4 +1,6 @@
 import { useRouter } from 'next/router';
+import Image from 'next/image';
+
 import styles from './MovieItem.module.css';
 
 interface MovieItemProps {
@@ -15,11 +17,9 @@ const MovieItem = ({ id, image }: MovieItemProps) => {
 
   return (
     <li>
-      <img
-        src={image}
-        className={styles['selected-image']}
-        onClick={selectMovieHandler}
-      />
+      <div className={styles['movie-image']}>
+        <Image src={image} onClick={selectMovieHandler} layout='fill' />
+      </div>
     </li>
   );
 };

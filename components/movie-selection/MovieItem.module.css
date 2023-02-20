@@ -1,4 +1,6 @@
-.selected-image {
-  max-height: 50rem;
+.movie-image {
+  /* max-height: 50rem; */
   cursor: pointer;
+  height: 50rem;
+  /* width: 25rem; */
 }

@@ -20,8 +20,30 @@ const MovieSelectionList = ({ selectedMovies }: MovieSelectionListProps) => {
   return (
     <div className={styles['swiper-container']}>
       <Swiper
-        spaceBetween={1}
-        slidesPerView={4}
+        breakpoints={{
+          // 400: {
+          //   // width: 400,
+          //   slidesPerView: 1,
+          // },
+          576: {
+            // width: 576,
+            slidesPerView: 2,
+          },
+          768: {
+            // width: 768,
+            slidesPerView: 3,
+          },
+          1200: {
+            // width: 1200,
+            slidesPerView: 4,
+          },
+          1500: {
+            // width: 1400,
+            slidesPerView: 5,
+          },
+        }}
+        spaceBetween={6}
+        // slidesPerView={4}
         autoplay={{
           delay: 3000,
           disableOnInteraction: false,
