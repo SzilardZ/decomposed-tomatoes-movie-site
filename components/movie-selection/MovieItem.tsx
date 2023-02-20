@@ -18,7 +18,13 @@ const MovieItem = ({ id, image }: MovieItemProps) => {
   return (
     <li>
       <div className={styles['movie-image']}>
-        <Image src={image} onClick={selectMovieHandler} layout='fill' />
+        <Image
+          src={image}
+          onClick={selectMovieHandler}
+          width={400}
+          height={600}
+          alt='movie poster'
+        />
       </div>
     </li>
   );

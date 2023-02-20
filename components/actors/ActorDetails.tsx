@@ -22,7 +22,11 @@ const ActorDetails = ({ actor }: ActorDetailsProps) => {
             </p>
           </div>
           <div>
-            <img src={actor.imgUrl} alt='' className={styles['actor-img']} />
+            <img
+              src={actor.imgUrl}
+              alt='image of the actor'
+              className={styles['actor-img']}
+            />
           </div>
         </div>
         <div className={styles['section-container']}>
