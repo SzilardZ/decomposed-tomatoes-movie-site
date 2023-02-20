@@ -5,11 +5,12 @@
 }
 
 .inner-container {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   justify-content: space-between;
   max-width: 130rem;
   margin: 0 auto;
-  gap: 4.8rem;
+  column-gap: 6.4rem;
 }
 
 .data-container {
@@ -52,7 +53,6 @@
 }
 .movie-img {
   overflow: visible;
-  max-width: 55rem;
 }
 
 .btn-add-to-fav {
@@ -124,7 +124,7 @@
 
   .inner-container {
     margin: 0 auto;
-    flex-direction: column-reverse;
+    grid-template-columns: 1fr;
   }
 
   .data-container {
