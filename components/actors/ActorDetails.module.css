@@ -8,6 +8,7 @@
   padding: 8rem 6.4rem;
   display: grid;
   grid-template-columns: 3fr 1fr;
+  align-items: center;
   gap: 8rem;
 }
 
@@ -23,7 +24,7 @@
 .actor-bio {
   font-weight: 500;
   font-size: 3rem;
-  margin-top: 3.2rem;
+  margin: 3.2rem 0 4.8rem 0;
 }
 
 .secondary-title {
@@ -40,9 +41,6 @@
 
 .bio-container {
   width: 100%;
-  /* display: flex; */
-  /* justify-content: center; */
-  /* align-items: center; */
   background-color: #f8f9fa;
   color: #212529;
   margin: 4.8 auto 8rem auto;
@@ -55,6 +53,14 @@
   font-size: 2rem;
   line-height: 1.3;
   padding: 0 6.4rem;
+}
+
+.actor-img-container {
+  margin-top: 4.8rem;
+}
+
+.actor-img {
+  border-radius: 100%;
 }
 
 /****************************/
@@ -71,13 +77,12 @@
 /****************************/
 @media (max-width: 41.875em) {
   .actor-details-inner-container {
-    margin: 0 auto 3.2rem auto;
-    padding: 4.8rem 3.2rem;
-    grid-template-columns: 1fr;
+    margin: 0 auto 6.4rem auto;
+    padding: 4.8rem 3.2rem 0 3.2rem;
+    display: flex;
+    flex-direction: column-reverse;
   }
-  .actor-img {
-    width: 100%;
-  }
+
   .secondary-title {
     text-align: center;
   }
@@ -86,6 +91,6 @@
     padding: 0 2.4rem;
   }
   .actor-name {
-    margin: 4.8rem 0 4.8rem 0;
+    margin: 0 0 4.8rem 0;
   }
 }

@@ -4,6 +4,7 @@ import styles from './ActorDetails.module.css';
 import { ActorDetailedType } from '../../types/actorTypes';
 import Navbar from '../navbar/Navbar';
 import MovieList from '../movies/MovieList';
+import Image from 'next/image';
 
 interface ActorDetailsProps {
   actor: ActorDetailedType;
@@ -21,11 +22,13 @@ const ActorDetails = ({ actor }: ActorDetailsProps) => {
               {actor.bio} {actor.bio !== null ? 'full bio down ⬇' : ''}
             </p>
           </div>
-          <div>
-            <img
+          <div className={styles['actor-img-container']}>
+            <Image
               src={actor.imgUrl}
               alt='image of the actor'
               className={styles['actor-img']}
+              height={500}
+              width={333}
             />
           </div>
         </div>
