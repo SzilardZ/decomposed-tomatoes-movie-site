@@ -8,7 +8,7 @@ const Contact = () => {
       <Navbar />
       <div className={styles['text-container']}>
         <p className={styles.text}>
-          Never, never, contact us, okay? Not if there's a fire, not even if you
+          {`Never, never, contact us, okay? Not if there's a fire, not even if you
           hear the sound of a thud from our server and one week later there's a
           smell coming from there that can only be a decaying human body and you
           have to hold a hanky to your face because the stench is so thick that
@@ -18,7 +18,7 @@ const Contact = () => {
           queer president of the United States and he's going to have you down
           to Camp David, and you want someone to share the moment with. Even
           then, don't contact us. Not on this website. Not for any reason. Do
-          you get me, sweetheart?
+          you get me, sweetheart?`}
         </p>
         <div className={styles['go-back']}>
           <Link href='/'>Go to Homepage</Link>
