@@ -7,6 +7,7 @@ import Navbar from '../navbar/Navbar';
 import styles from './MovieDetails.module.css';
 import RoleActor from './RoleActor';
 import TheEnd from '../footer/TheEnd';
+import Image from 'next/image';
 
 interface MovieDetailProps {
   movie: MovieModel;
@@ -59,9 +60,9 @@ const MovieDetails = (props: MovieDetailProps) => {
     <Fragment>
       <Navbar />
       <main className={styles['outer-container']}>
-        <h1 className={styles['movie-title']}>{props.movie.title}</h1>
         <div className={styles['inner-container']}>
           <section className={styles['movie-details']}>
+            <h1 className={styles['movie-title']}>{props.movie.title}</h1>
             <div className={styles['data-container']}>
               <h3 className={styles['movie-year']}>
                 {props.movie.releaseYear}
@@ -86,10 +87,12 @@ const MovieDetails = (props: MovieDetailProps) => {
           </section>
 
           <div className={styles['movie-img-container']}>
-            <img
+            <Image
               className={styles['movie-img']}
               src={props.movie.imageUrl}
-              alt=''
+              alt='movie poster'
+              height={700}
+              width={466}
             />
           </div>
         </div>

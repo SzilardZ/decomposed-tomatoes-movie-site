@@ -1,16 +1,10 @@
-.selected-movie-container {
-  display: flex;
-  gap: 2.4rem;
+.swiper-container {
   margin-bottom: 8rem;
-  overflow: hidden;
-  animation: slide 40s linear infinite;
 }
 
-@keyframes slide {
-  0% {
-    transform: translate3d(0, 0, 0);
-  }
-  100% {
-    transform: translate3d(-1500px, 0, 0); /* The image width */
+/* max-width: 576px */
+@media screen and (max-width: 36em) {
+  .swiper-container {
+    margin: 0 2.4rem 8rem 2.4rem;
   }
 }

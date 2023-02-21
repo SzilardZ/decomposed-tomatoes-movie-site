@@ -33,16 +33,16 @@ const Home: NextPage<{ selectedMovies: SelectedMovieModel[] }> = ({
 
 export const getStaticProps: GetStaticProps = async () => {
   const movieIds = [
+    'tt8721424',
     'tt3783958',
-    'tt1727824',
-    'tt2278388',
+    'tt6966692',
+    'tt6155172',
     'tt11214590',
     'tt1160419',
     'tt4975722',
-    'tt8721424',
     'tt10366460',
-    'tt12631758',
     'tt2582802',
+    'tt2278388',
   ];
 
   const url = urlBuilderForMultipleMovies(movieIds);

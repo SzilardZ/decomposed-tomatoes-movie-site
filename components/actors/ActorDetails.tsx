@@ -4,11 +4,31 @@ import styles from './ActorDetails.module.css';
 import { ActorDetailedType } from '../../types/actorTypes';
 import Navbar from '../navbar/Navbar';
 import MovieList from '../movies/MovieList';
+import Image from 'next/image';
 
 interface ActorDetailsProps {
   actor: ActorDetailedType;
 }
 const ActorDetails = ({ actor }: ActorDetailsProps) => {
+  // handling if there is no image of the actor
+  let actorImage;
+
+  if (actor.imgUrl === null) {
+    actorImage = (
+      <p className={styles['no-available-img']}>No available image</p>
+    );
+  } else {
+    actorImage = (
+      <Image
+        src={actor.imgUrl}
+        alt='image of the actor'
+        className={styles['actor-img']}
+        height={500}
+        width={333}
+      />
+    );
+  }
+
   return (
     <Fragment>
       <Navbar />
@@ -21,9 +41,7 @@ const ActorDetails = ({ actor }: ActorDetailsProps) => {
               {actor.bio} {actor.bio !== null ? 'full bio down ⬇' : ''}
             </p>
           </div>
-          <div>
-            <img src={actor.imgUrl} alt='' className={styles['actor-img']} />
-          </div>
+          <div className={styles['actor-img-container']}>{actorImage}</div>
         </div>
         <div className={styles['section-container']}>
           <h3 className={styles['secondary-title']}>Movies Known For</h3>

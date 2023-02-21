@@ -1,4 +1,5 @@
 import { useRouter } from 'next/router';
+import Image from 'next/image';
 
 import styles from './Movie.module.css';
 
@@ -16,7 +17,13 @@ const Movie = ({ id, imageUrl }: MovieProps) => {
 
   return (
     <li className={styles.movie} onClick={selectMovieHandler}>
-      <img className={styles['movie-img']} src={imageUrl} alt='' />
+      <Image
+        className={styles['movie-img']}
+        src={imageUrl}
+        alt='movie poster'
+        width={266}
+        height={400}
+      />
     </li>
   );
 };

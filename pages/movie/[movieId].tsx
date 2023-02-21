@@ -33,11 +33,16 @@ export const getServerSideProps: GetServerSideProps = async context => {
     API_HOST_MOVIE_DB
   );
 
-  const genres = movieData.genres.genres.map(
-    (item: { text: string; id: string; __typename: string }) => item.text
-  );
+  let genres;
 
-  const genreString = genres.join(', ');
+  if (movieData.genres) {
+    const genresArr = movieData.genres.genres.map(
+      (item: { text: string; id: string; __typename: string }) => item.text
+    );
+    genres = genresArr.join(', ');
+  } else {
+    genres = 'NA';
+  }
 
   const durationInMinutes = movieData.runtime?.seconds
     ? +movieData.runtime.seconds / 60
@@ -58,9 +63,9 @@ export const getServerSideProps: GetServerSideProps = async context => {
         imageUrl: movieData.primaryImage.url,
         rating: movieData.ratingsSummary?.aggregateRating || 'NA',
         numVotes: movieData.ratingsSummary?.voteCount || 'NA',
-        genres: genreString || 'NA',
+        genres: genres,
         runtime: durationInMinutes,
-        plot: movieData.plot.plotText.plainText || 'NA',
+        plot: movieData.plot?.plotText.plainText || 'NA',
         cast: castData?.roles || [],
       },
     },
