@@ -1,7 +1,5 @@
 .text {
-  font-family: 'Inter', sans-serif;
-  font-weight: 900;
-  font-size: 5.2rem;
+  font-size: 6.2rem;
   display: flex;
   justify-content: center;
   padding: 15rem 0;
