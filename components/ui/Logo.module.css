@@ -11,9 +11,9 @@
 }
 
 /****************************/
-/* BELOW 1010px */
+/* BELOW 1060px */
 /****************************/
-@media (max-width: 63.125em) {
+@media (max-width: 66.25em) {
   .logo {
     font-size: 3.6rem;
   }

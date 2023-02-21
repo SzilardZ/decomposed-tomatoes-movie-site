@@ -6,7 +6,7 @@ const Logo = () => {
   return (
     <Link href='/'>
       <div className={styles.logo}>
-        decompos<span>e</span>d tomato.
+        decompos<span>e</span>d tomatoes.
       </div>
     </Link>
   );
