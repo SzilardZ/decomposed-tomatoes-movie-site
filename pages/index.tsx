@@ -18,7 +18,7 @@ const Home: NextPage<{ selectedMovies: SelectedMovieModel[] }> = ({
   return (
     <div>
       <Head>
-        <title>Decomposed Tomato</title>
+        <title>Decomposed Tomatoes</title>
         <meta name='description' content='A too good movie app' />
         <link rel='icon' href='/favicon.ico' />
       </Head>

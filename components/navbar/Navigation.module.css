@@ -52,14 +52,23 @@
 }
 
 /****************************/
-/* BELOW 1100px */
+/* BELOW 1256px */
 /****************************/
-@media (max-width: 68.75em) {
+@media (max-width: 78.5em) {
   .navigation {
     padding: 1.2rem 2.4rem;
   }
   .navbar-links {
     gap: 1.2rem;
+  }
+}
+
+/****************************/
+/* BELOW 970px */
+/****************************/
+@media (max-width: 60.625em) {
+  .menu__link {
+    margin-left: 1.2rem;
   }
 }
 
