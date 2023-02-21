@@ -7,7 +7,7 @@ const OurFavs = () => {
   return (
     <Fragment>
       <Navbar />
-      <h2 className={styles.text}>Sorry. We don't like movies.</h2>
+      <h2 className={styles.text}>{`Sorry. We don't like movies.`}</h2>
     </Fragment>
   );
 };
