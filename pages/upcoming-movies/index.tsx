@@ -11,13 +11,15 @@ interface UpcomingMoviesProps {
   upcomingMovies: UpcomingMovieModel[];
 }
 
-const UpcomingMovies = (props: UpcomingMoviesProps) => {
+const UpcomingMovies = ({ upcomingMovies }: UpcomingMoviesProps) => {
   return (
     <Fragment>
-      <MovieListSection
-        movies={props.upcomingMovies}
-        searchedMovie='Upcoming Movies'
-      />
+      {upcomingMovies && (
+        <MovieListSection
+          movies={upcomingMovies}
+          searchedMovie='Upcoming Movies'
+        />
+      )}
       <Footer />
     </Fragment>
   );

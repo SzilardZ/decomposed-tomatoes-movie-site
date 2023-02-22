@@ -22,7 +22,7 @@ const Home: NextPage<{ selectedMovies: SelectedMovieModel[] }> = ({
       </Head>
       <Header />
       <Opener />
-      <MovieSelectionList selectedMovies={selectedMovies} />
+      {selectedMovies && <MovieSelectionList selectedMovies={selectedMovies} />}
       <SearchActor />
       <Footer />
     </div>
