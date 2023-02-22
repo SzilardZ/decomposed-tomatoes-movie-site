@@ -1,5 +1,6 @@
 import { urlBuilderForMultipleMovies } from '../util/urlBuilder';
 import { API_KEY, API_HOST_MOVIE_DB } from '../constants/contants';
+import { ResultElement } from '../types/homePageMoviesTypes';
 
 export const sendHttpGetRequest = async (
   URL: string,
@@ -41,7 +42,15 @@ export const getSelectedMovies = async () => {
     },
   });
   const { results } = await response.json();
-  return results;
+
+  const seletedMovies = results.map((movie: ResultElement) => {
+    return {
+      movieId: movie.id,
+      movieImage: movie.primaryImage.url,
+    };
+  });
+
+  return seletedMovies;
 };
 
 export const getUpcomingMovies = async () => {
@@ -56,5 +65,18 @@ export const getUpcomingMovies = async () => {
     }
   );
   const { results } = await response.json();
-  return results;
+
+  // filter out the movies which don't have image
+  const filteredUpcoming = results.filter(
+    (movie: ResultElement) => movie.primaryImage !== null
+  );
+
+  const upComingMovies = filteredUpcoming.map((movie: ResultElement) => ({
+    id: movie.id,
+    title: movie.titleText.text,
+    imageUrl: movie.primaryImage!.url,
+    releaseYear: movie.releaseYear?.year || 'NA',
+  }));
+
+  return upComingMovies;
 };

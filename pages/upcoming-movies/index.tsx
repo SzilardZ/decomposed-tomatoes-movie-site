@@ -24,21 +24,11 @@ const UpcomingMovies = (props: UpcomingMoviesProps) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const data = await getUpcomingMovies();
-
-  // filter out the movies which don't have image
-  const filteredMovies = data.filter(
-    (movie: ResultElement) => movie.primaryImage !== null
-  );
+  const upcomingMovies = await getUpcomingMovies();
 
   return {
     props: {
-      upcomingMovies: filteredMovies.map((movie: ResultElement) => ({
-        id: movie.id,
-        title: movie.titleText.text,
-        imageUrl: movie.primaryImage!.url,
-        releaseYear: movie.releaseYear?.year || 'NA',
-      })),
+      upcomingMovies: upcomingMovies,
     },
   };
 };
