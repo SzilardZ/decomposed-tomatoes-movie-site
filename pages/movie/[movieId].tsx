@@ -1,4 +1,4 @@
-import { GetServerSideProps } from 'next';
+import { GetServerSideProps, GetServerSidePropsContext } from 'next';
 import { Fragment } from 'react';
 
 import {
@@ -24,7 +24,9 @@ const MovieDetailPage = (props: MovieDetailPageProps) => {
   );
 };
 
-export const getServerSideProps: GetServerSideProps = async context => {
+export const getServerSideProps: GetServerSideProps = async (
+  context: GetServerSidePropsContext
+) => {
   const movieId = context.params!.movieId;
 
   const movieData = await sendHttpGetRequest(

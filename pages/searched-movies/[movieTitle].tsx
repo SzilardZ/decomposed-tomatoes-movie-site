@@ -1,4 +1,4 @@
-import { GetServerSideProps } from 'next';
+import { GetServerSideProps, GetServerSidePropsContext } from 'next';
 import { Fragment, useEffect, useState } from 'react';
 
 import { API_HOST_MOVIE_DB, API_KEY } from '../../constants/contants';
@@ -38,7 +38,9 @@ const getMovieHttpRequest = async (URL: string) => {
   return movies;
 };
 
-export const getServerSideProps: GetServerSideProps = async context => {
+export const getServerSideProps: GetServerSideProps = async (
+  context: GetServerSidePropsContext
+) => {
   const movieTitle = context.params!.movieTitle;
 
   const movies1 = await getMovieHttpRequest(
