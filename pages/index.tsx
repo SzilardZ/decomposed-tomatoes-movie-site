@@ -30,18 +30,11 @@ const Home: NextPage<{ selectedMovies: SelectedMovieModel[] }> = ({
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const data = await getSelectedMovies();
-
-  const seletedMovies = data.map((movie: ResultElement) => {
-    return {
-      movieId: movie.id,
-      movieImage: movie.primaryImage.url,
-    };
-  });
+  const selectedMovies = await getSelectedMovies();
 
   return {
     props: {
-      selectedMovies: seletedMovies,
+      selectedMovies: selectedMovies,
     },
   };
 };
