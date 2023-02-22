@@ -8,7 +8,7 @@ import {
 } from '../../constants/contants';
 import ActorDetails from '../../components/actors/ActorDetails';
 import Footer from '../../components/footer/Footer';
-import { sendHttpGetRequest } from '../../util/http';
+import { sendHttpGetRequest } from '../../lib/httpRequests';
 import { ResultElement } from '../../types/actorByIdTypes';
 import { ActorDetailedType } from '../../types/actorTypes';
 import { Results } from '../../types/movieByIdTypes';
