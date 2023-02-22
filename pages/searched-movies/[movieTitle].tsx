@@ -1,8 +1,8 @@
-import { GetServerSideProps } from 'next';
+import { GetServerSideProps, GetServerSidePropsContext } from 'next';
 import { Fragment, useEffect, useState } from 'react';
 
 import { API_HOST_MOVIE_DB, API_KEY } from '../../constants/contants';
-import { sendHttpGetRequest } from '../../util/http';
+import { sendHttpGetRequest } from '../../lib/httpRequests';
 import { ResultElement } from '../../types/movieByTitleTypes';
 import { SimpleMovieModel } from '../../types/movieTypes';
 import MovieListSection from '../../components/movies/MovieListSection';
@@ -38,7 +38,9 @@ const getMovieHttpRequest = async (URL: string) => {
   return movies;
 };
 
-export const getServerSideProps: GetServerSideProps = async context => {
+export const getServerSideProps: GetServerSideProps = async (
+  context: GetServerSidePropsContext
+) => {
   const movieTitle = context.params!.movieTitle;
 
   const movies1 = await getMovieHttpRequest(

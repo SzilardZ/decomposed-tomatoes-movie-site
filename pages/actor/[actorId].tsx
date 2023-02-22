@@ -1,5 +1,5 @@
 import { Fragment } from 'react';
-import { GetServerSideProps } from 'next';
+import { GetServerSideProps, GetServerSidePropsContext } from 'next';
 
 import {
   API_HOST_MOVIE_DB,
@@ -8,7 +8,7 @@ import {
 } from '../../constants/contants';
 import ActorDetails from '../../components/actors/ActorDetails';
 import Footer from '../../components/footer/Footer';
-import { sendHttpGetRequest } from '../../util/http';
+import { sendHttpGetRequest } from '../../lib/httpRequests';
 import { ResultElement } from '../../types/actorByIdTypes';
 import { ActorDetailedType } from '../../types/actorTypes';
 import { Results } from '../../types/movieByIdTypes';
@@ -27,7 +27,9 @@ const ActorPage = (props: ActorPageProps) => {
   );
 };
 
-export const getServerSideProps: GetServerSideProps = async context => {
+export const getServerSideProps: GetServerSideProps = async (
+  context: GetServerSidePropsContext
+) => {
   const actorId = context.params!.actorId;
 
   const { imdb_id, name, birth_date, partial_bio, image_url } =

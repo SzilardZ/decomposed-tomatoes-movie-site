@@ -1,8 +1,7 @@
 import { GetStaticProps } from 'next';
 import { Fragment } from 'react';
 
-import { API_HOST_MOVIE_DB, API_KEY } from '../../constants/contants';
-import { sendHttpGetRequest } from '../../util/http';
+import { getUpcomingMovies } from '../../lib/httpRequests';
 import { ResultElement } from '../../types/upcomingMovieTypes';
 import { UpcomingMovieModel } from '../../types/movieTypes';
 import MovieListSection from '../../components/movies/MovieListSection';
@@ -25,11 +24,7 @@ const UpcomingMovies = (props: UpcomingMoviesProps) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const data = await sendHttpGetRequest(
-    'https://moviesdatabase.p.rapidapi.com/titles/x/upcoming',
-    API_KEY,
-    API_HOST_MOVIE_DB
-  );
+  const data = await getUpcomingMovies();
 
   // filter out the movies which don't have image
   const filteredMovies = data.filter(

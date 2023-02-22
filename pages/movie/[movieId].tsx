@@ -1,4 +1,4 @@
-import { GetServerSideProps } from 'next';
+import { GetServerSideProps, GetServerSidePropsContext } from 'next';
 import { Fragment } from 'react';
 
 import {
@@ -6,7 +6,7 @@ import {
   API_HOST_MOVIE_MINI_DB,
   API_KEY,
 } from '../../constants/contants';
-import { sendHttpGetRequest } from '../../util/http';
+import { sendHttpGetRequest } from '../../lib/httpRequests';
 import { MovieModel } from '../../types/movieTypes';
 import MovieDetails from '../../components/movies/MovieDetails';
 import Footer from '../../components/footer/Footer';
@@ -24,7 +24,9 @@ const MovieDetailPage = (props: MovieDetailPageProps) => {
   );
 };
 
-export const getServerSideProps: GetServerSideProps = async context => {
+export const getServerSideProps: GetServerSideProps = async (
+  context: GetServerSidePropsContext
+) => {
   const movieId = context.params!.movieId;
 
   const movieData = await sendHttpGetRequest(

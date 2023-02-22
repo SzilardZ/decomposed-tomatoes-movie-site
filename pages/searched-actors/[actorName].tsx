@@ -1,7 +1,7 @@
-import { GetServerSideProps } from 'next';
+import { GetServerSideProps, GetServerSidePropsContext } from 'next';
 
 import { API_HOST_MOVIE_MINI_DB, API_KEY } from '../../constants/contants';
-import { sendHttpGetRequest } from '../../util/http';
+import { sendHttpGetRequest } from '../../lib/httpRequests';
 import { ActorElement } from '../../types/actorByIdTypes';
 import { ActorType } from '../../types/actorTypes';
 import ActorList from '../../components/actors/ActorList';
@@ -14,7 +14,9 @@ const SearchedActor = (props: SearchedActorProps) => {
   return <ActorList actors={props.actors} />;
 };
 
-export const getServerSideProps: GetServerSideProps = async context => {
+export const getServerSideProps: GetServerSideProps = async (
+  context: GetServerSidePropsContext
+) => {
   const actorName = context.params!.actorName;
 
   const actorData = await sendHttpGetRequest(
