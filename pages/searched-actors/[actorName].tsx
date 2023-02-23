@@ -1,6 +1,6 @@
 import { GetServerSideProps, GetServerSidePropsContext } from 'next';
 
-import { API_HOST_MOVIE_MINI_DB, API_KEY } from '../../constants/contants';
+import { API_HOST_MOVIE_MINI_DB, API_KEY } from '../../util/constants';
 import { sendHttpGetRequest } from '../../lib/httpRequests';
 import { ActorElement } from '../../types/actorByIdTypes';
 import { ActorType } from '../../types/actorTypes';

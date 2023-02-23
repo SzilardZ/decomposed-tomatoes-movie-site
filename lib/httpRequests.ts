@@ -1,5 +1,5 @@
 import { urlBuilderForMultipleMovies } from '../util/urlBuilder';
-import { API_KEY, API_HOST_MOVIE_DB } from '../constants/contants';
+import { API_KEY, API_HOST_MOVIE_DB } from '../util/constants';
 import { ResultElement } from '../types/homePageMoviesTypes';
 
 export const sendHttpGetRequest = async (

@@ -5,7 +5,7 @@ import {
   API_HOST_MOVIE_DB,
   API_HOST_MOVIE_MINI_DB,
   API_KEY,
-} from '../../constants/contants';
+} from '../../util/constants';
 import { sendHttpGetRequest } from '../../lib/httpRequests';
 import { MovieModel } from '../../types/movieTypes';
 import MovieDetails from '../../components/movies/MovieDetails';
