@@ -1,7 +1,7 @@
 import { GetServerSideProps, GetServerSidePropsContext } from 'next';
 import { Fragment, useEffect, useState } from 'react';
 
-import { API_HOST_MOVIE_DB, API_KEY } from '../../constants/contants';
+import { API_HOST_MOVIE_DB, API_KEY } from '../../util/constants';
 import { sendHttpGetRequest } from '../../lib/httpRequests';
 import { ResultElement } from '../../types/movieByTitleTypes';
 import { SimpleMovieModel } from '../../types/movieTypes';
