@@ -29,7 +29,7 @@ const SearchFieldActor = ({ onSearchActor }: SearchFieldActorProps) => {
           ref={inputRef}
           placeholder='actor name'
         />
-        <Button buttonText='Search now' />
+        <Button buttonText='Search' />
       </div>
     </form>
   );

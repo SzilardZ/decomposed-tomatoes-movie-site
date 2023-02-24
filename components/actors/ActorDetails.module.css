@@ -39,6 +39,12 @@
   margin: 0 auto;
 }
 
+.no-movies {
+  font-size: 2.4rem;
+  margin-top: 3.2rem;
+  padding: 0 6.4rem 9.6rem 6.4rem;
+}
+
 .bio-container {
   width: 100%;
   background-color: #f8f9fa;
