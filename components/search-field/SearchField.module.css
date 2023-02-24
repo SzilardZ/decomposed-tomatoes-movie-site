@@ -25,5 +25,6 @@
   }
   .input input {
     margin-right: 0.1rem;
+    width: 20rem;
   }
 }
