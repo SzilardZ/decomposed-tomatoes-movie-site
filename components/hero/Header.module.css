@@ -87,7 +87,7 @@
   }
   .header-container {
     width: 55rem;
-    transform: translate(-25%, 20%);
+    transform: translate(-25%, 10%);
   }
   .dark-overlay {
     height: 800px;
