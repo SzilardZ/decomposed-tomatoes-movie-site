@@ -10,7 +10,7 @@ interface ActorDetailsProps {
   actor: ActorDetailedType;
 }
 const ActorDetails = ({ actor }: ActorDetailsProps) => {
-  // handling if there is no image of the actor
+  // handling if there is no IMAGE of the actor
   let actorImage;
 
   if (actor.imgUrl === null) {
@@ -26,6 +26,19 @@ const ActorDetails = ({ actor }: ActorDetailsProps) => {
         height={500}
         width={333}
       />
+    );
+  }
+
+  // handling if there is no MOVIES of the actor
+  let moviesKnowFor;
+
+  if (actor.movies) {
+    moviesKnowFor = <MovieList movies={actor.movies} />;
+  } else {
+    moviesKnowFor = (
+      <div className={styles['no-movies']}>
+        <p>There are no movies in our database for this actor.</p>
+      </div>
     );
   }
 
@@ -45,7 +58,7 @@ const ActorDetails = ({ actor }: ActorDetailsProps) => {
         </div>
         <div className={styles['section-container']}>
           <h3 className={styles['secondary-title']}>Movies Known For</h3>
-          <MovieList movies={actor.movies} />
+          {moviesKnowFor}
         </div>
       </div>
       <div>

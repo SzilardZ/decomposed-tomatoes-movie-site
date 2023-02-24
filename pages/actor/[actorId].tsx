@@ -51,20 +51,27 @@ export const getServerSideProps: GetServerSideProps = async (
     API_HOST_MOVIE_MINI_DB
   );
 
-  const actorMovieIdArr = moviesKnownFor.flatMap(
-    (movie: ResultElement[]) => movie[0].imdb_id
-  );
+  let movies;
 
-  const url = urlBuilderForMultipleMovies(actorMovieIdArr);
-
-  const moviesData = await sendHttpGetRequest(url, API_KEY, API_HOST_MOVIE_DB);
-
-  const movies = await moviesData.map((movie: Results) => {
-    return {
-      id: movie.id,
-      imageUrl: movie.primaryImage.url,
-    };
-  });
+  if (moviesKnownFor.length === 0) {
+    movies = null;
+  } else {
+    const actorMovieIdArr = moviesKnownFor.flatMap(
+      (movie: ResultElement[]) => movie[0].imdb_id
+    );
+    const url = urlBuilderForMultipleMovies(actorMovieIdArr);
+    const moviesData = await sendHttpGetRequest(
+      url,
+      API_KEY,
+      API_HOST_MOVIE_DB
+    );
+    movies = await moviesData.map((movie: Results) => {
+      return {
+        id: movie.id,
+        imageUrl: movie.primaryImage.url,
+      };
+    });
+  }
 
   const actor = {
     id: imdb_id,
