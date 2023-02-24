@@ -4,8 +4,8 @@
 
 .actor-details-inner-container {
   max-width: 130rem;
-  margin: 0 auto 8rem auto;
-  padding: 8rem 6.4rem;
+  margin: 0 auto 2.4rem auto;
+  padding: 6.4rem;
   display: grid;
   grid-template-columns: 3fr 1fr;
   align-items: center;
@@ -43,7 +43,7 @@
   width: 100%;
   background-color: #f8f9fa;
   color: #212529;
-  margin: 4.8 auto 8rem auto;
+  margin: 4.8 auto 6.4rem auto;
   padding: 8rem 0;
 }
 
@@ -72,7 +72,7 @@
 /****************************/
 @media (max-width: 63.75em) {
   .actor-name {
-    font-size: 8rem;
+    font-size: 7.4rem;
   }
 }
 
@@ -81,20 +81,27 @@
 /****************************/
 @media (max-width: 41.875em) {
   .actor-details-inner-container {
-    margin: 0 auto 6.4rem auto;
+    margin: 0 auto 3.2rem auto;
     padding: 4.8rem 3.2rem 0 3.2rem;
     display: flex;
     flex-direction: column-reverse;
+    gap: 6.4rem;
   }
 
   .secondary-title {
     text-align: center;
+    margin-bottom: 6.4rem;
   }
   .bio-full {
     margin: 0 auto 3.2rem auto;
     padding: 0 2.4rem;
   }
   .actor-name {
-    margin: 0 0 4.8rem 0;
+    font-size: 5.2rem;
+    margin: 0 0 2.4rem 0;
+  }
+  .actor-img-container {
+    max-width: 75%;
+    margin: 0;
   }
 }
