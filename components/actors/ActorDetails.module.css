@@ -40,9 +40,9 @@
 }
 
 .no-movies {
-  font-size: 3rem;
-  margin: 3.2rem 0 4.8rem 0;
-  padding: 0 6.4rem 3.2rem 6.4rem;
+  font-size: 2.4rem;
+  margin-top: 3.2rem;
+  padding: 0 6.4rem 9.6rem 6.4rem;
 }
 
 .bio-container {
