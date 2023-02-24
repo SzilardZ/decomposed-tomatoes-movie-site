@@ -16,8 +16,8 @@ FONT SIZE SYSTEM (px)
 
 html,
 body {
-  /* font-family: 'Inter', sans-serif; */
   font-family: 'Bebas Neue', sans-serif;
+  background-color: #000;
 }
 
 html {
@@ -41,9 +41,6 @@ ul {
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
-  }
-  body {
-    background-color: #000;
   }
 }
 
