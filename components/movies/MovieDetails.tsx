@@ -96,11 +96,14 @@ const MovieDetails = (props: MovieDetailProps) => {
             />
           </div>
         </div>
+        <div className={styles.instructions}>
+          <p>You can click on the name of the creators/actors ⬇</p>
+        </div>
         <section className={styles['cast-container']}>
           <h3 className={styles['cast-title']}>Cast</h3>
-          <p className={styles['cast-sub-title']}>
-            (in not alphabetical order)
-          </p>
+          <div className={styles['cast-sub-title']}>
+            <p>(in not alphabetical order)</p>
+          </div>
           <div>{castContent}</div>
         </section>
       </main>
