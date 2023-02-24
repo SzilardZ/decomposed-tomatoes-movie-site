@@ -35,7 +35,7 @@ const SearchField = ({ type }: SearchFieldProps) => {
             ref={inputRef}
             placeholder='type here'
           />
-          <Button buttonText='Search now' />
+          <Button buttonText='Search' />
         </div>
       </form>
     </div>
