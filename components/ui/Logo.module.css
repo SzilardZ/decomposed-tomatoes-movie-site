@@ -6,8 +6,12 @@
   cursor: pointer;
 }
 
-.logo span {
+.e {
   color: #63e6be;
+}
+
+.o {
+  color: #e6638b;
 }
 
 /****************************/

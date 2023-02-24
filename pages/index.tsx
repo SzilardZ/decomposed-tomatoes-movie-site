@@ -3,7 +3,6 @@ import Head from 'next/head';
 
 import { getSelectedMovies } from '../lib/httpRequests';
 import { SelectedMovieModel } from '../types/movieTypes';
-import { ResultElement } from '../types/homePageMoviesTypes';
 import Header from '../components/hero/Header';
 import Opener from '../components/opener/Opener';
 import MovieSelectionList from '../components/movie-selection/MovieSelectionList';
