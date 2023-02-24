@@ -82,13 +82,13 @@
 /****************************/
 @media (max-width: 28.125em) {
   .header {
-    height: 650px;
+    height: 675px;
   }
   .header-container {
     width: 55rem;
     transform: translate(-25%, 10%);
   }
   .dark-overlay {
-    height: 650px;
+    height: 675px;
   }
 }
