@@ -87,13 +87,16 @@
   .header {
     height: 675px;
   }
+
   .header-container {
     width: 55rem;
     transform: translate(-25%, 10%);
   }
+
   .dark-overlay {
     height: 675px;
   }
+
   .site-details {
     font-size: 2.4rem;
   }

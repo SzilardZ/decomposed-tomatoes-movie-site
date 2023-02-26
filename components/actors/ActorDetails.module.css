@@ -99,23 +99,28 @@
     flex-direction: column-reverse;
     gap: 6.4rem;
   }
+
   .secondary-title {
     font-size: 3rem;
     margin-bottom: 6.4rem;
     padding: 0 2.4rem;
   }
+
   .bio-container {
     margin: 4.8 auto 6.4rem auto;
     padding: 2.4rem 0 8rem 0;
   }
+
   .bio-full {
     margin: 0 auto 3.2rem auto;
     padding: 0 2.4rem;
   }
+
   .actor-name {
     font-size: 4.4rem;
     margin: 0 0 2.4rem 0;
   }
+
   .actor-img-container {
     margin: 0;
   }
