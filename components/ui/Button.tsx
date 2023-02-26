@@ -8,7 +8,9 @@ const Button = ({ buttonText }: ButtonProps) => {
   return (
     <div>
       <button className={styles.button}>
-        <span className={styles['button-text']}>{buttonText}</span>
+        <span className={styles['button-text']}>
+          {buttonText.toUpperCase()}
+        </span>
       </button>
     </div>
   );

@@ -14,8 +14,9 @@
   align-items: center;
   justify-content: center;
   margin: 4.8rem;
+  color: #f1f3f5;
 
-  transform: translate(-15%, 45%);
+  transform: translate(-15%, 25%);
 }
 
 .header-container-inner {
@@ -28,13 +29,15 @@
 }
 
 .title {
-  font-size: 7.4rem;
-  margin-bottom: 3.2rem;
+  font-size: 5.2rem;
+  font-weight: 700;
+  margin-bottom: 4.8rem;
   line-height: 1;
 }
 
 .site-details {
   font-size: 3rem;
+  font-weight: 500;
   line-height: 1.2;
 }
 
@@ -90,5 +93,8 @@
   }
   .dark-overlay {
     height: 675px;
+  }
+  .site-details {
+    font-size: 2.4rem;
   }
 }

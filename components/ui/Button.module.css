@@ -1,25 +1,26 @@
 .button {
   letter-spacing: 1px;
-  padding: 10px 20px;
+  padding: 15px 30px;
   font: inherit;
-  border-radius: 8px;
+  border-radius: 5px;
   outline: 0;
   border: none;
   cursor: pointer;
   position: relative;
-  background-color: #e6638b;
+  background-color: #de3f00;
   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
   transition: box-shadow 0.1s;
 }
 
 .button-text {
-  font-size: 3rem;
+  font-size: 1.6rem;
+  font-weight: 500;
   color: #fff;
   transition: color 0.1s;
 }
 .button:hover {
   box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
-  background-color: #c85174;
+  background-color: #cd3a00;
 }
 
 .button-text:active {
@@ -31,9 +32,6 @@
 /****************************/
 @media (max-width: 31.25em) {
   .button {
-    padding: 10px 15px;
-  }
-  .button-text {
-    font-size: 2.4rem;
+    padding: 12px 18px;
   }
 }
