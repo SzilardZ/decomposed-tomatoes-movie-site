@@ -6,7 +6,6 @@ import { MovieModel, SimpleMovieModel } from '../../types/movieTypes';
 import Navbar from '../navbar/Navbar';
 import styles from './MovieDetails.module.css';
 import RoleActor from './RoleActor';
-import TheEnd from '../footer/TheEnd';
 import Image from 'next/image';
 
 interface MovieDetailProps {
@@ -37,6 +36,9 @@ const MovieDetails = (props: MovieDetailProps) => {
   };
 
   // handle the case if the movie does not have available cast
+
+  const isAvailableCast = props.movie.cast.length === 0 ? false : true;
+
   let castContent;
   if (props.movie.cast.length === 0) {
     castContent = <p className={styles['no-cast']}>No available cast</p>;
@@ -64,9 +66,6 @@ const MovieDetails = (props: MovieDetailProps) => {
           <section className={styles['movie-details']}>
             <h1 className={styles['movie-title']}>{props.movie.title}</h1>
             <div className={styles['data-container']}>
-              <h3 className={styles['movie-year']}>
-                {props.movie.releaseYear}
-              </h3>
               <span>
                 <button
                   className={styles['btn-add-to-fav']}
@@ -74,7 +73,7 @@ const MovieDetails = (props: MovieDetailProps) => {
                   {buttonText}
                 </button>
               </span>
-
+              <p>Release Year: {props.movie.releaseYear}</p>
               <p>IMDB Rating: {props.movie.rating}</p>
               <p>Number of Votes: {props.movie.numVotes}</p>
               <p>Genres: {props.movie.genres}</p>
@@ -97,17 +96,23 @@ const MovieDetails = (props: MovieDetailProps) => {
           </div>
         </div>
         <div className={styles.instructions}>
-          <p>You can click on the name of the creators/actors ⬇</p>
+          {isAvailableCast && (
+            <p>You can click on the name of the creators/actors ⬇</p>
+          )}
         </div>
         <section className={styles['cast-container']}>
           <h3 className={styles['cast-title']}>Cast</h3>
           <div className={styles['cast-sub-title']}>
-            <p>(in not alphabetical order)</p>
+            {isAvailableCast && <p>(in not alphabetical order)</p>}
           </div>
           <div>{castContent}</div>
         </section>
       </main>
-      <TheEnd />
+      {isAvailableCast && (
+        <div className={styles['the-end-text']}>
+          <p>THE END</p>
+        </div>
+      )}
     </Fragment>
   );
 };

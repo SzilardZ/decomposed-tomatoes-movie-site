@@ -31,8 +31,8 @@ const FavoriteMovies = () => {
             <h3 className={styles['sub-title']}>Your favorite movies</h3>
             <SearchField type='movie' />
           </div>
+          {content}
         </div>
-        {content}
       </div>
       <Footer />
     </Fragment>

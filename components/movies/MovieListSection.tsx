@@ -6,6 +6,7 @@ import Navbar from '../navbar/Navbar';
 import SearchField from '../search-field/SearchField';
 import MovieList from './MovieList';
 import NoResults from '../no-results/NoResults';
+import { capitalizeFirstLetter } from '../../util/helpers';
 
 interface MovieListSectionProps {
   movies: SimpleMovieModel[];
@@ -29,7 +30,7 @@ const MovieListSection = ({ movies, searchedMovie }: MovieListSectionProps) => {
         <div className={styles['inner-container']}>
           <div className={styles['title-search-container']}>
             <h3 className={styles['sub-title']}>
-              Results for: <span>{searchedMovie}</span>
+              Results for: <span>{capitalizeFirstLetter(searchedMovie)}</span>
             </h3>
             <SearchField type='movie' />
           </div>

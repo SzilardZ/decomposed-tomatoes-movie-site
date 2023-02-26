@@ -5,10 +5,7 @@ import styles from './Logo.module.css';
 const Logo = () => {
   return (
     <Link href='/'>
-      <div className={styles.logo}>
-        decompos<span className={styles.e}>e</span>d tomat
-        <span className={styles.o}>o</span>es.
-      </div>
+      <div className={styles.logo}>decomposed tomatoes</div>
     </Link>
   );
 };

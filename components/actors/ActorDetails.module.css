@@ -1,10 +1,11 @@
 .actor-details-outer-container {
-  background-color: #080708;
+  background-color: #111;
+  color: #999;
 }
 
 .actor-details-inner-container {
   max-width: 130rem;
-  margin: 0 auto 2.4rem auto;
+  margin: 0 auto 6.4rem auto;
   padding: 6.4rem;
   display: grid;
   grid-template-columns: 3fr 1fr;
@@ -13,30 +14,34 @@
 }
 
 .actor-name {
-  font-size: 8.6rem;
+  font-size: 7.2rem;
   margin: 4.8rem 0 2.4rem 0;
+  color: #e9ecef;
 }
 
 .actor-birth-date {
-  font-size: 3rem;
+  font-size: 2.4rem;
 }
 
 .actor-bio {
   font-weight: 500;
-  font-size: 3rem;
+  font-size: 2.4rem;
+  color: #999;
   margin: 3.2rem 0 4.8rem 0;
 }
 
 .secondary-title {
   font-size: 3.6rem;
-  margin-bottom: 4.8rem;
-  padding: 0 6.4rem;
-  color: #63e6be;
+  font-weight: 500;
+  margin-bottom: 8rem;
+  padding: 0 2.4rem;
+  color: #e9ecef;
 }
 
 .section-container {
   max-width: 130rem;
   margin: 0 auto;
+  background-color: #111;
 }
 
 .no-movies {
@@ -47,27 +52,28 @@
 
 .bio-container {
   width: 100%;
-  background-color: #f8f9fa;
-  color: #212529;
+  color: #999;
+  background-color: #111;
   margin: 4.8 auto 6.4rem auto;
   padding: 8rem 0;
 }
 
 .bio-full {
-  font-family: 'Inter', sans-serif;
   font-weight: 500;
-  font-size: 2rem;
+  font-size: 2.4rem;
   line-height: 1.3;
   padding: 0 6.4rem;
 }
 
 .actor-img-container {
   margin-top: 4.8rem;
+  border-radius: 5px;
+  overflow: hidden;
 }
 
-.actor-img {
+/* .actor-img {
   border-radius: 100%;
-}
+} */
 
 .no-available-img {
   font-size: 2.4rem;
@@ -88,26 +94,29 @@
 @media (max-width: 41.875em) {
   .actor-details-inner-container {
     margin: 0 auto 3.2rem auto;
-    padding: 4.8rem 3.2rem 0 3.2rem;
+    padding: 4.8rem 2.4rem 0 2.4rem;
     display: flex;
     flex-direction: column-reverse;
     gap: 6.4rem;
   }
-
   .secondary-title {
-    text-align: center;
+    /* text-align: center; */
+    font-size: 3rem;
     margin-bottom: 6.4rem;
+  }
+  .bio-container {
+    margin: 4.8 auto 6.4rem auto;
+    padding: 2.4rem 0;
   }
   .bio-full {
     margin: 0 auto 3.2rem auto;
     padding: 0 2.4rem;
   }
   .actor-name {
-    font-size: 5.2rem;
+    font-size: 4.4rem;
     margin: 0 0 2.4rem 0;
   }
   .actor-img-container {
-    max-width: 75%;
     margin: 0;
   }
 }

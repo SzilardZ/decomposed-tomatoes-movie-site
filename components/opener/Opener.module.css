@@ -5,7 +5,6 @@
   padding: 9.6rem 6.4rem;
   max-width: 100%;
   text-align: center;
-  font-family: 'Inter', sans-serif;
   font-weight: 700;
 }
 
@@ -15,6 +14,7 @@
 
 .opener-text {
   font-size: 3.6rem;
+  font-weight: 500;
   line-height: 1.5;
 }
 
