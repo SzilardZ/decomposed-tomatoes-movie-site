@@ -1,6 +1,7 @@
 .outer-container {
   max-width: 100%;
   background-color: #111;
+  font-family: 'Bebas Neue', sans-serif;
   padding: 8rem 12.8rem;
 }
 
@@ -12,6 +13,7 @@
   max-width: 130rem;
   margin: 0 auto;
   column-gap: 6.4rem;
+  font-size: 3rem;
   color: #999;
 }
 
@@ -22,13 +24,10 @@
   justify-content: center;
   row-gap: 3.2rem;
   column-gap: 2.4rem;
-  font-size: 2.4rem;
 }
 
 .movie-img-container {
   justify-self: end;
-  border-radius: 5px;
-  overflow: hidden;
 }
 
 .movie-details {
@@ -41,12 +40,10 @@
   max-width: 130rem;
   color: #e9ecef;
   margin-bottom: 3.2rem;
-  font-size: 6.2rem;
-  font-weight: 900;
+  font-size: 8.6rem;
 }
 
 .plot {
-  font-size: 2.4rem;
   margin-top: 4.8rem;
 }
 
@@ -76,6 +73,7 @@
 }
 
 .instructions {
+  font-family: 'Inter', sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -91,7 +89,6 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  font-family: 'Bebas Neue', sans-serif;
   margin-top: 9.6rem;
 }
 
@@ -168,10 +165,15 @@
     display: flex;
     justify-content: center;
     grid-row: 1 / 2;
-    margin: 2.4rem 0 6.4rem 0;
+    margin: 2.4rem 0 4.8rem 0;
   }
 
   .btn-add-to-fav {
+    margin-bottom: 2rem;
+  }
+
+  .movie-title {
+    font-size: 6.2rem;
     margin-bottom: 2rem;
   }
 
@@ -180,8 +182,6 @@
   }
 
   .plot-title {
-    font-size: 3rem;
-    font-weight: 700;
     margin-bottom: 3.2rem;
   }
 
@@ -195,10 +195,5 @@
 
   .cast-title {
     text-align: center;
-  }
-
-  .movie-title {
-    font-size: 5.2rem;
-    margin-bottom: 2rem;
   }
 }

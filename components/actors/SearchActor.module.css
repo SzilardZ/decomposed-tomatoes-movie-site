@@ -6,6 +6,7 @@
   margin: auto 0;
   height: 900px;
   background-size: cover;
+  font-family: 'Bebas Neue', sans-serif;
 }
 
 .search-actor-container {
@@ -14,7 +15,6 @@
   align-items: center;
   justify-content: center;
   margin: 4.8rem;
-  color: #e9ecef;
 
   transform: translate(-15%, 70%);
 }
@@ -24,15 +24,13 @@
 }
 
 .title {
-  font-size: 5.2rem;
-  font-weight: 900;
-  margin-bottom: 4.8rem;
+  font-size: 7.4rem;
+  margin-bottom: 3.2rem;
   line-height: 1;
 }
 
 .site-details {
   font-size: 3rem;
-  font-weight: 700;
   line-height: 1.2;
 }
 
@@ -57,14 +55,9 @@
   .search-actor {
     height: 700px;
   }
-
   .search-actor-container {
     width: 55rem;
     margin-bottom: 30rem;
     transform: translate(-25%, 40%);
-  }
-
-  .site-details {
-    font-size: 2.4rem;
   }
 }
