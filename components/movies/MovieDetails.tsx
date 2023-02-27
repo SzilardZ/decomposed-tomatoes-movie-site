@@ -107,12 +107,12 @@ const MovieDetails = (props: MovieDetailProps) => {
           </div>
           <div>{castContent}</div>
         </section>
+        {isAvailableCast && (
+          <div className={styles['the-end-text']}>
+            <p>THE END</p>
+          </div>
+        )}
       </main>
-      {isAvailableCast && (
-        <div className={styles['the-end-text']}>
-          <p>THE END</p>
-        </div>
-      )}
     </Fragment>
   );
 };

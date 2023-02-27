@@ -15,10 +15,12 @@ const RoleActor = ({ id, role, name }: RoleActorProps) => {
   };
 
   return (
-    <li className={styles['roles-actors']} onClick={clickHandler}>
+    <li className={styles['roles-actors']}>
       <div>{role}</div>
       <div>
-        <span className={styles['actor-name']}>{name}</span>
+        <span className={styles['actor-name']} onClick={clickHandler}>
+          {name}
+        </span>
       </div>
     </li>
   );
