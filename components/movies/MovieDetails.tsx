@@ -36,7 +36,6 @@ const MovieDetails = (props: MovieDetailProps) => {
   };
 
   // handle the case if the movie does not have available cast
-
   const isAvailableCast = props.movie.cast.length === 0 ? false : true;
 
   let castContent;

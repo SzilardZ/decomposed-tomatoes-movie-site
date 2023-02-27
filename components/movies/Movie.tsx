@@ -21,7 +21,7 @@ const Movie = ({ id, imageUrl }: MovieProps) => {
         className={styles['movie-img']}
         src={imageUrl}
         alt='movie poster'
-        width={266}
+        width={265}
         height={400}
       />
     </li>

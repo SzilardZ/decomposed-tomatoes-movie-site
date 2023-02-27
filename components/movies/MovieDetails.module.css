@@ -59,17 +59,15 @@
   font-size: 2rem;
   padding: 1rem 2rem;
   outline: 0;
+  color: #111;
+  background-color: #e9ecef;
   border: 1.5px solid #e9ecef;
   border-radius: 5px;
-  color: #e9ecef;
-  background-color: rgba(0, 0, 0, 0);
   cursor: pointer;
 }
 
 .btn-add-to-fav:hover {
-  color: #000;
-  background-color: #e9ecef;
-  border: 1.5px solid #e9ecef;
+  background-color: #c6c9cb;
 }
 
 .instructions {
