@@ -97,14 +97,12 @@
 /****************************/
 /* BELOW 370px */
 /****************************/
-/* @media (max-width: 23.125em) {
+@media (max-width: 23.125em) {
   .header-container {
     width: 50rem;
-    margin: 2.4rem;
-
-    transform: translate(-25%, 4%);
+    transform: translate(-20%, 10%);
   }
   .header-container-inner {
-    width: 50%;
+    width: 60%;
   }
-} */
+}
