@@ -8,10 +8,13 @@ import ActorList from '../../components/actors/ActorList';
 
 interface SearchedActorProps {
   actors: ActorType[];
+  searchedActor: string;
 }
 
 const SearchedActor = (props: SearchedActorProps) => {
-  return <ActorList actors={props.actors} />;
+  return (
+    <ActorList actors={props.actors} searchedActor={props.searchedActor} />
+  );
 };
 
 export const getServerSideProps: GetServerSideProps = async (
@@ -40,6 +43,7 @@ export const getServerSideProps: GetServerSideProps = async (
   return {
     props: {
       actors: actors,
+      searchedActor: actorName,
     },
   };
 };

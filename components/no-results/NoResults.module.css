@@ -1,9 +1,22 @@
 .container {
   display: flex;
   justify-content: center;
-  padding: 12.8rem 0 30rem 0;
+  padding: 12.8rem 2.4rem 30rem 2.4rem;
 }
 
 .text {
   font-size: 3.6rem;
+  color: #999;
+}
+
+/****************************/
+/* BELOW 520px */
+/****************************/
+@media (max-width: 32.5em) {
+  .container {
+    text-align: center;
+  }
+  .text {
+    font-size: 2.4rem;
+  }
 }
