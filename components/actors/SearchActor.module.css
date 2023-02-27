@@ -65,8 +65,8 @@
 /****************************/
 /* BELOW 370px */
 /****************************/
-@media (max-width: 23.125em) {
+/* @media (max-width: 23.125em) {
   .search-actor-container {
     margin: 2.4rem;
   }
-}
+} */
