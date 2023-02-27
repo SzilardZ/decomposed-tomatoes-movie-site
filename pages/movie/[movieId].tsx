@@ -67,7 +67,7 @@ export const getServerSideProps: GetServerSideProps = async (
         numVotes: movieData.ratingsSummary?.voteCount || 'NA',
         genres: genres,
         runtime: durationInMinutes,
-        plot: movieData.plot?.plotText.plainText || 'NA',
+        plot: movieData.plot?.plotText?.plainText || 'NA',
         cast: castData?.roles || [],
       },
     },
