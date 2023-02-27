@@ -93,3 +93,18 @@
     height: 675px;
   }
 }
+
+/****************************/
+/* BELOW 370px */
+/****************************/
+@media (max-width: 23.125em) {
+  .header-container {
+    width: 50rem;
+    margin: 2.4rem;
+
+    transform: translate(-25%, 4%);
+  }
+  .header-container-inner {
+    width: 50%;
+  }
+}
