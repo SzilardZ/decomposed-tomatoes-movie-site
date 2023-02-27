@@ -15,7 +15,7 @@ const Header = () => {
               complete and updated data for over 9 million titles and 11 million
               actors / crew and cast members.
             </p>
-            <div className={styles['search-field']}>
+            <div className={styles['search-field']} id='search-movie'>
               <SearchField type='movie' />
             </div>
           </div>

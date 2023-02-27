@@ -11,7 +11,7 @@ const SearchActor = () => {
             Search for your favorite actors or film makers, our movie site has a
             database of 11 million actors / crew and cast members.
           </p>
-          <div className={styles['search-field']}>
+          <div className={styles['search-field']} id='search-actor'>
             <SearchField type='actor' />
           </div>
         </div>

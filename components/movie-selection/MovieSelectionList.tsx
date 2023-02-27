@@ -52,7 +52,9 @@ const MovieSelectionList = ({ selectedMovies }: MovieSelectionListProps) => {
         className='mySwiper'>
         {selectedMovies.map(movie => (
           <SwiperSlide key={movie.movieId}>
-            <MovieItem id={movie.movieId} image={movie.movieImage} />
+            <ul>
+              <MovieItem id={movie.movieId} image={movie.movieImage} />
+            </ul>
           </SwiperSlide>
         ))}
       </Swiper>
