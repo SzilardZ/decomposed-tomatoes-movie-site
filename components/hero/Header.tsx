@@ -11,9 +11,9 @@ const Header = () => {
           <div className={styles['header-container-inner']}>
             <h1 className={styles['title']}>Search for a movie</h1>
             <p className={styles['site-details']}>
-              The movie site works with a large database and provides complete
-              and updated data for over 9 million titles and 11 million actors /
-              crew and cast members.
+              Decomposed Tomatoes works with a large database and provides
+              complete and updated data for over 9 million titles and 11 million
+              actors / crew and cast members.
             </p>
             <div className={styles['search-field']}>
               <SearchField type='movie' />
