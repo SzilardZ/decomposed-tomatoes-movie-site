@@ -4,6 +4,10 @@
   font-family: 'Bebas Neue', sans-serif;
 }
 
+.search-field-container {
+  margin-top: 3rem;
+}
+
 /****************************/
 /* BELOW 840px */
 /****************************/
@@ -30,9 +34,6 @@
     align-items: center;
     font-size: 3rem;
     z-index: 999;
-    padding: 5rem 0 4rem 0;
+    padding: 1.6rem 0 3.2rem 0;
   }
-  /* .navbar-links li:hover {
-    color: #63e6bfd5;
-  } */
 }

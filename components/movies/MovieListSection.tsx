@@ -32,7 +32,9 @@ const MovieListSection = ({ movies, searchedMovie }: MovieListSectionProps) => {
             <h3 className={styles['sub-title']}>
               Results for: <span>{capitalizeFirstLetter(searchedMovie)}</span>
             </h3>
-            <SearchField type='movie' />
+            <div className={styles['search-field-container']}>
+              <SearchField type='movie' />
+            </div>
           </div>
           {content}
         </div>
