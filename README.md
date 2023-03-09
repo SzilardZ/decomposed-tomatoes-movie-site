@@ -19,6 +19,6 @@
 
 or from mobile:
 
-![qrcode](https://imgbox.com/JlCVYUjr)
+![qrcode](https://images2.imgbox.com/02/be/JlCVYUjr_o.png)
 
 ---
