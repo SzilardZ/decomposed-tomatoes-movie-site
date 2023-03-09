@@ -126,3 +126,35 @@
     margin: 0;
   }
 }
+
+/****************************/
+/* BELOW 460px */
+/****************************/
+@media (max-width: 28.75em) {
+  .actor-details-inner-container {
+    margin: 0 auto 4.8rem auto;
+  }
+  .bio-container {
+    margin-top: 0;
+    padding-top: 0;
+  }
+  .actor-name {
+    font-size: 3.6rem;
+  }
+  .actor-birth-date {
+    font-size: 2rem;
+  }
+  .actor-bio {
+    margin: 2.4rem 0 2.4rem 0;
+  }
+  .actor-bio,
+  .bio-full {
+    font-weight: 400;
+    font-size: 2rem;
+    line-height: 3.2rem;
+  }
+  .secondary-title {
+    font-size: 2.4rem;
+    margin-bottom: 4.8rem;
+  }
+}

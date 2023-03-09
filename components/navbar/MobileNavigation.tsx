@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import { IoMdMenu, IoMdClose } from 'react-icons/io';
+import SearchField from '../search-field/SearchField';
 
 import Logo from '../ui/Logo';
 import styles from './MobileNavigation.module.css';
@@ -44,6 +45,11 @@ const MobileNavigation = () => {
           </li>
           <li>
             <Link href='/contact'>Contact Us</Link>
+          </li>
+          <li>
+            <div className={styles['search-field-container']}>
+              <SearchField type='movie' />
+            </div>
           </li>
         </ul>
       )}
