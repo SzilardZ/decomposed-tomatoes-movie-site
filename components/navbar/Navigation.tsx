@@ -1,6 +1,5 @@
 import styles from './Navigation.module.css';
 import Logo from '../ui/Logo';
-import Link from 'next/link';
 import NavigationItem from './NavigationItem';
 
 const Navigation = () => {

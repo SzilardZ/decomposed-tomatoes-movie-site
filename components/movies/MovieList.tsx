@@ -1,6 +1,6 @@
 import styles from './MovieList.module.css';
-import { SimpleMovieModel } from '../../types/movieTypes';
 import Movie from './Movie';
+import { SimpleMovieModel } from '../../types/movieTypes';
 
 interface MovieListProps {
   movies: SimpleMovieModel[];

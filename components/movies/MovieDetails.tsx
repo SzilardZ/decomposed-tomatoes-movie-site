@@ -1,12 +1,10 @@
 import { Fragment, useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-
-// import { addMovie, removeMovie } from '../../store/favMovies/favMoviesSlice';
-import { MovieModel, SimpleMovieModel } from '../../types/movieTypes';
-import Navbar from '../navbar/Navbar';
-import styles from './MovieDetails.module.css';
-import RoleActor from './RoleActor';
 import Image from 'next/image';
+
+import styles from './MovieDetails.module.css';
+import { MovieModel } from '../../types/movieTypes';
+import Navbar from '../navbar/Navbar';
+import RoleActor from './RoleActor';
 
 interface MovieDetailProps {
   movie: MovieModel;

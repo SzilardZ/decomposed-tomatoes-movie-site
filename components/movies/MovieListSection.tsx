@@ -1,12 +1,12 @@
 import { Fragment } from 'react';
 
 import styles from './MovieListSection.module.css';
-import { SimpleMovieModel } from '../../types/movieTypes';
-import Navbar from '../navbar/Navbar';
-import SearchField from '../search-field/SearchField';
-import MovieList from './MovieList';
-import NoResults from '../no-results/NoResults';
 import { capitalizeFirstLetter } from '../../util/helpers';
+import MovieList from './MovieList';
+import Navbar from '../navbar/Navbar';
+import NoResults from '../no-results/NoResults';
+import SearchField from '../search-field/SearchField';
+import { SimpleMovieModel } from '../../types/movieTypes';
 
 interface MovieListSectionProps {
   movies: SimpleMovieModel[];
