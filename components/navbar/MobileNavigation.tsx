@@ -1,10 +1,10 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import { IoMdMenu, IoMdClose } from 'react-icons/io';
-import SearchField from '../search-field/SearchField';
 
-import Logo from '../ui/Logo';
 import styles from './MobileNavigation.module.css';
+import Logo from '../ui/Logo';
+import SearchField from '../search-field/SearchField';
 
 const MobileNavigation = () => {
   const [open, setOpen] = useState(false);

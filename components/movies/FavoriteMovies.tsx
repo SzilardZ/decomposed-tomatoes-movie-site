@@ -1,11 +1,10 @@
 import { Fragment, useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
 
 import styles from './FavoriteMovies.module.css';
+import Footer from '../footer/Footer';
+import MovieList from './MovieList';
 import Navbar from '../navbar/Navbar';
 import SearchField from '../search-field/SearchField';
-import MovieList from './MovieList';
-import Footer from '../footer/Footer';
 import { SimpleMovieModel } from '../../types/movieTypes';
 
 const FavoriteMovies = () => {

@@ -2,11 +2,11 @@ import { Fragment } from 'react';
 import { ActorType } from '../../types/actorTypes';
 
 import styles from './ActorList.module.css';
+import ActorItem from './ActorItem';
+import { capitalizeFirstLetter } from '../../util/helpers';
 import Navbar from '../navbar/Navbar';
 import NoResults from '../no-results/NoResults';
-import ActorItem from './ActorItem';
 import SearchField from '../search-field/SearchField';
-import { capitalizeFirstLetter } from '../../util/helpers';
 
 interface ActorListProps {
   actors: ActorType[];

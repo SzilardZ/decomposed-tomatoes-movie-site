@@ -2,7 +2,6 @@ import { GetStaticProps } from 'next';
 import { Fragment } from 'react';
 
 import { getUpcomingMovies } from '../../lib/httpRequests';
-import { ResultElement } from '../../types/upcomingMovieTypes';
 import { UpcomingMovieModel } from '../../types/movieTypes';
 import MovieListSection from '../../components/movies/MovieListSection';
 import Footer from '../../components/footer/Footer';

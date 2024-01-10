@@ -1,5 +1,5 @@
-import MovieItem from './MovieItem';
 import styles from './MovieSelectionList.module.css';
+import MovieItem from './MovieItem';
 import { SelectedMovieModel } from '../../types/movieTypes';
 
 // SWIPER imports

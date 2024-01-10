@@ -1,7 +1,7 @@
 import { Fragment } from 'react';
-import Navbar from '.././navbar/Navbar';
 
 import styles from './OurFavs.module.css';
+import Navbar from '.././navbar/Navbar';
 
 const OurFavs = () => {
   return (

@@ -1,10 +1,10 @@
 import { Fragment } from 'react';
+import Image from 'next/image';
 
 import styles from './ActorDetails.module.css';
 import { ActorDetailedType } from '../../types/actorTypes';
 import Navbar from '../navbar/Navbar';
 import MovieList from '../movies/MovieList';
-import Image from 'next/image';
 
 interface ActorDetailsProps {
   actor: ActorDetailedType;
