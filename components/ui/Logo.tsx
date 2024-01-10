@@ -10,8 +10,8 @@ const Logo = () => {
       <div className={styles.logo}>
         <div>
           decomposed t
-          <span className={styles.imageReplacement}>
-            <Image src={tomato} alt='tomato' />
+          <span className=''>
+            <Image src={tomato} width={32} height={32} alt='tomato' />
           </span>
           matoes.
         </div>
