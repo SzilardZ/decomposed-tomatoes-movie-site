@@ -32,6 +32,10 @@
   font-size: 4.8rem;
 }
 
+.go-back:hover {
+  color: #999;
+}
+
 /****************************/
 /* BELOW 544px (Mobile phones) */
 /****************************/

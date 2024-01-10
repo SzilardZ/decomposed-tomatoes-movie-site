@@ -1,7 +1,7 @@
-import { Fragment } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { addMovie, removeMovie } from '../../store/favMovies/favMoviesSlice';
+// import { addMovie, removeMovie } from '../../store/favMovies/favMoviesSlice';
 import { MovieModel, SimpleMovieModel } from '../../types/movieTypes';
 import Navbar from '../navbar/Navbar';
 import styles from './MovieDetails.module.css';
@@ -12,40 +12,72 @@ interface MovieDetailProps {
   movie: MovieModel;
 }
 
+interface FavMovieModel {
+  id: string;
+  imageUrl: string;
+}
+
 const MovieDetails = (props: MovieDetailProps) => {
-  const dispatch = useDispatch();
+  const [buttonText, setButtonText] = useState<string>('+ Add to Favorites');
 
-  const favMovies = useSelector((state: any) => state.favMovies.favMovies);
+  const checkFavoriteStatus = () => {
+    const existingFavorites = localStorage.getItem('favorites');
+    const favoritesArray: { id: string; imageUrl: string }[] = existingFavorites
+      ? JSON.parse(existingFavorites)
+      : [];
 
-  let buttonText;
+    const isInFavorite = favoritesArray.some(
+      favorite => favorite.id === props.movie.id
+    );
 
-  const isInFavorite = favMovies.find(
-    (movie: SimpleMovieModel) => movie.id === props.movie.id
-  );
+    const updatedButtonText = isInFavorite
+      ? 'Remove from Favorites'
+      : '+ Add to Favorites';
 
-  isInFavorite
-    ? (buttonText = 'Remove from Favorites')
-    : (buttonText = '+ Add to Favorites');
-
-  const favoriteHandler = () => {
-    isInFavorite
-      ? dispatch(removeMovie(props.movie.id))
-      : dispatch(
-          addMovie({ id: props.movie.id, imageUrl: props.movie.imageUrl })
-        );
+    setButtonText(updatedButtonText);
   };
+
+  const favoriteHandler = (id: string, imageUrl: string) => {
+    const existingFavorites = localStorage.getItem('favorites');
+    const favoritesArray: { id: string; imageUrl: string }[] = existingFavorites
+      ? JSON.parse(existingFavorites)
+      : [];
+
+    const isAlreadyFavorited = favoritesArray.some(
+      favorite => favorite.id === id
+    );
+
+    let updatedFavorites: { id: string; imageUrl: string }[];
+
+    if (!isAlreadyFavorited) {
+      favoritesArray.push({ id, imageUrl });
+      updatedFavorites = favoritesArray;
+    } else {
+      updatedFavorites = favoritesArray.filter(favorite => favorite.id !== id);
+    }
+
+    localStorage.setItem('favorites', JSON.stringify(updatedFavorites));
+    checkFavoriteStatus(); // Update button text after modifying favorites
+  };
+
+  useEffect(() => {
+    checkFavoriteStatus(); // Update button text on initial load
+  }, []);
 
   // handle the case if the movie does not have available cast
   const isAvailableCast = props.movie.cast.length === 0 ? false : true;
 
   let castContent;
+
   if (props.movie.cast.length === 0) {
     castContent = <p className={styles['no-cast']}>No available cast</p>;
   } else if (props.movie.cast.length > 0) {
     castContent = (
       <div>
-        {props.movie.cast.map(item => (
-          <ul className={styles['role-actor-list']} key={item.actor.imdb_id}>
+        {props.movie.cast.map((item, index) => (
+          <ul
+            className={styles['role-actor-list']}
+            key={`${item.actor.imdb_id}-${index}`}>
             <RoleActor
               id={item.actor.imdb_id}
               role={item.role}
@@ -68,7 +100,9 @@ const MovieDetails = (props: MovieDetailProps) => {
               <span>
                 <button
                   className={styles['btn-add-to-fav']}
-                  onClick={favoriteHandler}>
+                  onClick={() =>
+                    favoriteHandler(props.movie.id, props.movie.imageUrl)
+                  }>
                   {buttonText}
                 </button>
               </span>
@@ -80,7 +114,7 @@ const MovieDetails = (props: MovieDetailProps) => {
             </div>
             <div className={styles.plot}>
               <p className={styles['plot-title']}>Plot</p>
-              <p>{props.movie.plot}</p>
+              <p className={styles['plot-text']}>{props.movie.plot}</p>
             </div>
           </section>
 
@@ -101,9 +135,6 @@ const MovieDetails = (props: MovieDetailProps) => {
         </div>
         <section className={styles['cast-container']}>
           <h3 className={styles['cast-title']}>Cast</h3>
-          <div className={styles['cast-sub-title']}>
-            {isAvailableCast && <p>(in not alphabetical order)</p>}
-          </div>
           <div>{castContent}</div>
         </section>
         {isAvailableCast && (

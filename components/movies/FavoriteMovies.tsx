@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import styles from './FavoriteMovies.module.css';
@@ -6,20 +6,36 @@ import Navbar from '../navbar/Navbar';
 import SearchField from '../search-field/SearchField';
 import MovieList from './MovieList';
 import Footer from '../footer/Footer';
+import { SimpleMovieModel } from '../../types/movieTypes';
 
 const FavoriteMovies = () => {
-  const favMovies = useSelector((state: any) => state.favMovies.favMovies);
+  const [favMovies, setFavMovies] = useState<string | null>(null);
+
+  useEffect(() => {
+    const favoriteMovies = localStorage.getItem('favorites');
+    setFavMovies(favoriteMovies);
+  }, []);
 
   let content;
 
-  if (favMovies.length === 0) {
+  if (favMovies === null || !favMovies) {
     content = (
       <p className={styles['no-movie']}>
         Search for movies and add them to your favorites!
       </p>
     );
-  } else if (favMovies.length > 0) {
-    content = <MovieList movies={favMovies} />;
+  } else {
+    const parsedMovies: SimpleMovieModel[] = JSON.parse(favMovies);
+
+    if (parsedMovies.length === 0) {
+      content = (
+        <p className={styles['no-movie']}>
+          Search for movies and add them to your favorites!
+        </p>
+      );
+    } else {
+      content = <MovieList movies={parsedMovies} />;
+    }
   }
 
   return (
