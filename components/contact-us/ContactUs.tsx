@@ -21,13 +21,13 @@ const Contact = () => {
           you get me, sweetheart? *`}
         </p>
         <div className={styles['go-back']}>
-          <Link href='/'>Go to Homepage</Link>
+          <Link href='/'>GO TO HOMEPAGE</Link>
         </div>
         <div>
           <p
             className={
               styles['sub-text']
-            }>{`* quote from the classic movie As Good as It Gets`}</p>
+            }>{`* (slightly altered) quote from the classic movie 'As Good as It Gets'`}</p>
         </div>
       </div>
     </div>
